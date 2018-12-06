@@ -16,10 +16,8 @@ namespace Maybe.Samples
         public Maybe<CustomerDto> CreateCustomer(string name)
         {
             var customer = Customer.Create(name);
-            var customerDto = customer 
-                ? _customerConverter.ToDto(customer) 
-                : customer.Fail<CustomerDto>();
-            return customerDto ? _repository.Add(customerDto) : customerDto;
+            var customerDto = Track.Continue(customer, () => _customerConverter.ToDto(customer));
+            return Track.Continue(customerDto, () => _repository.Add(customerDto));
         }
     }
 }
