@@ -1,4 +1,6 @@
-﻿namespace Maybe
+﻿using System.Diagnostics.Contracts;
+
+namespace Maybe
 {
     public readonly struct Maybe
     {
@@ -10,10 +12,12 @@
 
         public static Maybe Success() => new Maybe(null);
 
-        public Maybe<T> Fail<T>() => Error.Fail<T>();
+        [Pure]
+        public Maybe<T> Fail<T>() => new Maybe<T>(in this);
 
         public static implicit operator bool(Maybe r) => r.IsSuccess;
 
+        [Pure]
         public override string ToString() => $"{nameof(Maybe)}{{{(IsSuccess ? "Success" : "Failure")}{(IsSuccess ? "" : ": " + Error)}}}";
     }
 
@@ -22,31 +26,37 @@
         internal Maybe(TData data, string failure)
         {
             Data = data;
-            Error = failure;
+            Inner = new Maybe(failure);
+        }
+
+        internal Maybe(in Maybe inner)
+        {
+            Data = default;
+            Inner = inner;
         }
 
         public TData Data { get; }
 
-        public string Error { get; }
-
-        public bool IsSuccess => Error == null;
+        private Maybe Inner { get; }
 
         public void Deconstruct(out TData data, out string failure)
         {
             data = Data;
-            failure = Error;
+            failure = Inner.Error;
         }
 
-        public Maybe<T> Fail<T>() => Error.Fail<T>();
+        [Pure]
+        public Maybe<T> Fail<T>() => Inner.Fail<T>();
 
-        public static implicit operator bool(Maybe<TData> r) => r.IsSuccess;
+        public static implicit operator bool(Maybe<TData> r) => r.Inner.IsSuccess;
 
         public static implicit operator TData(Maybe<TData> r) => r.Data;
 
         public static implicit operator Maybe(Maybe<TData> r)
-            => r ? Maybe.Success() : r.Error.Fail();
+            => r.Inner;
 
+        [Pure]
         public override string ToString() =>
-            $"{nameof(Maybe)}{{{(IsSuccess ? "Success" : "Failure")}: {(IsSuccess ? Data.ToString() : Error)}}}";
+            $"{nameof(Maybe)}{{{(Inner.IsSuccess ? "Success" : "Failure")}: {(Inner.IsSuccess ? Data.ToString() : Inner.Error)}}}";
     }
 }
