@@ -1,23 +1,33 @@
-﻿using Maybe.Samples.Dependencies;
+﻿using System;
+using Maybe.Samples.Dependencies;
 
 namespace Maybe.Samples
 {
     public class CustomerService
     {
         private readonly CustomerRepository _repository;
-        private readonly CustomerConverter _customerConverter;
+        private readonly CustomerConverter _converter;
 
-        public CustomerService(CustomerRepository repository, CustomerConverter customerConverter)
+        public CustomerService(CustomerRepository repository, CustomerConverter converter)
         {
             _repository = repository;
-            _customerConverter = customerConverter;
+            _converter = converter;
         }
 
         public Maybe<CustomerDto> CreateCustomer(string name)
         {
             var customer = Customer.Create(name);
-            var customerDto = Track.Continue(customer, () => _customerConverter.ToDto(customer));
+            var customerDto = Track.Continue(customer, () => _converter.ToDto(customer));
             return Track.Continue(customerDto, () => _repository.Add(customerDto));
+        }
+
+        public Maybe<CustomerDto> Deposit(Guid id, decimal amount)
+        {
+            var customerDto = _repository.Find(id.ToString("n"));
+            var customer = Track.Continue(customerDto, () => _converter.ToEntity(customerDto));
+            var accountBalance = Track.Continue(customer, () => customer.Data.Deposit(amount));
+            var updatedCustomerDto = Track.Continue(accountBalance, () => _converter.ToDto(customer));
+            return Track.Continue(updatedCustomerDto, () => _repository.Update(updatedCustomerDto));
         }
     }
 }

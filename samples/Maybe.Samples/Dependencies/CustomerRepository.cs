@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using FakeResponse = System.ValueTuple<System.Func<string, Maybe.Samples.Dependencies.CustomerDto, bool>, System.Func<Maybe.Samples.Dependencies.CustomerDto, Maybe.Maybe<Maybe.Samples.Dependencies.CustomerDto>>>;
+using FakeResponse = System.ValueTuple<System.Func<string, object[], bool>, System.Func<object[], Maybe.Maybe<Maybe.Samples.Dependencies.CustomerDto>>>;
 
 namespace Maybe.Samples.Dependencies
 {
@@ -28,14 +28,19 @@ namespace Maybe.Samples.Dependencies
             return Respond(nameof(Delete), customer);
         }
 
+        public Maybe<CustomerDto> Find(string id)
+        {
+            return Respond(nameof(Find), id);
+        }
+
         public static CustomerRepository WithResponses(params FakeResponse[] responses)
         {
             return new CustomerRepository(responses);
         }
 
-        private Maybe<CustomerDto> Respond(string operationName, CustomerDto customer)
+        private Maybe<CustomerDto> Respond(string operationName, params object[] args)
         {
-            return _responses.First(r => r.Item1(operationName, customer)).Item2(customer);
+            return _responses.First(r => r.Item1(operationName, args)).Item2(args);
         }
     }
 }

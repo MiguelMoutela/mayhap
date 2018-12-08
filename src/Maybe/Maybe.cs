@@ -39,12 +39,6 @@ namespace Maybe
 
         private Maybe Inner { get; }
 
-        public void Deconstruct(out TData data, out string failure)
-        {
-            data = Data;
-            failure = Inner.Error;
-        }
-
         [Pure]
         public Maybe<T> Fail<T>() => Inner.Fail<T>();
 
@@ -57,6 +51,6 @@ namespace Maybe
 
         [Pure]
         public override string ToString() =>
-            $"{nameof(Maybe)}{{{(Inner.IsSuccess ? "Success" : "Failure")}: {(Inner.IsSuccess ? Data.ToString() : Inner.Error)}}}";
+            $"{GetType().Name}{{{(Inner.IsSuccess ? "Success" : "Failure")}: {(Inner.IsSuccess ? Data.ToString() : Inner.Error)}}}";
     }
 }

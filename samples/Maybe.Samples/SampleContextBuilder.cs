@@ -1,6 +1,6 @@
 ﻿using System;
 using Maybe.Samples.Dependencies;
-using FakeResponse = System.ValueTuple<System.Func<string, Maybe.Samples.Dependencies.CustomerDto, bool>, System.Func<Maybe.Samples.Dependencies.CustomerDto, Maybe.Maybe<Maybe.Samples.Dependencies.CustomerDto>>>;
+using FakeResponse = System.ValueTuple<System.Func<string, object[], bool>, System.Func<object[], Maybe.Maybe<Maybe.Samples.Dependencies.CustomerDto>>>;
 
 namespace Maybe.Samples
 {

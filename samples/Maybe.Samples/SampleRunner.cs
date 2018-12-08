@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Maybe.Samples.Dependencies;
 using Xunit;
 using Xunit.Abstractions;
@@ -8,12 +9,12 @@ namespace Maybe.Samples
 {
     public class SampleRunner
     {
-        private readonly ITestOutputHelper _output;
-
         public SampleRunner(ITestOutputHelper output)
         {
-            _output = output;
+            Output = output;
         }
+
+        private ITestOutputHelper Output { get; }
 
         [Fact]
         public void CustomerCreatedSuccessfully()
@@ -22,11 +23,18 @@ namespace Maybe.Samples
                 .WithRepositoryResponding(
                     (
                         (op, _) => op.Equals(nameof(CustomerRepository.Add), StringComparison.InvariantCulture),
-                        c => c.Success()
+                        args => (args.First() as CustomerDto).Success()
                     ));
 
             var customer = context.Service.CreateCustomer("John Doe");
-            _output.WriteLine(customer.ToString());
+            Output.WriteLine(customer.ToString());
+        }
+
+        [Fact]
+        public void DepositServiceUnavailable()
+        {
+            var deposit = Context().Service.Deposit(Guid.NewGuid(), 100.0m);
+            Output.WriteLine(deposit.ToString());
         }
 
         private CustomerServiceContext Context()
