@@ -9,6 +9,6 @@
         public decimal AccountBalance { get; set; }
 
         public override string ToString()
-            => $"{nameof(CustomerDto)}{{{Id}, {Name}, {AccountBalance:C}}}";
+            => $"{nameof(CustomerDto)}{{{Id}, {Name}, {AccountBalance}}}";
     }
 }

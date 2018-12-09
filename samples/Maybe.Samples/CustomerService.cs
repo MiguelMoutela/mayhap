@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Maybe.Samples.Dependencies;
 
 namespace Maybe.Samples
@@ -19,6 +20,13 @@ namespace Maybe.Samples
             var customer = Customer.Create(name);
             var customerDto = Track.Continue(customer, () => _converter.ToDto(customer));
             return Track.Continue(customerDto, () => _repository.Add(customerDto));
+        }
+
+        public Task<Maybe<CustomerDto>> CreateCustomerAsync(string name)
+        {
+            var customer = Customer.Create(name);
+            var customerDto = Track.Continue(customer, () => _converter.ToDto(customer));
+            return Track.Continue(customerDto, async () => await _repository.AddAsync(customerDto));
         }
 
         public Maybe<CustomerDto> Deposit(Guid id, decimal amount)

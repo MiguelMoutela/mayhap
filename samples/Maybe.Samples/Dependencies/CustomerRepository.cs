@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using FakeResponse = System.ValueTuple<System.Func<string, object[], bool>, System.Func<object[], Maybe.Maybe<Maybe.Samples.Dependencies.CustomerDto>>>;
 
 namespace Maybe.Samples.Dependencies
@@ -16,6 +17,11 @@ namespace Maybe.Samples.Dependencies
         public Maybe<CustomerDto> Add(CustomerDto customer)
         {
             return Respond(nameof(Add), customer);
+        }
+
+        public Task<Maybe<CustomerDto>> AddAsync(CustomerDto customer)
+        {
+            return Task.FromResult(Respond(nameof(AddAsync), customer));
         }
 
         public Maybe<CustomerDto> Update(CustomerDto customer)
