@@ -69,6 +69,15 @@ namespace Maybe.Samples
             Output.WriteLine(deposit.ToString());
         }
 
+        [Fact]
+        public void Playground()
+        {
+            var x = false.Success();
+
+            var maybe = Track.Continue(x, () => x.Value);
+            Output.WriteLine(maybe.ToString());
+        }
+
         private CustomerServiceContext Context()
         {
             return new CustomerServiceContext();

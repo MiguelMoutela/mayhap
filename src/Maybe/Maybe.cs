@@ -18,39 +18,43 @@ namespace Maybe
         public static implicit operator bool(Maybe r) => r.IsSuccess;
 
         [Pure]
-        public override string ToString() => $"{nameof(Maybe)}{{{(IsSuccess ? "Success" : "Failure")}{(IsSuccess ? "" : ": " + Error)}}}";
+        public override string ToString() => $"{nameof(Maybe)}{{IsSuccess: {IsSuccess}{(IsSuccess ? "" : ", Error: " + Error)}}}";
     }
 
-    public readonly struct Maybe<TData>
+    public readonly struct Maybe<TValue>
     {
-        internal Maybe(TData data, string failure)
+        internal Maybe(TValue value, string failure)
         {
-            Data = data;
+            Value = value;
             Inner = new Maybe(failure);
         }
 
         internal Maybe(in Maybe inner)
         {
-            Data = default;
+            Value = default;
             Inner = inner;
         }
 
-        public TData Data { get; }
+        public TValue Value { get; }
+
+        public bool IsSuccess => Inner.IsSuccess;
+
+        public string Error => Inner.Error;
 
         private Maybe Inner { get; }
 
         [Pure]
         public Maybe<T> Fail<T>() => Inner.Fail<T>();
 
-        public static implicit operator bool(Maybe<TData> r) => r.Inner.IsSuccess;
+        public static implicit operator bool(Maybe<TValue> r) => r.Inner.IsSuccess;
 
-        public static implicit operator TData(Maybe<TData> r) => r.Data;
+        public static implicit operator TValue(Maybe<TValue> r) => r.Value;
 
-        public static implicit operator Maybe(Maybe<TData> r)
+        public static implicit operator Maybe(Maybe<TValue> r)
             => r.Inner;
 
         [Pure]
         public override string ToString() =>
-            $"{GetType().Name}{{{(Inner.IsSuccess ? "Success" : "Failure")}: {(Inner.IsSuccess ? Data.ToString() : Inner.Error)}}}";
+            $"{GetType().Name}{{IsSuccess: {IsSuccess}, {(IsSuccess ? "Value: " + Value.ToString() : "Error: " + Error)}}}";
     }
 }

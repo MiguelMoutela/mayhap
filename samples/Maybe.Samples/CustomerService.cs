@@ -33,7 +33,7 @@ namespace Maybe.Samples
         {
             var customerDto = _repository.Find(id.ToString("n"));
             var customer = Track.Continue(customerDto, () => _converter.ToEntity(customerDto));
-            var accountBalance = Track.Continue(customer, () => customer.Data.Deposit(amount));
+            var accountBalance = Track.Continue(customer, () => customer.Value.Deposit(amount));
             var updatedCustomerDto = Track.Continue(accountBalance, () => _converter.ToDto(customer));
             return Track.Continue(updatedCustomerDto, () => _repository.Update(updatedCustomerDto));
         }
