@@ -18,24 +18,24 @@ namespace Maybe.Samples
         public Maybe<CustomerDto> CreateCustomer(string name)
         {
             var customer = Customer.Create(name);
-            var customerDto = Track.Continue(customer, () => _converter.ToDto(customer));
-            return Track.Continue(customerDto, () => _repository.Add(customerDto));
+            var customerDto = customer.Continue(c => _converter.ToDto(c));
+            return customerDto.Continue(c => _repository.Add(c));
         }
 
         public Task<Maybe<CustomerDto>> CreateCustomerAsync(string name)
         {
             var customer = Customer.Create(name);
-            var customerDto = Track.Continue(customer, () => _converter.ToDto(customer));
-            return Track.Continue(customerDto, async () => await _repository.AddAsync(customerDto));
+            var customerDto = customer.Continue(c => _converter.ToDto(c));
+            return customerDto.Continue(async c => await _repository.AddAsync(c));
         }
 
         public Maybe<CustomerDto> Deposit(Guid id, decimal amount)
         {
-            var customerDto = _repository.Find(id.ToString("n"));
-            var customer = Track.Continue(customerDto, () => _converter.ToEntity(customerDto));
-            var accountBalance = Track.Continue(customer, () => customer.Value.Deposit(amount));
-            var updatedCustomerDto = Track.Continue(accountBalance, () => _converter.ToDto(customer));
-            return Track.Continue(updatedCustomerDto, () => _repository.Update(updatedCustomerDto));
+            return _repository.Find(id.ToString("n"))
+                .Continue(customerDto => _converter.ToEntity(customerDto), out var customer)
+                .Continue(c => c.Deposit(amount))
+                .Continue(_ => _converter.ToDto(customer))
+                .Continue(customerDto => _repository.Update(customerDto));
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Maybe.Samples.Dependencies
             return Respond(nameof(Update), customer);
         }
 
-        public Maybe Delete(CustomerDto customer)
+        public Maybe<CustomerDto> Delete(CustomerDto customer)
         {
             return Respond(nameof(Delete), customer);
         }

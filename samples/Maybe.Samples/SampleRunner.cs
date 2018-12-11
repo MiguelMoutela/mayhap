@@ -74,7 +74,7 @@ namespace Maybe.Samples
         {
             var x = false.Success();
 
-            var maybe = Track.Continue(x, () => x.Value);
+            var maybe = Track.Continue(x, y => (!y).Success());
             Output.WriteLine(maybe.ToString());
         }
 

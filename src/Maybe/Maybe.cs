@@ -1,60 +1,44 @@
-﻿using System.Diagnostics.Contracts;
+﻿using System;
+using System.Diagnostics.Contracts;
 
 namespace Maybe
 {
-    public readonly struct Maybe
-    {
-        internal Maybe(string failure) => Error = failure;
-
-        public string Error { get; }
-
-        public bool IsSuccess => Error == null;
-
-        public static Maybe Success() => new Maybe(null);
-
-        [Pure]
-        public Maybe<T> Fail<T>() => new Maybe<T>(in this);
-
-        public static implicit operator bool(Maybe r) => r.IsSuccess;
-
-        [Pure]
-        public override string ToString() => $"{nameof(Maybe)}{{IsSuccess: {IsSuccess}{(IsSuccess ? "" : ", Error: " + Error)}}}";
-    }
-
     public readonly struct Maybe<TValue>
     {
+        private readonly Result _result;
+
         internal Maybe(TValue value, string failure)
         {
             Value = value;
-            Inner = new Maybe(failure);
+            _result = new Result(failure);
         }
 
-        internal Maybe(in Maybe inner)
+        internal Maybe(in Result result)
         {
+            if (result.IsSuccess)
+            {
+                throw new InvalidOperationException("Conversion is possible only for failed Maybe");
+            }
+
             Value = default;
-            Inner = inner;
+            _result = result;
         }
 
         public TValue Value { get; }
 
-        public bool IsSuccess => Inner.IsSuccess;
+        public bool IsSuccess => _result.IsSuccess;
 
-        public string Error => Inner.Error;
-
-        private Maybe Inner { get; }
+        public string Error => _result.Error;
 
         [Pure]
-        public Maybe<T> Fail<T>() => Inner.Fail<T>();
+        public Maybe<T> To<T>() => new Maybe<T>(in _result);
 
-        public static implicit operator bool(Maybe<TValue> r) => r.Inner.IsSuccess;
+        public static implicit operator bool(Maybe<TValue> r) => r._result.IsSuccess;
 
         public static implicit operator TValue(Maybe<TValue> r) => r.Value;
 
-        public static implicit operator Maybe(Maybe<TValue> r)
-            => r.Inner;
-
         [Pure]
         public override string ToString() =>
-            $"{GetType().Name}{{IsSuccess: {IsSuccess}, {(IsSuccess ? "Value: " + Value.ToString() : "Error: " + Error)}}}";
+            $"{GetType().Name}{{IsSuccess: {IsSuccess}, {(IsSuccess ? "Value: " + Value : "Error: " + Error)}}}";
     }
 }

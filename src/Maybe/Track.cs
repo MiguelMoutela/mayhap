@@ -3,24 +3,28 @@ using System.Threading.Tasks;
 
 namespace Maybe
 {
-    public class Track
+    public static class Track
     {
-        public static Maybe<T> Continue<T>(Maybe previous, Func<Maybe<T>> next)
-            => previous.IsSuccess ? next() : previous.Fail<T>();
+        public static Maybe<TNext> Continue<TPrev, TNext>(
+            this Maybe<TPrev> previous,
+            Func<TPrev, Maybe<TNext>> continuation)
+            => previous ? continuation(previous) : previous.To<TNext>();
 
-        public static Maybe Continue(Maybe previous, Func<Maybe> next)
-            => previous.IsSuccess ? next() : previous;
+        public static Task<Maybe<TNext>> Continue<TPrev, TNext>(
+            this Maybe<TPrev> previous, 
+            Func<TPrev, Task<Maybe<TNext>>> continuation)
+            => previous ? continuation(previous) : Task.FromResult(previous.To<TNext>());
 
-        public static Maybe<T> Continue<T>(Maybe previous, Func<T> next)
-            => previous.IsSuccess ? next().Success() : previous.Fail<T>();
+        public static Maybe<TNext> Continue<TPrev, TNext>(
+            this Maybe<TPrev> previous,
+            Func<TPrev, Maybe<TNext>> continuation,
+            out Maybe<TNext> next)
+            => next = Continue(previous, continuation);
 
-        public static Task<Maybe<T>> Continue<T>(Maybe previous, Func<Task<Maybe<T>>> next)
-            => previous.IsSuccess ? next() : Task.FromResult(previous.Fail<T>());
-
-        public static Task<Maybe> Continue(Maybe previous, Func<Task<Maybe>> next)
-            => previous.IsSuccess ? next() : Task.FromResult(previous);
-
-        public static async Task<Maybe<T>> Continue<T>(Maybe previous, Func<Task<T>> next)
-            => previous.IsSuccess ? (await next()).Success() : previous.Fail<T>();
+        public static Task<Maybe<TNext>> Continue<TPrev, TNext>(
+            this Maybe<TPrev> previous,
+            Func<TPrev, Task<Maybe<TNext>>> continuation,
+            out Task<Maybe<TNext>> next)
+            => next = Continue(previous, continuation);
     }
 }
