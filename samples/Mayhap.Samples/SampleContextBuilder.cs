@@ -1,8 +1,8 @@
 ﻿using System;
-using Maybe.Samples.Dependencies;
-using FakeResponse = System.ValueTuple<System.Func<string, object[], bool>, System.Func<object[], Maybe.Maybe<Maybe.Samples.Dependencies.CustomerDto>>>;
+using Mayhap.Samples.Dependencies;
+using FakeResponse = System.ValueTuple<System.Func<string, object[], bool>, System.Func<object[], Mayhap.Maybe<Mayhap.Samples.Dependencies.CustomerDto>>>;
 
-namespace Maybe.Samples
+namespace Mayhap.Samples
 {
     internal class CustomerServiceContext
     {

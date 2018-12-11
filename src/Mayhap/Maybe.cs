@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.Contracts;
 
-namespace Maybe
+namespace Mayhap
 {
     public readonly struct Maybe<TValue>
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Maybe
+namespace Mayhap
 {
     public static class Track
     {

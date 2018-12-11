@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FakeResponse = System.ValueTuple<System.Func<string, object[], bool>, System.Func<object[], Maybe.Maybe<Maybe.Samples.Dependencies.CustomerDto>>>;
+using FakeResponse = System.ValueTuple<System.Func<string, object[], bool>, System.Func<object[], Mayhap.Maybe<Mayhap.Samples.Dependencies.CustomerDto>>>;
 
-namespace Maybe.Samples.Dependencies
+namespace Mayhap.Samples.Dependencies
 {
     public class CustomerRepository
     {

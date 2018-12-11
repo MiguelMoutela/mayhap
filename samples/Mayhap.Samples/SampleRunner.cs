@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Maybe.Samples.Dependencies;
+using Mayhap.Samples.Dependencies;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Maybe.Samples
+namespace Mayhap.Samples
 {
     public class SampleRunner
     {

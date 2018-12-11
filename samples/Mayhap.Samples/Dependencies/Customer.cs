@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Maybe.Samples.Dependencies
+namespace Mayhap.Samples.Dependencies
 {
     public class Customer
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Maybe.Samples.Dependencies;
+using Mayhap.Samples.Dependencies;
 
-namespace Maybe.Samples
+namespace Mayhap.Samples
 {
     public class CustomerService
     {

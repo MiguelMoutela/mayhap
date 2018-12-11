@@ -1,4 +1,4 @@
-﻿namespace Maybe
+﻿namespace Mayhap
 {
     public struct Empty
     {

@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.Contracts;
-
-namespace Maybe
+﻿namespace Mayhap
 {
     internal readonly struct Result
     {
