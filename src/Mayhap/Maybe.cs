@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.Contracts;
 
 namespace Mayhap
 {
@@ -51,7 +50,6 @@ namespace Mayhap
         /// </summary>
         /// <typeparam name="T">New wrapped type</typeparam>
         /// <returns></returns>
-        [Pure]
         public Maybe<T> To<T>() => new Maybe<T>(in _result);
 
         /// <summary>
@@ -69,8 +67,7 @@ namespace Mayhap
         /// <summary>
         /// Converts to string
         /// </summary>
-        /// <returns>String representation</returns>
-        [Pure]
+        /// <returns>Str</returns>
         public override string ToString() =>
             $"{GetType().Name}{{IsSuccess: {IsSuccess}, {(IsSuccess ? "Value: " + Value : "Error: " + Error)}}}";
     }
