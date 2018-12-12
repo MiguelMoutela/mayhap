@@ -5,15 +5,28 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B05628CE-7472-42C3-B131-91B862F82F12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mayhap", "src\Mayhap\Mayhap.csproj", "{39B37B96-C653-4EAB-95AE-AFC55E6A2B62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mayhap", "src\Mayhap\Mayhap.csproj", "{39B37B96-C653-4EAB-95AE-AFC55E6A2B62}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{3365ACA6-03B1-4935-9828-FB03139329C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mayhap.Samples", "samples\Mayhap.Samples\Mayhap.Samples.csproj", "{30133D58-B6C9-41E0-9DFC-62D6D6C005AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mayhap.Samples", "samples\Mayhap.Samples\Mayhap.Samples.csproj", "{30133D58-B6C9-41E0-9DFC-62D6D6C005AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{92A67B22-2839-4A5E-ADEB-AE3DC7C740F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mayhap.Tests", "tests\Mayhap.Tests\Mayhap.Tests.csproj", "{43C31DCB-803C-4FB6-94CF-6D7B8ABEC44A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mayhap.Tests", "tests\Mayhap.Tests\Mayhap.Tests.csproj", "{43C31DCB-803C-4FB6-94CF-6D7B8ABEC44A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{923AA476-4558-4831-A246-9FACEB6DCAE2}"
+	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{F7FA913B-A8B5-472B-8064-1E4C68BBDA62}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\build.ps1 = scripts\build.ps1
+		scripts\envinfo.ps1 = scripts\envinfo.ps1
+		scripts\test.ps1 = scripts\test.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,9 +36,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{39B37B96-C653-4EAB-95AE-AFC55E6A2B62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -65,9 +75,16 @@ Global
 		{43C31DCB-803C-4FB6-94CF-6D7B8ABEC44A}.Release|x86.ActiveCfg = Release|Any CPU
 		{43C31DCB-803C-4FB6-94CF-6D7B8ABEC44A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{39B37B96-C653-4EAB-95AE-AFC55E6A2B62} = {B05628CE-7472-42C3-B131-91B862F82F12}
 		{30133D58-B6C9-41E0-9DFC-62D6D6C005AE} = {3365ACA6-03B1-4935-9828-FB03139329C1}
 		{43C31DCB-803C-4FB6-94CF-6D7B8ABEC44A} = {92A67B22-2839-4A5E-ADEB-AE3DC7C740F9}
+		{F7FA913B-A8B5-472B-8064-1E4C68BBDA62} = {923AA476-4558-4831-A246-9FACEB6DCAE2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3623C92E-9811-4882-AA05-F0F170B6D17A}
 	EndGlobalSection
 EndGlobal

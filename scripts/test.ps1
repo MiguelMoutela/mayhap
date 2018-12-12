@@ -1,0 +1,1 @@
+dotnet test --no-build -c Release tests/Mayhap.Tests/Mayhap.Tests.csproj

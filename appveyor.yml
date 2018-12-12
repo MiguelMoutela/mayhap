@@ -1,0 +1,32 @@
+image: Visual Studio 2017
+
+version: '#{build}'
+
+environment:
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+nuget:
+  disable_publish_on_pr: true
+
+pull_requests:
+  do_not_increment_build_number: true
+
+before_build:
+  - ps: .\scripts\envinfo.ps1
+
+build_script:
+  - ps: .\scripts\build.ps1
+
+test_script:
+  - ps: .\scripts\test.ps1
+
+artifacts:
+  - path: '**/*.nupkg'
+
+deploy:
+  - provider: NuGet
+    api_key:
+      secure: tUx7I2So0E8VbuxyJ2nYNkz2ryrcjKOYmTn3O5szPAicQ9+GTCT+ML+BLj6prsp6
+    on:
+      branch: master
+      appveyor_repo_tag: true

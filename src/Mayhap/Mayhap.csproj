@@ -5,4 +5,19 @@
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
 
+  <Import Project="./Package.props" />
+  
+  <PropertyGroup>
+    <IgnoreVersionUpdate>true</IgnoreVersionUpdate>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <VersionMajor>0</VersionMajor>
+    <VersionMinor>1</VersionMinor>
+    <VersionPatch>0</VersionPatch>
+    <VersionPrefix>$(VersionMajor).$(VersionMinor).$(VersionPatch)</VersionPrefix>
+    <VersionSuffix Condition="'$(Prerelease)' != ''">$(Prerelease)</VersionSuffix>
+  </PropertyGroup>
+
 </Project>

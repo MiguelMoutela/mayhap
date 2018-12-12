@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <Authors>pmartynski</Authors>
+    <PackageDescription>Mayhap is a tiny C# library inspired by Scott Wlaschins Railway Oriented Programming. Its goal is to simplify typical success/fail logic flows.</PackageDescription>
+    <PackageLicenseUrl>http://unlicense.org</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/pmartynski/mayhap</PackageProjectUrl>
+    <PackageTags>maybe mayhap monad rop railway</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
+  </PropertyGroup>
+</Project>
