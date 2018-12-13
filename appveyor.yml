@@ -27,6 +27,8 @@ deploy:
   - provider: NuGet
     api_key:
       secure: tUx7I2So0E8VbuxyJ2nYNkz2ryrcjKOYmTn3O5szPAicQ9+GTCT+ML+BLj6prsp6
+    skip_symbols: false
+    symbol_server: http://nuget.smbsrc.net
     on:
       branch: master
       appveyor_repo_tag: true
