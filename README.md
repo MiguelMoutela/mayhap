@@ -1,4 +1,4 @@
-# Mayhap [![Build status](https://ci.appveyor.com/api/projects/status/7dd0enuihjr8dwgj?svg=true)](https://ci.appveyor.com/project/pmartynski/mayhap)
+# Mayhap [![Build status](https://ci.appveyor.com/api/projects/status/7dd0enuihjr8dwgj?svg=true)](https://ci.appveyor.com/project/pmartynski/mayhap) [![Nuget package](https://img.shields.io/nuget/v/mayhap.svg)](https://www.nuget.org/packages/Mayhap)
 
 Mayhap is a tiny C# library inspired by Scott Wlaschins [Railway Oriented Programming](https://fsharpforfunandprofit.com/rop/). Its goal is to simplify typical success/fail logic flows.
 
