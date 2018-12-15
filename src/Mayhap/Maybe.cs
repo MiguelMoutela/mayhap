@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Mayhap
+﻿namespace Mayhap
 {
     /// <summary>
     /// A structure representing possible value of TValue.
@@ -18,14 +16,9 @@ namespace Mayhap
             _result = new Result(failure);
         }
 
-        private Maybe(in Result result)
+        private Maybe(in Result result, TValue value)
         {
-            if (result.IsSuccess)
-            {
-                throw new InvalidOperationException("Conversion is possible only for failed Maybe");
-            }
-
-            Value = default;
+            Value = result ? value : default;
             _result = result;
         }
 
@@ -45,12 +38,12 @@ namespace Mayhap
         public string Error => _result.Error;
 
         /// <summary>
-        /// Cast to Maybe of T.
-        /// Should be used only for failed Maybe.
+        /// Convert to Maybe of T.
         /// </summary>
+        /// <param name="value">New value</param>
         /// <typeparam name="T">New wrapped type</typeparam>
-        /// <returns></returns>
-        public Maybe<T> To<T>() => new Maybe<T>(in _result);
+        /// <returns>Maybe of new type</returns>
+        public Maybe<T> To<T>(T value = default) => new Maybe<T>(in _result, value);
 
         /// <summary>
         /// To bool implicit cast operator.
