@@ -1,6 +1,7 @@
 ﻿using System;
+using Mayhap.Samples.Shared;
 
-namespace Mayhap.Samples.Dependencies
+namespace Mayhap.Samples.RailwayOriented
 {
     public class CustomerConverter
     {

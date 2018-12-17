@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Mayhap.Samples.Dependencies;
+using Mayhap.Samples.Shared;
 
-namespace Mayhap.Samples
+namespace Mayhap.Samples.RailwayOriented
 {
     public class CustomerService
     {

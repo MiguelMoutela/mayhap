@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Mayhap.Samples.Dependencies;
+using Mayhap.Samples.RailwayOriented;
+using Mayhap.Samples.Shared;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -19,7 +20,8 @@ namespace Mayhap.Samples
         [Fact]
         public void CustomerCreatedSuccessfully()
         {
-            var context = Context()
+            // todo consider using moq
+            var context = RoContext()
                 .WithRepositoryResponding(
                     (
                         (op, _) => op.Equals(nameof(CustomerRepository.Add), StringComparison.InvariantCulture),
@@ -33,7 +35,7 @@ namespace Mayhap.Samples
         [Fact]
         public async Task CustomerCreatedAsynchronousSuccessfully()
         {
-            var context = Context()
+            var context = RoContext()
                 .WithRepositoryResponding(
                     (
                         (op, _) => op.Equals(nameof(CustomerRepository.AddAsync), StringComparison.InvariantCulture),
@@ -47,14 +49,14 @@ namespace Mayhap.Samples
         [Fact]
         public void DepositServiceUnavailable()
         {
-            var deposit = Context().Service.Deposit(Guid.NewGuid(), 100.0m);
+            var deposit = RoContext().Service.Deposit(Guid.NewGuid(), 100.0m);
             Output.WriteLine(deposit.ToString());
         }
 
         [Fact]
         public void DepositSuccessful()
         {
-            var context = Context()
+            var context = RoContext()
                 .WithRepositoryResponding(
                     (
                         (op, _) => nameof(CustomerRepository.Update) == op,
@@ -69,18 +71,11 @@ namespace Mayhap.Samples
             Output.WriteLine(deposit.ToString());
         }
 
-        [Fact]
-        public void Playground()
-        {
-            var x = false.Success();
+        private RoCustomerServiceContext RoContext() => new RoCustomerServiceContext();
+        private TraditionalCustomerServiceContext TraditionalContext() => new TraditionalCustomerServiceContext();
+    }
 
-            var maybe = Track.Continue(x, y => (!y).Success());
-            Output.WriteLine(maybe.ToString());
-        }
-
-        private CustomerServiceContext Context()
-        {
-            return new CustomerServiceContext();
-        }
+    internal class TraditionalCustomerServiceContext
+    {
     }
 }
