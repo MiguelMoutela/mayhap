@@ -53,7 +53,9 @@ namespace Mayhap.Tests
         public void GivenSyncContinue_WhenCalled_ThenReturnSameMaybeAsReturnAndAsOutParameter(
             Maybe<int> previousMaybe,
             Maybe<string> continuationResult,
+#pragma warning disable xUnit1026 // Theory methods should use all of their parameters
             Maybe<string> __)
+#pragma warning restore xUnit1026 // Theory methods should use all of their parameters
         {
             // given
             Maybe<string> Continuation(int _) => continuationResult;
@@ -70,7 +72,9 @@ namespace Mayhap.Tests
         public async Task GivenAsyncContinue_WhenCalled_ThenReturnSameMaybeAsReturnAndAsOutParameter(
             Maybe<int> previousMaybe,
             Maybe<string> continuationResult,
+#pragma warning disable xUnit1026 // Theory methods should use all of their parameters
             Maybe<string> __)
+#pragma warning restore xUnit1026 // Theory methods should use all of their parameters
         {
             // given
             Task<Maybe<string>> Continuation(int _) => Task.FromResult(continuationResult);

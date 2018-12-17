@@ -6,10 +6,10 @@ namespace Mayhap.Samples.RailwayOriented
 {
     public class CustomerService
     {
-        private readonly CustomerRepository _repository;
+        private readonly ICustomerRepository _repository;
         private readonly CustomerConverter _converter;
 
-        public CustomerService(CustomerRepository repository, CustomerConverter converter)
+        public CustomerService(ICustomerRepository repository, CustomerConverter converter)
         {
             _repository = repository;
             _converter = converter;
