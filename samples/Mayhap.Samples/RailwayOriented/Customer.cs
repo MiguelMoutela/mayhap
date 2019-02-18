@@ -1,23 +1,21 @@
 ﻿using System;
 
-namespace Mayhap.Samples.Dependencies
+namespace Mayhap.Samples.RailwayOriented
 {
     public class Customer
     {
-        private decimal _accountBalance;
-
         private Customer(Guid id, string name, decimal accountBalance = 0.0m)
         {
             Id = id;
             Name = name;
-            _accountBalance = accountBalance;
+            AccountBalance = accountBalance;
         }
 
         public Guid Id { get; }
 
         public string Name { get; }
 
-        public decimal AccountBalance => _accountBalance;
+        public decimal AccountBalance { get; private set; }
 
         public static Maybe<Customer> Create(string name) 
             => IsNameValid(name) 
@@ -46,8 +44,8 @@ namespace Mayhap.Samples.Dependencies
         {
             if (amount > 0)
             {
-                _accountBalance += amount;
-                return _accountBalance.Success();
+                AccountBalance += amount;
+                return AccountBalance.Success();
             }
 
             return $"TOO_LOW.{nameof(amount)}".Fail<decimal>();
@@ -55,10 +53,10 @@ namespace Mayhap.Samples.Dependencies
 
         public Maybe<decimal> Withdraw(decimal amount)
         {
-            if (_accountBalance >= amount)
+            if (AccountBalance >= amount)
             {
-                _accountBalance -= amount;
-                return _accountBalance.Success();
+                AccountBalance -= amount;
+                return AccountBalance.Success();
             }
 
             return $"TOO_HIGH.{nameof(amount)}".Fail<decimal>();

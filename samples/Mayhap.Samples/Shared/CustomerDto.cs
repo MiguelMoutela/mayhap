@@ -1,4 +1,4 @@
-﻿namespace Mayhap.Samples.Dependencies
+﻿namespace Mayhap.Samples.Shared
 {
     public class CustomerDto
     {

@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Linq;
 using System.Threading.Tasks;
-using Mayhap.Samples.Dependencies;
+using Mayhap.Samples.Shared;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -17,70 +16,82 @@ namespace Mayhap.Samples
         private ITestOutputHelper Output { get; }
 
         [Fact]
-        public void CustomerCreatedSuccessfully()
+        public void CustomerCreatedSuccessfullyRo()
         {
-            var context = Context()
-                .WithRepositoryResponding(
-                    (
-                        (op, _) => op.Equals(nameof(CustomerRepository.Add), StringComparison.InvariantCulture),
-                        args => (args.First() as CustomerDto).Success()
-                    ));
+            var context = RoContext()
+                .WithAddAction(c => c.Success());
 
             var customer = context.Service.CreateCustomer("John Doe");
             Output.WriteLine(customer.ToString());
         }
 
         [Fact]
-        public async Task CustomerCreatedAsynchronousSuccessfully()
+        public async Task CustomerCreatedAsynchronousSuccessfullyRo()
         {
-            var context = Context()
-                .WithRepositoryResponding(
-                    (
-                        (op, _) => op.Equals(nameof(CustomerRepository.AddAsync), StringComparison.InvariantCulture),
-                        args => (args.First() as CustomerDto).Success()
-                    ));
+            var context = RoContext()
+                .WithAddAsyncAction(c => Task.FromResult(c.Success()));
 
             var customer = await context.Service.CreateCustomerAsync("John Doe");
             Output.WriteLine(customer.ToString());
         }
 
         [Fact]
-        public void DepositServiceUnavailable()
+        public void DepositServiceUnavailableRo()
         {
-            var deposit = Context().Service.Deposit(Guid.NewGuid(), 100.0m);
+            var deposit = RoContext().Service.Deposit(Guid.NewGuid(), 100.0m);
             Output.WriteLine(deposit.ToString());
         }
 
         [Fact]
-        public void DepositSuccessful()
+        public void DepositSuccessfulRo()
         {
-            var context = Context()
-                .WithRepositoryResponding(
-                    (
-                        (op, _) => nameof(CustomerRepository.Update) == op,
-                        args => (args.First() as CustomerDto).Success()
-                    ),
-                    (
-                        (op, _) => nameof(CustomerRepository.Find) == op,
-                        args => new CustomerDto { Id = args.First().ToString(), Name = "John Doe", AccountBalance = 10.0m }.Success()
-                    ));
+            var context = RoContext()
+                .WithFindAction(id => new CustomerDto { Id = id, Name = "John Doe", AccountBalance = 10.0m }.Success())
+                .WithUpdateAction(c => c.Success());
 
             var deposit = context.Service.Deposit(Guid.NewGuid(), 100.0m);
             Output.WriteLine(deposit.ToString());
         }
 
         [Fact]
-        public void Playground()
+        public void CustomerCreatedSuccessfullyTraditional()
         {
-            var x = false.Success();
+            var context = TraditionalContext()
+                .WithAddAction(c => c);
 
-            var maybe = Track.Continue(x, y => (!y).Success());
-            Output.WriteLine(maybe.ToString());
+            var customer = context.Service.CreateCustomer("John Doe");
+            Output.WriteLine(customer.ToString());
         }
 
-        private CustomerServiceContext Context()
+        [Fact]
+        public async Task CustomerCreatedAsynchronousSuccessfullyTraditional()
         {
-            return new CustomerServiceContext();
+            var context = TraditionalContext()
+                .WithAddAsyncAction(Task.FromResult);
+
+            var customer = await context.Service.CreateCustomerAsync("John Doe");
+            Output.WriteLine(customer.ToString());
         }
+
+        [Fact]
+        public void DepositServiceUnavailableTraditional()
+        {
+            var deposit = TraditionalContext().Service.Deposit(Guid.NewGuid(), 100.0m);
+            Output.WriteLine(deposit?.ToString() ?? "null");
+        }
+
+        [Fact]
+        public void DepositSuccessfulTraditional()
+        {
+            var context = TraditionalContext()
+                .WithFindAction(id => new CustomerDto { Id = id, Name = "John Doe", AccountBalance = 10.0m }.Success())
+                .WithUpdateAction(c => c.Success());
+
+            var deposit = context.Service.Deposit(Guid.NewGuid(), 100.0m);
+            Output.WriteLine(deposit.ToString());
+        }
+
+        private RoCustomerServiceContext RoContext() => new RoCustomerServiceContext();
+        private TraditionalCustomerServiceContext TraditionalContext() => new TraditionalCustomerServiceContext();
     }
 }
