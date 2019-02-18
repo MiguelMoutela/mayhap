@@ -6,19 +6,63 @@ namespace Mayhap.Samples.Traditional
 {
     public class CustomerService
     {
-        public CustomerDto CreateCustomer(string name)
+        private readonly ICustomerRepository _repository;
+        private readonly CustomerConverter _converter;
+
+        public CustomerService(ICustomerRepository repository, CustomerConverter converter)
         {
-            throw new NotImplementedException();
+            _repository = repository;
+            _converter = converter;
         }
 
-        public Task<CustomerDto> CreateCustomerAsync(string name)
+        public CustomerDto CreateCustomer(string name)
         {
-            throw new NotImplementedException();
+            var customer = Customer.Create(name);
+            if (customer == null)
+            {
+                return null;
+            }
+
+            var customerDto = _converter.ToDto(customer);
+            return _repository.Add(customerDto);
+        }
+
+        public async Task<CustomerDto> CreateCustomerAsync(string name)
+        {
+            var customer = Customer.Create(name);
+            if (customer == null)
+            {
+                return null;
+            }
+
+            var customerDto = _converter.ToDto(customer);
+            return await _repository.AddAsync(customerDto);
         }
 
         public CustomerDto Deposit(Guid id, decimal amount)
         {
-            throw new NotImplementedException();
+            var customerDto = _repository.Find(id.ToString("N"));
+
+            if (customerDto == null)
+            {
+                return null;
+            }
+
+            var customer = _converter.ToEntity(customerDto);
+            if (customer == null)
+            {
+                return null;
+            }
+
+            var deposit = customer.Deposit(amount);
+            if (deposit == 0)
+            {
+                return null;
+            }
+
+            customerDto = _converter.ToDto(customer);
+            customerDto = _repository.Update(customerDto);
+            return customerDto;
         }
     }
 }

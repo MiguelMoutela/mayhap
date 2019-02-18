@@ -16,7 +16,7 @@ namespace Mayhap.Samples
         private ITestOutputHelper Output { get; }
 
         [Fact]
-        public void CustomerCreatedSuccessfully()
+        public void CustomerCreatedSuccessfullyRo()
         {
             var context = RoContext()
                 .WithAddAction(c => c.Success());
@@ -26,7 +26,7 @@ namespace Mayhap.Samples
         }
 
         [Fact]
-        public async Task CustomerCreatedAsynchronousSuccessfully()
+        public async Task CustomerCreatedAsynchronousSuccessfullyRo()
         {
             var context = RoContext()
                 .WithAddAsyncAction(c => Task.FromResult(c.Success()));
@@ -36,16 +36,54 @@ namespace Mayhap.Samples
         }
 
         [Fact]
-        public void DepositServiceUnavailable()
+        public void DepositServiceUnavailableRo()
         {
             var deposit = RoContext().Service.Deposit(Guid.NewGuid(), 100.0m);
             Output.WriteLine(deposit.ToString());
         }
 
         [Fact]
-        public void DepositSuccessful()
+        public void DepositSuccessfulRo()
         {
             var context = RoContext()
+                .WithFindAction(id => new CustomerDto { Id = id, Name = "John Doe", AccountBalance = 10.0m }.Success())
+                .WithUpdateAction(c => c.Success());
+
+            var deposit = context.Service.Deposit(Guid.NewGuid(), 100.0m);
+            Output.WriteLine(deposit.ToString());
+        }
+
+        [Fact]
+        public void CustomerCreatedSuccessfullyTraditional()
+        {
+            var context = TraditionalContext()
+                .WithAddAction(c => c);
+
+            var customer = context.Service.CreateCustomer("John Doe");
+            Output.WriteLine(customer.ToString());
+        }
+
+        [Fact]
+        public async Task CustomerCreatedAsynchronousSuccessfullyTraditional()
+        {
+            var context = TraditionalContext()
+                .WithAddAsyncAction(Task.FromResult);
+
+            var customer = await context.Service.CreateCustomerAsync("John Doe");
+            Output.WriteLine(customer.ToString());
+        }
+
+        [Fact]
+        public void DepositServiceUnavailableTraditional()
+        {
+            var deposit = TraditionalContext().Service.Deposit(Guid.NewGuid(), 100.0m);
+            Output.WriteLine(deposit?.ToString() ?? "null");
+        }
+
+        [Fact]
+        public void DepositSuccessfulTraditional()
+        {
+            var context = TraditionalContext()
                 .WithFindAction(id => new CustomerDto { Id = id, Name = "John Doe", AccountBalance = 10.0m }.Success())
                 .WithUpdateAction(c => c.Success());
 
