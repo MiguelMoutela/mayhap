@@ -8,8 +8,8 @@ Make sure that all parts of your code, that can either return a successful or fa
 Take a look at code samples [here](https://github.com/pmartynski/mayhap/blob/master/samples/Mayhap.Samples/RailwayOriented/CustomerService.cs).
 
 ## Why to use Mayhap?
-Writing a chunk of business logic code, especially when dealing with remote resources involves a lot of success checking on each step.
-The main goal of this library is to make those parts of code more readable and concise.
+Writing a chunk of business logic code, especially when dealing with remote resources, involves a lot of success checking on each step.
+The goal of this library is to make those parts of code more readable and concise.
 
 Lets consider the following example:
 
@@ -41,10 +41,9 @@ public CustomerDto Deposit(Guid id, decimal amount)
 }
 ```
 
-The example above involves null checking after each operation that could fail. Lets ommit the fact that treating null as a special business value is an abuse,
-which leads to error reason loss. To do it properly, special Result type should be created.
+The flow contains a null check after each operation that could fail. Lets ommit the fact that treating null as a special business value is an abuse.
 
-The example below shows how the same operation can be written using Mayhap, including error message passing:
+The example below shows how the same operation could be written using Mayhap, including error message passing:
 
 ```csharp
 public Maybe<CustomerDto> Deposit(Guid id, decimal amount)
