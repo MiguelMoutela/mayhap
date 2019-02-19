@@ -6,6 +6,8 @@ Mayhap is a tiny C# library inspired by Scott Wlaschins [Railway Oriented Progra
 Make sure that all parts of your code, that can either return a successful or faulty result, will return Maybe<TValue> struct. 
 "Maybe" operations are able to be chained using "Continue" extension method.
 Take a look at code samples [here](https://github.com/pmartynski/mayhap/blob/master/samples/Mayhap.Samples/RailwayOriented/CustomerService.cs).
+    
+`Maybe<T>` struct gives you also implicit conversions to `bool` and `T`. In result, `Maybe<T>` can be used directly as an `if` statement condition, or `T` typed argument.
 
 ## Why to use Mayhap?
 Writing a chunk of business logic code, especially when dealing with remote resources, involves a lot of success checking on each step.
