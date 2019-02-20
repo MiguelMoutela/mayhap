@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using FluentAssertions;
 using Xunit;
 
@@ -73,7 +74,8 @@ namespace Mayhap.Tests
 
         [Theory]
         [MemberData(nameof(ProblemPropertyTestCases))]
-        public void GivenProblemType_WhenProblemOfTypeCreated_ThenShouldContainProperties(TestProblemType type,
+        public void GivenProblemType_WhenProblemOfTypeCreated_ThenShouldContainProperties(
+            TestProblemType type,
             IDictionary<string, object> expectedProperties)
         {
             // act
@@ -117,6 +119,65 @@ namespace Mayhap.Tests
                         ["prop2"] = "Property attr val 2",
                     }
                 }
+            };
+
+        [Theory]
+        [MemberData(nameof(ProblemCustomizationTestCases))]
+        public void GivenParameterlessProblemCreation_WhenProblemCreated_ThenShouldContainData(
+            Func<ProblemBuilder, Problem> factory,
+            Action<Problem> assert)
+        {
+            // arrange
+            var builder = Problem.Builder();
+
+            // act
+            var actual = factory.Invoke(builder);
+
+            // assert
+            assert.Invoke(actual);
+        }
+
+        public static readonly IEnumerable<object[]> ProblemCustomizationTestCases =
+            new[]
+            {
+                new object[]
+                {
+                    (Func<ProblemBuilder, Problem>)(b => b.WithTitle("title val").Create()),
+                    (Action<Problem>)(p => p.Title.Should().Be("title val"))
+                },
+                new object[]
+                {
+                    (Func<ProblemBuilder, Problem>)(b => b.WithType("type val").Create()),
+                    (Action<Problem>)(p => p.Type.Should().Be("type val"))
+                },
+                new object[]
+                {
+                    (Func<ProblemBuilder, Problem>)(b => b.WithDetail("detail val").Create()),
+                    (Action<Problem>)(p => p.Detail.Should().Be("detail val"))
+                },
+                new object[]
+                {
+                    (Func<ProblemBuilder, Problem>)(b => b.WithInstance("instance val").Create()),
+                    (Action<Problem>)(p => p.Instance.Should().Be("instance val"))
+                },
+                new object[]
+                {
+                    (Func<ProblemBuilder, Problem>)(b => b.WithStatus(100).Create()),
+                    (Action<Problem>)(p => p.Status.Should().Be(100))
+                },
+                new object[]
+                {
+                    (Func<ProblemBuilder, Problem>)(b => b.WithProperties(new Dictionary<string, object>
+                    {
+                        ["prop1"] = "Property attr val 1",
+                        ["prop2"] = "Property attr val 2"
+                    }).Create()),
+                    (Action<Problem>)(p => p.Properties.Should().BeEquivalentTo(new Dictionary<string, object>
+                    {
+                        ["prop1"] = "Property attr val 1",
+                        ["prop2"] = "Property attr val 2"
+                    }))
+                },
             };
 
         public enum TestProblemType

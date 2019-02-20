@@ -56,11 +56,16 @@ namespace Mayhap
         /// <summary>
         /// Problem factory method
         /// </summary>
-        /// <typeparam name="TTypeEnum">Problem type enum</typeparam>
-        /// <param name="type"></param>
+        /// <param name="type">The problem type</param>
         /// <returns>Problem builder instance</returns>
-        public static ProblemBuilder<TTypeEnum> OfType<TTypeEnum>(TTypeEnum type)
-            where TTypeEnum : Enum
-            => new ProblemBuilder<TTypeEnum>(type);
+        public static ProblemBuilder OfType(Enum type)
+            => new ProblemBuilder(type);
+
+        /// <summary>
+        /// Creates a problem builder.
+        /// </summary>
+        /// <returns>Problem builder instance</returns>
+        public static ProblemBuilder Builder()
+            => new ProblemBuilder();
     }
 }
