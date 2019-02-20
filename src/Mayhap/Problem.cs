@@ -6,7 +6,7 @@ namespace Mayhap
     /// <summary>
     /// RFC7807 compliant problem details representation
     /// </summary>
-    public class Problem
+    public struct Problem : IProblem
     {
         public Problem(string type,
             string title,
@@ -67,5 +67,8 @@ namespace Mayhap
         /// <returns>Problem builder instance</returns>
         public static ProblemBuilder Builder()
             => new ProblemBuilder();
+
+        public override string ToString()
+            => $"Problem {{ Type = {Type} }}";
     }
 }

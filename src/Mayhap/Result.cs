@@ -2,9 +2,9 @@
 {
     internal readonly struct Result
     {
-        internal Result(string failure) => Error = failure;
+        internal Result(IProblem failure) => Error = failure;
 
-        internal string Error { get; }
+        internal IProblem Error { get; }
 
         internal bool IsSuccess => Error == null;
 

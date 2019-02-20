@@ -31,7 +31,7 @@ namespace Mayhap.Tests
 
             // then
             maybe.IsSuccess.Should().BeFalse();
-            maybe.Error.Should().Be(fault);
+            maybe.Error?.Type.Should().Be(fault);
         }
 
         public static IEnumerable<object[]> ImplicitBoolTheory => new[]

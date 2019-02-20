@@ -10,7 +10,7 @@
     {
         private readonly Result _result;
 
-        internal Maybe(TValue value, string failure)
+        internal Maybe(TValue value, IProblem failure)
         {
             Value = value;
             _result = new Result(failure);
@@ -35,7 +35,7 @@
         /// <summary>
         /// Gets error message. Null if is successful.
         /// </summary>
-        public string Error => _result.Error;
+        public IProblem Error => _result.Error;
 
         /// <summary>
         /// Convert to Maybe of T.
