@@ -10,7 +10,7 @@ namespace Mayhap
         /// <typeparam name="TValue">Wrapped value type</typeparam>
         /// <param name="failure">Error</param>
         /// <returns>Failed Maybe</returns>
-        public static Maybe<TValue> Fail<TValue>(this Problem failure)
+        public static Maybe<TValue> Fail<TValue>(this IProblem failure)
         {
             return new Maybe<TValue>(default, failure);
         }
