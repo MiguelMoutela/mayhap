@@ -9,6 +9,10 @@ Take a look at code samples [here](https://github.com/pmartynski/mayhap/blob/mas
     
 `Maybe<T>` struct gives you also implicit conversions to `bool` and `T`. In result, `Maybe<T>` can be used directly as an `if` statement condition, or `T` typed argument.
 
+## The problem details model
+
+Mayhap comes with a [RFC7807](https://tools.ietf.org/html/rfc7807) `Problem` struct, which is the default error model. You may create your own error model by implementing `IProblem` interface.
+
 ## Why to use Mayhap?
 Writing a chunk of business logic code, especially when dealing with remote resources, involves a lot of success checking on each step.
 The goal of this library is to make those parts of code more readable and concise.
