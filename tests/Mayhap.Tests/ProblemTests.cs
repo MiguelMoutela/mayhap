@@ -128,7 +128,7 @@ namespace Mayhap.Tests
             Action<Problem> assert)
         {
             // arrange
-            var builder = Problem.Builder();
+            var builder = Problem.New();
 
             // act
             var actual = factory.Invoke(builder);

@@ -18,11 +18,12 @@ namespace Mayhap
         private Dictionary<string, object> _properties;
 
         /// <summary>
-        /// Creates ProblemBuilder instance
+        /// Creates a ProblemBuilder instance.
         /// </summary>
         public ProblemBuilder()
         {
             _typeString = "about:blank";
+            _properties = new Dictionary<string, object>();
         }
 
         internal ProblemBuilder(Enum type)
@@ -36,10 +37,10 @@ namespace Mayhap
         }
 
         /// <summary>
-        /// Sets the output Problem instances type
+        /// Sets the output Problem instances type.
         /// </summary>
-        /// <param name="type">The type</param>
-        /// <returns>Problem builder</returns>
+        /// <param name="type">The problem type.</param>
+        /// <returns>An instance of ProblemBuilder.</returns>
         public ProblemBuilder WithType(string type)
         {
             _typeString = type;
@@ -47,10 +48,10 @@ namespace Mayhap
         }
 
         /// <summary>
-        /// Sets the output Problem instances title
+        /// Sets the output Problem instances title.
         /// </summary>
-        /// <param name="title">The title</param>
-        /// <returns>Problem builder</returns>
+        /// <param name="title">The title.</param>
+        /// <returns>An instance of ProblemBuilder.</returns>
         public ProblemBuilder WithTitle(string title)
         {
             _title = title;
@@ -58,10 +59,10 @@ namespace Mayhap
         }
 
         /// <summary>
-        /// Sets the output Problem instances detail
+        /// Sets the output Problem instances detail.
         /// </summary>
-        /// <param name="detail">The detail</param>
-        /// <returns>Problem builder</returns>
+        /// <param name="detail">The detail.</param>
+        /// <returns>An instance of ProblemBuilder.</returns>
         public ProblemBuilder WithDetail(string detail)
         {
             _detail = detail;
@@ -69,10 +70,10 @@ namespace Mayhap
         }
 
         /// <summary>
-        /// Sets the output Problem instances instance property
+        /// Sets the output Problem instances instance property.
         /// </summary>
         /// <param name="instance">The instance</param>
-        /// <returns>Problem builder</returns>
+        /// <returns>An instance of ProblemBuilder.</returns>
         public ProblemBuilder WithInstance(string instance)
         {
             _instance = instance;
@@ -80,10 +81,10 @@ namespace Mayhap
         }
 
         /// <summary>
-        /// Sets the output Problem instances status
+        /// Sets the output Problem instances status.
         /// </summary>
         /// <param name="status">The status</param>
-        /// <returns>Problem builder</returns>
+        /// <returns>An instance of ProblemBuilder.</returns>
         public ProblemBuilder WithStatus(int? status)
         {
             _status = status;
@@ -91,13 +92,29 @@ namespace Mayhap
         }
 
         /// <summary>
-        /// Sets the output Problem instances extension properties
+        /// Sets the output Problem instances extension properties.
         /// </summary>
-        /// <param name="properties">The extension properties</param>
-        /// <returns>Problem builder</returns>
+        /// <param name="properties">The extension properties.</param>
+        /// <returns>An instance of ProblemBuilder.</returns>
         public ProblemBuilder WithProperties(Dictionary<string, object> properties)
         {
-            _properties = properties;
+            foreach (var property in properties)
+            {
+                WithProperty(property.Key, property.Value);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the output Problem instances extension property.
+        /// </summary>
+        /// <param name="name">The property name.</param>
+        /// <param name="value">The property value</param>
+        /// <returns>An instance of ProblemBuilder.</returns>
+        public ProblemBuilder WithProperty(string name, object value)
+        {
+            _properties[name] = value;
             return this;
         }
 
@@ -105,14 +122,15 @@ namespace Mayhap
         /// Creates previously set up Problem instance.
         /// </summary>
         /// <returns>A Problem structure instance.</returns>
-        public Problem Create() => new Problem(_typeString, _title, _detail, _instance, _status, _properties);
-
-        private Dictionary<string, object> ExtractProperties(Enum type)
+        public Problem Create()
         {
-            var properties = ExtractAttributes<ProblemPropertyAttribute>(type)
-                .ToDictionary(a => a.Name, a => a.Value);
-            return properties.Any() ? properties : null;
+            var properties = _properties.Any() ? _properties : null;
+            return new Problem(_typeString, _title, _detail, _instance, _status, properties);
         }
+
+        private Dictionary<string, object> ExtractProperties(Enum type) =>
+            ExtractAttributes<ProblemPropertyAttribute>(type)
+                .ToDictionary(a => a.Name, a => a.Value);
 
         private T ExtractAttribute<T>(Enum type) =>
             ExtractAttributes<T>(type)

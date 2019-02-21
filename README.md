@@ -11,7 +11,48 @@ Take a look at code samples [here](https://github.com/pmartynski/mayhap/blob/mas
 
 ## The problem details model
 
-Mayhap comes with a [RFC7807](https://tools.ietf.org/html/rfc7807) `Problem` struct, which is the default error model. You may create your own error model by implementing `IProblem` interface.
+Mayhap comes with a [RFC7807](https://tools.ietf.org/html/rfc7807) `Problem` struct, which is the default error model. 
+You may create your own error model by implementing `IProblem` interface.
+
+Along with the `Problem` struct, Mayhap delivers also a few `Problem` construction patters. You may either create it from a public constructor, providing its properties explicitly, or use `string` or `System.Enum` extension methods.
+A `Problem` instance created using `System.Enum` extension can be customized via attributes. Either way, final shape of `Problem` instance can be achieved using `ProblemBuilder` object.
+
+Example:
+```csharp
+public enum ProblemType
+{
+    [ProblemType("VALIDATION_ERROR")]
+    [ProblemTitle("The data input is invalid")]
+    [ProblemStatus(400)]
+    ValidationError
+}
+
+public Maybe<AccountBalance> Deposit(long accountId, decimal amount)
+{
+    if(amount <= 0)
+    {
+        return Problem.OfType(ProblemType.ValidationError)
+            .WithDetail("The amount value is too low.")
+            .WithInstance("/account/3215")
+            .WithProperty(
+                "correlationId", 
+                "a910ff48df1b41fb884cf05e1e68741d")
+            .Create()
+            .Fail<AccountBalance>()
+    }
+
+    Maybe<Account> account = _accountRepository.Find(accountId);
+    if(!account)
+    {
+        return Problem.New()
+            .WithType("ACCOUNT_NOT_FOUND")
+            .Create()
+            .Fail<AccountBalance>();
+    }
+
+    // ...
+}
+```
 
 ## Why to use Mayhap?
 Writing a chunk of business logic code, especially when dealing with remote resources, involves a lot of success checking on each step.

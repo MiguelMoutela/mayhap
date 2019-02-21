@@ -23,7 +23,7 @@ namespace Mayhap
         /// <returns>Failed Maybe</returns>
         public static Maybe<TValue> Fail<TValue>(this string failure)
         {
-            return new Maybe<TValue>(default, Problem.Builder().WithType(failure).Create());
+            return new Maybe<TValue>(default, Problem.New().WithType(failure).Create());
         }
 
         /// <summary>

@@ -8,6 +8,15 @@ namespace Mayhap
     /// </summary>
     public struct Problem : IProblem
     {
+        /// <summary>
+        /// Creates a Problem struct instance.
+        /// </summary>
+        /// <param name="type">The problem type.</param>
+        /// <param name="title">The problem title.</param>
+        /// <param name="detail">This problem occurence detailed info.</param>
+        /// <param name="instance">This problem occurence resource instance.</param>
+        /// <param name="status">The problem status code.</param>
+        /// <param name="properties">This problem occurence extension properties.</param>
         public Problem(string type,
             string title,
             string detail,
@@ -65,9 +74,10 @@ namespace Mayhap
         /// Creates a problem builder.
         /// </summary>
         /// <returns>Problem builder instance</returns>
-        public static ProblemBuilder Builder()
+        public static ProblemBuilder New()
             => new ProblemBuilder();
 
+        /// <inheritdoc cref="System.Object.ToString()" />
         public override string ToString()
             => $"Problem {{ Type = {Type} }}";
     }
