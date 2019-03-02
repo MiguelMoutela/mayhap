@@ -1,4 +1,4 @@
-﻿namespace Mayhap
+﻿namespace Mayhap.Maybe
 {
     /// <summary>
     /// The problem representation

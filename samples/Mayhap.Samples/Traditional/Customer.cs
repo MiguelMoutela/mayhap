@@ -1,4 +1,5 @@
 ﻿using System;
+using Mayhap.Maybe;
 
 namespace Mayhap.Samples.Traditional
 {

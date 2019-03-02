@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using FluentAssertions;
+using Mayhap.Error;
 using Xunit;
 
-namespace Mayhap.Tests
+namespace Mayhap.Tests.Error
 {
     public class ProblemTests
     {

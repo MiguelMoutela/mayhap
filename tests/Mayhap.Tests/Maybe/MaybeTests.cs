@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 using FluentAssertions;
+using Mayhap.Error;
+using Mayhap.Maybe;
+using Mayhap.Option;
 using Xunit;
 
-namespace Mayhap.Tests
+namespace Mayhap.Tests.Maybe
 {
     public class MaybeTests
     {
@@ -16,8 +19,8 @@ namespace Mayhap.Tests
             var maybe = value.Success();
 
             // then
-            maybe.IsSuccess.Should().BeTrue();
-            maybe.Value.Should().Be(value);
+            maybe.IsSuccessful.Should().BeTrue();
+            maybe.Value.Unwrap().Should().Be(value);
         }
 
         [Fact]
@@ -30,9 +33,10 @@ namespace Mayhap.Tests
             var maybe = fault.Fail<object>();
 
             // then
-            maybe.IsSuccess.Should().BeFalse();
-            maybe.Error.Should().BeOfType<Problem>();
-            ((Problem) maybe.Error).Type.Should().Be(fault);
+            maybe.IsSuccessful.Should().BeFalse();
+            maybe.Error.Should().BeOfType<Some<IProblem>>();
+            var problem = (Problem) maybe.Error.Unwrap();
+            problem.Type.Should().Be(fault);
         }
 
         public static IEnumerable<object[]> ImplicitBoolTheory => new[]
@@ -62,26 +66,22 @@ namespace Mayhap.Tests
             int actual = maybe;
 
             //then
-            actual.Should().Be(maybe.Value);
+            actual.Should().Be(maybe.Value.Unwrap());
         }
 
-        public static IEnumerable<object[]> ConvertToTheory => new[]
+        [Fact]
+        public void GivenProblemTypeEnum_WhenFailCalled_ThenShouldCreateFailure()
         {
-            new object[] { 100.Success(), "new val", "new val", true }, 
-            new object[] { "fault".Fail<int>(), "new val", null, false },
-        };
+            var maybe = TestProblemType.ProblemX.Fail<int>();
 
-        [Theory]
-        [MemberData(nameof(ConvertToTheory))]
-        public void GivenMaybe_WhenCalledToMethod_ThenShouldCreateNewMaybeWithProperties(
-            Maybe<int> maybe, string newValue, string expectedValue, bool expectedSuccess)
+            maybe.IsSuccessful.Should().BeFalse();
+            ((Problem) maybe.Error.Unwrap()).Type.Should().Be("Problem X");
+        }
+
+        private enum TestProblemType
         {
-            // when
-            var newMaybe = maybe.To(newValue);
-
-            //then
-            newMaybe.Value.Should().Be(expectedValue);
-            newMaybe.IsSuccess.Should().Be(expectedSuccess);
+            [ProblemType("Problem X")]
+            ProblemX
         }
     }
 }

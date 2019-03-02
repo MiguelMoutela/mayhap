@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Mayhap
+namespace Mayhap.Maybe
 {
     /// <summary>
     /// Maybe chaining extension methods.
@@ -16,10 +16,10 @@ namespace Mayhap
         /// <param name="previous">Previous Maybe value</param>
         /// <param name="continuation">Continuation func</param>
         /// <returns>Target Maybe</returns>
-        public static Maybe<TNext> Continue<TPrev, TNext>(
+        public static Maybe<TNext> Map<TPrev, TNext>(
             this Maybe<TPrev> previous,
             Func<TPrev, Maybe<TNext>> continuation)
-            => previous ? continuation(previous) : previous.To<TNext>();
+            => previous ? continuation(previous) : previous.Error.Unwrap().Fail<TNext>();
 
         /// <summary>
         /// If previous successful, continue with continuation functor.
@@ -29,10 +29,10 @@ namespace Mayhap
         /// <param name="previous">Previous Maybe value</param>
         /// <param name="continuation">Continuation func</param>
         /// <returns>Target Maybe</returns>
-        public static Task<Maybe<TNext>> Continue<TPrev, TNext>(
+        public static Task<Maybe<TNext>> Map<TPrev, TNext>(
             this Maybe<TPrev> previous, 
             Func<TPrev, Task<Maybe<TNext>>> continuation)
-            => previous ? continuation(previous) : Task.FromResult(previous.To<TNext>());
+            => previous ? continuation(previous) : Task.FromResult(previous.Error.Unwrap().Fail<TNext>());
 
         /// <summary>
         /// If previous successful, continue with continuation functor.
@@ -43,11 +43,11 @@ namespace Mayhap
         /// <param name="continuation">Continuation func</param>
         /// <param name="next">Target Maybe value output parameter</param>
         /// <returns>Target Maybe</returns>
-        public static Maybe<TNext> Continue<TPrev, TNext>(
+        public static Maybe<TNext> Map<TPrev, TNext>(
             this Maybe<TPrev> previous,
             Func<TPrev, Maybe<TNext>> continuation,
             out Maybe<TNext> next)
-            => next = Continue(previous, continuation);
+            => next = Map(previous, continuation);
 
         /// <summary>
         /// If previous successful, continue with continuation functor.
@@ -58,10 +58,10 @@ namespace Mayhap
         /// <param name="continuation">Continuation func</param>
         /// <param name="next">Target Maybe value output parameter</param>
         /// <returns>Target Maybe</returns>
-        public static Task<Maybe<TNext>> Continue<TPrev, TNext>(
+        public static Task<Maybe<TNext>> Map<TPrev, TNext>(
             this Maybe<TPrev> previous,
             Func<TPrev, Task<Maybe<TNext>>> continuation,
             out Task<Maybe<TNext>> next)
-            => next = Continue(previous, continuation);
+            => next = Map(previous, continuation);
     }
 }

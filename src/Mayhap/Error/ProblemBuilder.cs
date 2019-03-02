@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Mayhap
+namespace Mayhap.Error
 {
     /// <summary>
     /// Problem structure builder

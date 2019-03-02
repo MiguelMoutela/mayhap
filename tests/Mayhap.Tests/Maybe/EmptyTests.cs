@@ -1,7 +1,8 @@
 ﻿using FluentAssertions;
+using Mayhap.Maybe;
 using Xunit;
 
-namespace Mayhap.Tests
+namespace Mayhap.Tests.Maybe
 {
     public class EmptyTests
     {
@@ -12,7 +13,7 @@ namespace Mayhap.Tests
             var maybe = Empty.Success();
 
             // then
-            maybe.IsSuccess.Should().Be(true);
+            maybe.IsSuccessful.Should().Be(true);
         }
     }
 }
