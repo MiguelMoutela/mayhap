@@ -68,5 +68,20 @@ namespace Mayhap.Tests.Maybe
             //then
             actual.Should().Be(maybe.Value.Unwrap());
         }
+
+        [Fact]
+        public void GivenProblemTypeEnum_WhenFailCalled_ThenShouldCreateFailure()
+        {
+            var maybe = TestProblemType.ProblemX.Fail<int>();
+
+            maybe.IsSuccessful.Should().BeFalse();
+            ((Problem) maybe.Error.Unwrap()).Type.Should().Be("Problem X");
+        }
+
+        private enum TestProblemType
+        {
+            [ProblemType("Problem X")]
+            ProblemX
+        }
     }
 }

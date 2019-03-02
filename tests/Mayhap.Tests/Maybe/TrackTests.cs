@@ -26,7 +26,7 @@ namespace Mayhap.Tests.Maybe
             Maybe<string> Continuation(int _) => continuationResult;
 
             // when
-            var actual = previousMaybe.Continue(Continuation);
+            var actual = previousMaybe.Map(Continuation);
 
             // then
             actual.Should().Be(expectedMaybe);
@@ -43,7 +43,7 @@ namespace Mayhap.Tests.Maybe
             Task<Maybe<string>> Continuation(int _) => Task.FromResult(continuationResult);
 
             // when
-            var actual = await previousMaybe.Continue(Continuation);
+            var actual = await previousMaybe.Map(Continuation);
 
             // then
             actual.Should().Be(expectedMaybe);
@@ -62,7 +62,7 @@ namespace Mayhap.Tests.Maybe
             Maybe<string> Continuation(int _) => continuationResult;
 
             // when
-            var returnedMaybe = previousMaybe.Continue(Continuation, out var outParamMaybe);
+            var returnedMaybe = previousMaybe.Map(Continuation, out var outParamMaybe);
 
             // then
             returnedMaybe.Should().Be(outParamMaybe);
@@ -81,7 +81,7 @@ namespace Mayhap.Tests.Maybe
             Task<Maybe<string>> Continuation(int _) => Task.FromResult(continuationResult);
 
             // when
-            var returnedMaybe = await previousMaybe.Continue(Continuation, out var outParamMaybeTask);
+            var returnedMaybe = await previousMaybe.Map(Continuation, out var outParamMaybeTask);
             var outParamMaybe = await outParamMaybeTask;
 
             // then
