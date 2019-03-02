@@ -10,5 +10,11 @@
         /// Indicates if wrapped object exists.
         /// </summary>
         public bool HasValue => false;
+
+        /// <summary>
+        /// Unwraps the value.
+        /// </summary>
+        /// <returns>The value.</returns>
+        public T Unwrap() => default;
     }
 }

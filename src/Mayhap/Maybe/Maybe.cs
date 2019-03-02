@@ -1,4 +1,6 @@
-﻿namespace Mayhap.Maybe
+﻿using Mayhap.Option;
+
+namespace Mayhap.Maybe
 {
     /// <summary>
     /// A structure representing possible value of TValue.
@@ -8,60 +10,44 @@
     /// <typeparam name="TValue">Wrapped value type</typeparam>
     public readonly struct Maybe<TValue>
     {
-        private readonly Result _result;
-
-        internal Maybe(TValue value, IProblem failure)
+        internal Maybe(IOption<IProblem> error, IOption<TValue> value)
         {
+            Error = error;
             Value = value;
-            _result = new Result(failure);
-        }
-
-        private Maybe(in Result result, TValue value)
-        {
-            Value = result ? value : default;
-            _result = result;
         }
 
         /// <summary>
         /// Gets the wrapped value
         /// </summary>
-        public TValue Value { get; }
+        public IOption<TValue> Value { get; }
 
         /// <summary>
-        /// Gets success value
+        /// Gets the success value
         /// </summary>
-        public bool IsSuccess => _result.IsSuccess;
+        public bool IsSuccessful => !Error.HasValue;
 
         /// <summary>
         /// Gets error message. Null if is successful.
         /// </summary>
-        public IProblem Error => _result.Error;
-
-        /// <summary>
-        /// Convert to Maybe of T.
-        /// </summary>
-        /// <param name="value">New value</param>
-        /// <typeparam name="T">New wrapped type</typeparam>
-        /// <returns>Maybe of new type</returns>
-        public Maybe<T> To<T>(T value = default) => new Maybe<T>(in _result, value);
+        public IOption<IProblem> Error { get; }
 
         /// <summary>
         /// To bool implicit cast operator.
         /// </summary>
         /// <param name="r"></param>
-        public static implicit operator bool(Maybe<TValue> r) => r._result.IsSuccess;
+        public static implicit operator bool(Maybe<TValue> r) => r.IsSuccessful;
 
         /// <summary>
         /// To TValue implicit cast operator.
         /// </summary>
         /// <param name="r">Maybe</param>
-        public static implicit operator TValue(Maybe<TValue> r) => r.Value;
+        public static implicit operator TValue(Maybe<TValue> r) => r.Value.Unwrap();
 
         /// <summary>
         /// Converts to string
         /// </summary>
-        /// <returns>Str</returns>
+        /// <returns>The string representation</returns>
         public override string ToString() =>
-            $"{GetType().Name}{{IsSuccess: {IsSuccess}, {(IsSuccess ? "Value: " + Value : "Error: " + Error)}}}";
+            $"{GetType().Name}{{IsSuccess: {IsSuccessful}, {(IsSuccessful ? "Value: " + Value : "Error: " + Error)}}}";
     }
 }

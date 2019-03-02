@@ -2,6 +2,7 @@
 using FluentAssertions;
 using Mayhap.Error;
 using Mayhap.Maybe;
+using Mayhap.Option;
 using Xunit;
 
 namespace Mayhap.Tests.Maybe
@@ -18,8 +19,8 @@ namespace Mayhap.Tests.Maybe
             var maybe = value.Success();
 
             // then
-            maybe.IsSuccess.Should().BeTrue();
-            maybe.Value.Should().Be(value);
+            maybe.IsSuccessful.Should().BeTrue();
+            maybe.Value.Unwrap().Should().Be(value);
         }
 
         [Fact]
@@ -32,9 +33,10 @@ namespace Mayhap.Tests.Maybe
             var maybe = fault.Fail<object>();
 
             // then
-            maybe.IsSuccess.Should().BeFalse();
-            maybe.Error.Should().BeOfType<Problem>();
-            ((Problem) maybe.Error).Type.Should().Be(fault);
+            maybe.IsSuccessful.Should().BeFalse();
+            maybe.Error.Should().BeOfType<Some<IProblem>>();
+            var problem = (Problem) maybe.Error.Unwrap();
+            problem.Type.Should().Be(fault);
         }
 
         public static IEnumerable<object[]> ImplicitBoolTheory => new[]
@@ -64,26 +66,7 @@ namespace Mayhap.Tests.Maybe
             int actual = maybe;
 
             //then
-            actual.Should().Be(maybe.Value);
-        }
-
-        public static IEnumerable<object[]> ConvertToTheory => new[]
-        {
-            new object[] { 100.Success(), "new val", "new val", true }, 
-            new object[] { "fault".Fail<int>(), "new val", null, false },
-        };
-
-        [Theory]
-        [MemberData(nameof(ConvertToTheory))]
-        public void GivenMaybe_WhenCalledToMethod_ThenShouldCreateNewMaybeWithProperties(
-            Maybe<int> maybe, string newValue, string expectedValue, bool expectedSuccess)
-        {
-            // when
-            var newMaybe = maybe.To(newValue);
-
-            //then
-            newMaybe.Value.Should().Be(expectedValue);
-            newMaybe.IsSuccess.Should().Be(expectedSuccess);
+            actual.Should().Be(maybe.Value.Unwrap());
         }
     }
 }

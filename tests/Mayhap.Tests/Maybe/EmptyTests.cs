@@ -13,7 +13,7 @@ namespace Mayhap.Tests.Maybe
             var maybe = Empty.Success();
 
             // then
-            maybe.IsSuccess.Should().Be(true);
+            maybe.IsSuccessful.Should().Be(true);
         }
     }
 }

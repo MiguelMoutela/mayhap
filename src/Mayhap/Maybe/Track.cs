@@ -19,7 +19,7 @@ namespace Mayhap.Maybe
         public static Maybe<TNext> Continue<TPrev, TNext>(
             this Maybe<TPrev> previous,
             Func<TPrev, Maybe<TNext>> continuation)
-            => previous ? continuation(previous) : previous.To<TNext>();
+            => previous ? continuation(previous) : previous.Error.Unwrap().Fail<TNext>();
 
         /// <summary>
         /// If previous successful, continue with continuation functor.
@@ -32,7 +32,7 @@ namespace Mayhap.Maybe
         public static Task<Maybe<TNext>> Continue<TPrev, TNext>(
             this Maybe<TPrev> previous, 
             Func<TPrev, Task<Maybe<TNext>>> continuation)
-            => previous ? continuation(previous) : Task.FromResult(previous.To<TNext>());
+            => previous ? continuation(previous) : Task.FromResult(previous.Error.Unwrap().Fail<TNext>());
 
         /// <summary>
         /// If previous successful, continue with continuation functor.

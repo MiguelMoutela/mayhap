@@ -6,10 +6,6 @@
     /// <typeparam name="T">The wrapped type</typeparam>
     public struct Some<T> : IOption<T>
     {
-        /// <summary>
-        /// Creates an instance of Some&lt;T&gt;
-        /// </summary>
-        /// <param name="value">The value</param>
         public Some(T value) => Value = value;
 
         /// <summary>
@@ -21,5 +17,11 @@
         /// Indicates if wrapped object exists.
         /// </summary>
         public bool HasValue => true;
+
+        /// <summary>
+        /// Unwraps the value.
+        /// </summary>
+        /// <returns>The value.</returns>
+        public T Unwrap() => Value;
     }
 }
