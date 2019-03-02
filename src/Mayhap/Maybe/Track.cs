@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Mayhap
+namespace Mayhap.Maybe
 {
     /// <summary>
     /// Maybe chaining extension methods.

@@ -1,4 +1,4 @@
-﻿namespace Mayhap
+﻿namespace Mayhap.Maybe
 {
     /// <summary>
     /// A structure representing possible value of TValue.

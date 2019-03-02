@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using FluentAssertions;
+using Mayhap.Error;
+using Mayhap.Maybe;
 using Xunit;
 
-namespace Mayhap.Tests
+namespace Mayhap.Tests.Maybe
 {
     public class MaybeTests
     {

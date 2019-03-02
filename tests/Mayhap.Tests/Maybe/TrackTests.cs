@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using FluentAssertions;
+using Mayhap.Maybe;
 using Xunit;
 
-namespace Mayhap.Tests
+namespace Mayhap.Tests.Maybe
 {
     public class TrackTests
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mayhap
+namespace Mayhap.Error
 {
     /// <summary>
     /// The problem property attribute.

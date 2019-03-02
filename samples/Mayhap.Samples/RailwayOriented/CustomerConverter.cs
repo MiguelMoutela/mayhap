@@ -1,4 +1,5 @@
 ﻿using System;
+using Mayhap.Maybe;
 using Mayhap.Samples.Shared;
 
 namespace Mayhap.Samples.RailwayOriented

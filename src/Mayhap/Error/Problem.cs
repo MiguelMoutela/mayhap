@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Mayhap.Maybe;
 
-namespace Mayhap
+namespace Mayhap.Error
 {
     /// <summary>
     /// RFC7807 compliant problem details representation

@@ -1,4 +1,4 @@
-﻿namespace Mayhap
+﻿namespace Mayhap.Maybe
 {
     internal readonly struct Result
     {

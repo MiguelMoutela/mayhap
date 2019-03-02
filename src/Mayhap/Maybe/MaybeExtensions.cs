@@ -1,6 +1,7 @@
 ﻿using System;
+using Mayhap.Error;
 
-namespace Mayhap
+namespace Mayhap.Maybe
 {
     public static class MaybeExtensions
     {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Mayhap.Maybe;
 using Mayhap.Samples.Shared;
 
 namespace Mayhap.Samples.RailwayOriented

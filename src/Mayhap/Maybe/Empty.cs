@@ -1,4 +1,4 @@
-﻿namespace Mayhap
+﻿namespace Mayhap.Maybe
 {
     /// <summary>
     /// Represents empty response
