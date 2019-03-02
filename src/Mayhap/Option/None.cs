@@ -16,5 +16,17 @@
         /// </summary>
         /// <returns>The value.</returns>
         public T Unwrap() => default;
+
+        /// <summary>
+        /// Returns a string representation.
+        /// </summary>
+        /// <returns>The string representation.</returns>
+        public override string ToString() => $"None(Of {typeof(T).Name})";
+
+        /// <summary>
+        /// Implicit cast to wrapped type.
+        /// </summary>
+        /// <param name="s">Operand</param>
+        public static implicit operator T(None<T> s) => default;
     }
 }
