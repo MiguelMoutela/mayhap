@@ -1,6 +1,6 @@
 - name: Documentation
   href: articles/
-  homepage: articles/intro.md
+  homepage: articles/option-model.md
 - name: Reference
   href: reference/
   homepage: reference/index.md
