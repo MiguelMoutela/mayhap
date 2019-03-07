@@ -9,7 +9,7 @@
           "src": ".."
         }
       ],
-      "dest": "api",
+      "dest": "reference",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     }
@@ -18,8 +18,8 @@
     "content": [
       {
         "files": [
-          "api/**.yml",
-          "api/index.md"
+          "reference/**.yml",
+          "reference/index.md"
         ]
       },
       {
