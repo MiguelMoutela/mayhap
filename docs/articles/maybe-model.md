@@ -1,11 +1,11 @@
-# Maybe model
+# The maybe model
 
-The responsibility of maybe model is to represent an operation result. To achieve that, `Maybe<T>`
+The responsibility of the maybe model is to represent an operation result. To achieve that, `Maybe<T>`
 structure composes features of the other two models: [problem model](problem-model.html) to represent
 error information, and [option model](option-model.html) to represent value in case of success. To provide a fluent experience, `Maybe<T>` structure comes with a set of methods and extension methods.
 The structure is also immutable.
 
-## Maybe<T> structure construction
+## `Maybe<T>` structure construction
 To create a `Maybe<T>` instance use `Success()`/`Fail()`extension methods. The `Success()` method,
 can be called from any type, while `Fail()` extends only `IProblem`, `string`, and `System.Enum` values.
 

@@ -19,9 +19,9 @@ public Maybe<CustomerDto> Deposit(Guid id, decimal amount)
 ```
 
 ```csharp
-IOption<int> x = "1".Some().Map(Convert.ToInt32);
+IOption<int> x = "1".Some().Map(s => Convert.ToInt32(s).Some());
 // x == Some<int>{ Value = 1 }
 
-IOption<int> y = Optional.None<string>().Map(Convert.ToInt32);
+IOption<int> y = Optional.None<string>().Map(s => Convert.ToInt32(s).Some());
 // y == None<int>
 ```
