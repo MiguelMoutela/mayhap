@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using Mayhap.Maybe;
 
 namespace Mayhap.Error
 {
     /// <summary>
-    /// RFC7807 compliant problem details representation
+    /// The RFC7807 compliant problem details representation.
     /// </summary>
     public struct Problem : IProblem
     {
         /// <summary>
-        /// Creates a Problem struct instance.
+        /// Creates a <see cref="Problem"/> struct instance.
         /// </summary>
         /// <param name="type">The problem type.</param>
         /// <param name="title">The problem title.</param>
@@ -34,51 +33,72 @@ namespace Mayhap.Error
         }
 
         /// <summary>
-        /// An URI reference that identifies the problem type.
+        /// Get the problem type.
         /// </summary>
+        /// <value>
+        /// An URI reference that identifies the problem type.
+        /// </value>
         public string Type { get; }
 
         /// <summary>
-        /// Human-readable summary of the problem type.
+        /// Gets the title.
         /// </summary>
+        /// <value>
+        /// A human-readable summary of the problem type.
+        /// </value>
         public string Title { get; }
 
         /// <summary>
-        /// A human-readable detailed description of this occurence of the problem.
+        /// Gets the detail.
         /// </summary>
+        /// <value>
+        /// A human-readable detailed description of this occurence of the problem.
+        /// </value>
         public string Detail { get; }
 
         /// <summary>
-        /// A URI reference that identifies the resource of this occurence of the problem.
+        /// Gets the instance of this occurence of the problem.
         /// </summary>
+        /// <value>
+        /// A URI reference that identifies the resource of this occurence of the problem.
+        /// </value>
         public string Instance { get; }
 
         /// <summary>
-        /// The HTTP status code for this occurrence of the problem.
+        /// Gets the HTTP status code.
         /// </summary>
+        /// <value>
+        /// The HTTP status code for this occurrence of the problem.
+        /// </value>
         public int? Status { get; }
 
         /// <summary>
-        /// The extension properties of this occurence of the problem.
+        /// Gets the extension properties.
         /// </summary>
+        /// <value>
+        /// The extension properties of this occurence of the problem.
+        /// </value>
         public IReadOnlyDictionary<string, object> Properties { get; }
 
         /// <summary>
-        /// Problem factory method
+        /// Creates an instance of <see cref="ProblemBuilder"/> based on <see cref="Enum"/> problem type.
         /// </summary>
-        /// <param name="type">The problem type</param>
-        /// <returns>Problem builder instance</returns>
-        public static ProblemBuilder OfType(Enum type)
-            => new ProblemBuilder(type);
+        /// <param name="problemType">The problem type</param>
+        /// <returns>An instance of problem builder.</returns>
+        public static ProblemBuilder OfType(Enum problemType)
+            => new ProblemBuilder(problemType);
 
         /// <summary>
-        /// Creates a problem builder.
+        /// Creates an instance of <see cref="ProblemBuilder"/>.
         /// </summary>
-        /// <returns>Problem builder instance</returns>
+        /// <returns>An instance of problem builder.</returns>
         public static ProblemBuilder New()
             => new ProblemBuilder();
 
-        /// <inheritdoc cref="System.Object.ToString()" />
+        /// <summary>
+        /// Returns a string representation of current instance.
+        /// </summary>
+        /// <returns>The string representation.</returns>
         public override string ToString()
             => $"Problem {{ Type = {Type} }}";
     }

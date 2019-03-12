@@ -4,70 +4,75 @@ using System.Threading.Tasks;
 namespace Mayhap.Option
 {
     /// <summary>
-    /// Option domain track
+    /// The option domain track. Contains useful chaining extension methods for <see cref="IOption{T}"/> type.
+    ///
+    /// See also:
+    /// <seealso cref="IOption{T}"/>,
+    /// <seealso cref="Some{T}"/>,
+    /// <seealso cref="None{T}"/>
     /// </summary>
     public static class Track
     {
         /// <summary>
-        /// Maps option of TPrev to option of TNext
+        /// Applies the mapping functor the input if it is <see cref="Some{T}"/>.
         /// </summary>
-        /// <typeparam name="TPrev">Previous wrapped type.</typeparam>
-        /// <typeparam name="TNext">Next wrapped type.</typeparam>
-        /// <param name="prev">Previous wrapped object.</param>
-        /// <param name="functor">Mapping functor.</param>
-        /// <returns>Option of TNext</returns>
-        public static IOption<TNext> Map<TPrev, TNext>(this IOption<TPrev> prev, Func<TPrev, IOption<TNext>> functor)
+        /// <typeparam name="TInput">The input type.</typeparam>
+        /// <typeparam name="TOutput">The output type.</typeparam>
+        /// <param name="input">The input option instance.</param>
+        /// <param name="functor">The mapping functor.</param>
+        /// <returns>The output option instance.</returns>
+        public static IOption<TOutput> Map<TInput, TOutput>(this IOption<TInput> input, Func<TInput, IOption<TOutput>> functor)
         {
-            switch (prev)
+            switch (input)
             {
-                case Some<TPrev> some:
+                case Some<TInput> some:
                     return functor.Invoke(some);
                 default:
-                    return Optional.None<TNext>();
+                    return Optional.None<TOutput>();
             }
         }
 
         /// <summary>
-        /// Maps option of TPrev to option of TNext
+        /// Applies the mapping functor the input if it is <see cref="Some{T}"/>.
         /// </summary>
-        /// <typeparam name="TPrev">Previous wrapped type.</typeparam>
-        /// <typeparam name="TNext">Next wrapped type.</typeparam>
-        /// <param name="prev">Previous wrapped object.</param>
-        /// <param name="functor">Mapping functor.</param>
-        /// <param name="next">Option of TNext out parameter.</param>
-        /// <returns>Option of TNext.</returns>        
-        public static IOption<TNext> Map<TPrev, TNext>(this IOption<TPrev> prev, Func<TPrev, IOption<TNext>> functor, out IOption<TNext> next)
-            => next = prev.Map(functor);
+        /// <typeparam name="TInput">The input type.</typeparam>
+        /// <typeparam name="TOutput">The output type.</typeparam>
+        /// <param name="input">The input option instance.</param>
+        /// <param name="functor">The mapping functor.</param>
+        /// <param name="output">The output option instance, same as the returned result.</param>
+        /// <returns>The output option instance.</returns>
+        public static IOption<TOutput> Map<TInput, TOutput>(this IOption<TInput> input, Func<TInput, IOption<TOutput>> functor, out IOption<TOutput> output)
+            => output = input.Map(functor);
 
         /// <summary>
-        /// Maps option of TPrev to option of TNext
+        /// Applies the mapping functor the input if it is <see cref="Some{T}"/>.
         /// </summary>
-        /// <typeparam name="TPrev">Previous wrapped type.</typeparam>
-        /// <typeparam name="TNext">Next wrapped type.</typeparam>
-        /// <param name="prev">Previous wrapped object.</param>
-        /// <param name="functor">Mapping functor.</param>
-        /// <returns>Awaitable task of option of TNext.</returns>     
-        public static Task<IOption<TNext>> Map<TPrev, TNext>(this IOption<TPrev> prev, Func<TPrev, Task<IOption<TNext>>> functor)
+        /// <typeparam name="TInput">The input type.</typeparam>
+        /// <typeparam name="TOutput">The output type.</typeparam>
+        /// <param name="input">The input option instance.</param>
+        /// <param name="functor">The mapping functor.</param>
+        /// <returns>An awaitable task of the output option instance.</returns>
+        public static Task<IOption<TOutput>> Map<TInput, TOutput>(this IOption<TInput> input, Func<TInput, Task<IOption<TOutput>>> functor)
         {
-            switch (prev)
+            switch (input)
             {
-                case Some<TPrev> some:
+                case Some<TInput> some:
                     return functor(some);
                 default:
-                    return Task.FromResult((IOption<TNext>) Optional.None<TNext>());
+                    return Task.FromResult((IOption<TOutput>) Optional.None<TOutput>());
             }
         }
 
         /// <summary>
-        /// Maps option of TPrev to option of TNext
+        /// Applies the mapping functor the input if it is <see cref="Some{T}"/>.
         /// </summary>
-        /// <typeparam name="TPrev">Previous wrapped type.</typeparam>
-        /// <typeparam name="TNext">Next wrapped type.</typeparam>
-        /// <param name="prev">Previous wrapped object.</param>
-        /// <param name="functor">Mapping functor.</param>
-        /// <param name="next">Awaitable task of option of TNext out parameter.</param>
-        /// <returns>Awaitable task of option of TNext.</returns>
-        public static Task<IOption<TNext>> Map<TPrev, TNext>(this IOption<TPrev> prev, Func<TPrev, Task<IOption<TNext>>> functor, out Task<IOption<TNext>> next)
-            => next = prev.Map(functor);
+        /// <typeparam name="TInput">The input type.</typeparam>
+        /// <typeparam name="TOutput">The output type.</typeparam>
+        /// <param name="input">The input option instance.</param>
+        /// <param name="functor">The mapping functor.</param>
+        /// <param name="output">The output option instance, same as the returned result.</param>
+        /// <returns>An awaitable task of the output option instance.</returns>
+        public static Task<IOption<TOutput>> Map<TInput, TOutput>(this IOption<TInput> input, Func<TInput, Task<IOption<TOutput>>> functor, out Task<IOption<TOutput>> output)
+            => output = input.Map(functor);
     }
 }
