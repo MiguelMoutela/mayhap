@@ -1,39 +1,49 @@
 ﻿namespace Mayhap.Option
 {
     /// <summary>
-    /// Represents existence of value of type T.
+    /// Represents an existing instance of the wrapped type.
     /// </summary>
-    /// <typeparam name="T">The wrapped type</typeparam>
+    /// <typeparam name="T">The wrapped type.</typeparam>
     public struct Some<T> : IOption<T>
     {
+        /// <summary>
+        /// Creates an instance of <see cref="Some{T}"/>.
+        /// </summary>
+        /// <param name="value">The wrapped instance.</param>
         public Some(T value) => Value = value;
 
         /// <summary>
-        /// The wrapped object
+        /// Gets the wrapped instance.
         /// </summary>
+        /// <value>
+        /// The wrapped instance.
+        /// </value>
         public T Value { get; }
 
         /// <summary>
-        /// Indicates if wrapped object exists.
+        /// Gets the HasValue value.
         /// </summary>
+        /// <value>
+        /// Indicates if the wrapped type instance exists.
+        /// </value>
         public bool HasValue => true;
 
         /// <summary>
-        /// Unwraps the value.
+        /// Unwraps the wrapped instance value.
         /// </summary>
-        /// <returns>The value.</returns>
+        /// <returns>The wrapped instance.</returns>
         public T Unwrap() => Value;
 
         /// <summary>
-        /// Returns a string representation.
+        /// Returns a string representation of current instance.
         /// </summary>
         /// <returns>The string representation.</returns>
         public override string ToString() => $"Some(Of {typeof(T).Name}{{ Value = {Value} }})";
 
         /// <summary>
-        /// Implicit cast to wrapped type.
+        /// Implicitly casts to wrapped type.
         /// </summary>
-        /// <param name="s">Operand</param>
-        public static implicit operator T(Some<T> s) => s.Value;
+        /// <param name="operand">The operand.</param>
+        public static implicit operator T(Some<T> operand) => operand.Value;
     }
 }

@@ -1,32 +1,35 @@
 ﻿namespace Mayhap.Option
 {
     /// <summary>
-    /// Represents absence of value of type T.
+    /// Represents the absence of the wrapped type instance.
     /// </summary>
-    /// <typeparam name="T">Wrapped type</typeparam>
+    /// <typeparam name="T">The wrapped type.</typeparam>
     public struct None<T> : IOption<T>
     {
         /// <summary>
-        /// Indicates if wrapped object exists.
+        /// Gets the HasValue value.
         /// </summary>
+        /// <value>
+        /// Indicates if the wrapped type instance exists.
+        /// </value>
         public bool HasValue => false;
 
         /// <summary>
-        /// Unwraps the value.
+        /// Unwraps the wrapped instance value.
         /// </summary>
-        /// <returns>The value.</returns>
+        /// <returns>The wrapped instance.</returns>
         public T Unwrap() => default;
 
         /// <summary>
-        /// Returns a string representation.
+        /// Returns a string representation of current instance.
         /// </summary>
         /// <returns>The string representation.</returns>
         public override string ToString() => $"None(Of {typeof(T).Name})";
 
         /// <summary>
-        /// Implicit cast to wrapped type.
+        /// Implicitly casts to wrapped type.
         /// </summary>
-        /// <param name="s">Operand</param>
-        public static implicit operator T(None<T> s) => default;
+        /// <param name="operand">The operand.</param>
+        public static implicit operator T(None<T> operand) => default;
     }
 }

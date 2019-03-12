@@ -1,21 +1,23 @@
 ﻿namespace Mayhap.Option
 {
     /// <summary>
-    /// The option wrapper of type T. If the wrapped object has value it is Some&lt;T&gt;, while when it's empty - None&lt;T&gt;.
+    /// Represents an optional occurence of the wrapped type instance.
     /// </summary>
-    /// <typeparam name="T">The wrapped type</typeparam>
-    // ReSharper disable once UnusedTypeParameter
+    /// <typeparam name="T">The wrapped type.</typeparam>
     public interface IOption<out T>
     {
         /// <summary>
-        /// Indicates if wrapped object exists.
+        /// Gets the HasValue value.
         /// </summary>
+        /// <value>
+        /// Indicates if the wrapped type instance exists.
+        /// </value>
         bool HasValue { get; }
 
         /// <summary>
-        /// Unwraps the value.
+        /// Unwraps the wrapped instance value.
         /// </summary>
-        /// <returns>The value.</returns>
+        /// <returns>The wrapped instance.</returns>
         T Unwrap();
     }
 }
