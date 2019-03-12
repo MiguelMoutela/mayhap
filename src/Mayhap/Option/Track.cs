@@ -14,7 +14,7 @@ namespace Mayhap.Option
     public static class Track
     {
         /// <summary>
-        /// Applies a mapping functor if input option is not <see cref="None{T}"/>.
+        /// Applies the mapping functor the input if it is <see cref="Some{T}"/>.
         /// </summary>
         /// <typeparam name="TInput">The input type.</typeparam>
         /// <typeparam name="TOutput">The output type.</typeparam>
@@ -33,19 +33,19 @@ namespace Mayhap.Option
         }
 
         /// <summary>
-        /// Applies a mapping functor if input option is not <see cref="None{T}"/>.
+        /// Applies the mapping functor the input if it is <see cref="Some{T}"/>.
         /// </summary>
         /// <typeparam name="TInput">The input type.</typeparam>
         /// <typeparam name="TOutput">The output type.</typeparam>
         /// <param name="input">The input option instance.</param>
         /// <param name="functor">The mapping functor.</param>
-        /// <param name="next">The output option instance, same as return result.</param>
+        /// <param name="output">The output option instance, same as the returned result.</param>
         /// <returns>The output option instance.</returns>
-        public static IOption<TOutput> Map<TInput, TOutput>(this IOption<TInput> input, Func<TInput, IOption<TOutput>> functor, out IOption<TOutput> next)
-            => next = input.Map(functor);
+        public static IOption<TOutput> Map<TInput, TOutput>(this IOption<TInput> input, Func<TInput, IOption<TOutput>> functor, out IOption<TOutput> output)
+            => output = input.Map(functor);
 
         /// <summary>
-        /// Applies a mapping functor if input option is not <see cref="None{T}"/>.
+        /// Applies the mapping functor the input if it is <see cref="Some{T}"/>.
         /// </summary>
         /// <typeparam name="TInput">The input type.</typeparam>
         /// <typeparam name="TOutput">The output type.</typeparam>
@@ -64,15 +64,15 @@ namespace Mayhap.Option
         }
 
         /// <summary>
-        /// Applies a mapping functor if input option is not <see cref="None{T}"/>.
+        /// Applies the mapping functor the input if it is <see cref="Some{T}"/>.
         /// </summary>
         /// <typeparam name="TInput">The input type.</typeparam>
         /// <typeparam name="TOutput">The output type.</typeparam>
         /// <param name="input">The input option instance.</param>
         /// <param name="functor">The mapping functor.</param>
-        /// <param name="next">The output option instance, same as return result.</param>
+        /// <param name="output">The output option instance, same as the returned result.</param>
         /// <returns>An awaitable task of the output option instance.</returns>
-        public static Task<IOption<TOutput>> Map<TInput, TOutput>(this IOption<TInput> input, Func<TInput, Task<IOption<TOutput>>> functor, out Task<IOption<TOutput>> next)
-            => next = input.Map(functor);
+        public static Task<IOption<TOutput>> Map<TInput, TOutput>(this IOption<TInput> input, Func<TInput, Task<IOption<TOutput>>> functor, out Task<IOption<TOutput>> output)
+            => output = input.Map(functor);
     }
 }

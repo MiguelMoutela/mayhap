@@ -4,64 +4,66 @@ using System.Threading.Tasks;
 namespace Mayhap.Maybe
 {
     /// <summary>
-    /// Maybe chaining extension methods.
+    /// The maybe domain track. Contains useful chaining extension methods for <see cref="Maybe{TValue}"/> type.
+    ///
+    /// See also: <seealso cref="Maybe{TValue}"/>
     /// </summary>
     public static class Track
     {
         /// <summary>
-        /// If previous successful, continue with continuation functor.
+        /// Applies the mapping functor to the input if it is successful.
         /// </summary>
-        /// <typeparam name="TPrev">Previous Maybe value type</typeparam>
-        /// <typeparam name="TNext">Target Maybe value type</typeparam>
-        /// <param name="previous">Previous Maybe value</param>
-        /// <param name="continuation">Continuation func</param>
-        /// <returns>Target Maybe</returns>
-        public static Maybe<TNext> Map<TPrev, TNext>(
-            this Maybe<TPrev> previous,
-            Func<TPrev, Maybe<TNext>> continuation)
-            => previous ? continuation(previous) : previous.Error.Unwrap().Fail<TNext>();
+        /// <typeparam name="TInput">The wrapped input type.</typeparam>
+        /// <typeparam name="TOutput">The wrapped output type.</typeparam>
+        /// <param name="input">The wrapped input instance.</param>
+        /// <param name="functor">The mapping functor.</param>
+        /// <returns>The output maybe instance.</returns>
+        public static Maybe<TOutput> Map<TInput, TOutput>(
+            this Maybe<TInput> input,
+            Func<TInput, Maybe<TOutput>> functor)
+            => input ? functor(input) : input.Error.Unwrap().Fail<TOutput>();
 
         /// <summary>
-        /// If previous successful, continue with continuation functor.
+        /// Applies the mapping functor to the input if it is successful.
         /// </summary>
-        /// <typeparam name="TPrev">Previous Maybe value type</typeparam>
-        /// <typeparam name="TNext">Target Maybe value type</typeparam>
-        /// <param name="previous">Previous Maybe value</param>
-        /// <param name="continuation">Continuation func</param>
-        /// <returns>Target Maybe</returns>
-        public static Task<Maybe<TNext>> Map<TPrev, TNext>(
-            this Maybe<TPrev> previous, 
-            Func<TPrev, Task<Maybe<TNext>>> continuation)
-            => previous ? continuation(previous) : Task.FromResult(previous.Error.Unwrap().Fail<TNext>());
+        /// <typeparam name="TInput">The wrapped input type.</typeparam>
+        /// <typeparam name="TOutput">The wrapped output type.</typeparam>
+        /// <param name="input">The wrapped input instance.</param>
+        /// <param name="functor">The mapping functor.</param>
+        /// <returns>An awaitable task of the output maybe instance.</returns>
+        public static Task<Maybe<TOutput>> Map<TInput, TOutput>(
+            this Maybe<TInput> input, 
+            Func<TInput, Task<Maybe<TOutput>>> functor)
+            => input ? functor(input) : Task.FromResult(input.Error.Unwrap().Fail<TOutput>());
 
         /// <summary>
-        /// If previous successful, continue with continuation functor.
+        /// Applies the mapping functor to the input if it is successful.
         /// </summary>
-        /// <typeparam name="TPrev">Previous Maybe value type</typeparam>
-        /// <typeparam name="TNext">Target Maybe value type</typeparam>
-        /// <param name="previous">Previous Maybe value</param>
-        /// <param name="continuation">Continuation func</param>
-        /// <param name="next">Target Maybe value output parameter</param>
-        /// <returns>Target Maybe</returns>
-        public static Maybe<TNext> Map<TPrev, TNext>(
-            this Maybe<TPrev> previous,
-            Func<TPrev, Maybe<TNext>> continuation,
-            out Maybe<TNext> next)
-            => next = Map(previous, continuation);
+        /// <typeparam name="TInput">The wrapped input type.</typeparam>
+        /// <typeparam name="TOutput">The wrapped output type.</typeparam>
+        /// <param name="input">The wrapped input instance.</param>
+        /// <param name="functor">The mapping functor.</param>
+        /// <param name="output">The output maybe instance, same as the returned result.</param>
+        /// <returns>The output maybe instance.</returns>
+        public static Maybe<TOutput> Map<TInput, TOutput>(
+            this Maybe<TInput> input,
+            Func<TInput, Maybe<TOutput>> functor,
+            out Maybe<TOutput> output)
+            => output = Map(input, functor);
 
         /// <summary>
-        /// If previous successful, continue with continuation functor.
+        /// Applies the mapping functor to the input if it is successful.
         /// </summary>
-        /// <typeparam name="TPrev">Previous Maybe value type</typeparam>
-        /// <typeparam name="TNext">Target Maybe value type</typeparam>
-        /// <param name="previous">Previous Maybe value</param>
-        /// <param name="continuation">Continuation func</param>
-        /// <param name="next">Target Maybe value output parameter</param>
-        /// <returns>Target Maybe</returns>
-        public static Task<Maybe<TNext>> Map<TPrev, TNext>(
-            this Maybe<TPrev> previous,
-            Func<TPrev, Task<Maybe<TNext>>> continuation,
-            out Task<Maybe<TNext>> next)
-            => next = Map(previous, continuation);
+        /// <typeparam name="TInput">The wrapped input type.</typeparam>
+        /// <typeparam name="TOutput">The wrapped output type.</typeparam>
+        /// <param name="input">The wrapped input instance.</param>
+        /// <param name="functor">The mapping functor.</param>
+        /// <param name="output">The output maybe instance, same as the returned result.</param>
+        /// <returns>An awaitable task of the output maybe instance.</returns>
+        public static Task<Maybe<TOutput>> Map<TInput, TOutput>(
+            this Maybe<TInput> input,
+            Func<TInput, Task<Maybe<TOutput>>> functor,
+            out Task<Maybe<TOutput>> output)
+            => output = Map(input, functor);
     }
 }
