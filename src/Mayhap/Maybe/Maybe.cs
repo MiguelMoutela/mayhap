@@ -1,4 +1,5 @@
-﻿using Mayhap.Option;
+﻿using Mayhap.Error;
+using Mayhap.Option;
 
 namespace Mayhap.Maybe
 {

@@ -14,7 +14,7 @@ namespace Mayhap.Error
         public int Value { get; }
 
         /// <summary>
-        /// Creates a ProblemStatusAttribute instance.
+        /// Creates a <see cref="ProblemStatusAttribute"/> instance.
         /// </summary>
         /// <param name="status">The problem status.</param>
         public ProblemStatusAttribute(int status) => Value = status;

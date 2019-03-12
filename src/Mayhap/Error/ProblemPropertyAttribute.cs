@@ -19,7 +19,7 @@ namespace Mayhap.Error
         public object Value { get; }
 
         /// <summary>
-        /// Creates a ProblemPropertyAttribute instance.
+        /// Creates a <see cref="ProblemPropertyAttribute"/> instance.
         /// </summary>
         /// <param name="name">The problem property name.</param>
         /// <param name="value">The problem property value.</param>
