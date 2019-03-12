@@ -1,4 +1,4 @@
-# The option model
+# Option model
 
 The option model represents a value which may, or may not exist. It's a C# adaptation of common 
 functional pattern. The base of the option model is build of three types: `IOption<T>`, `Some<T>` 

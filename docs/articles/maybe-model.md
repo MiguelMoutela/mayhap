@@ -1,4 +1,4 @@
-# The maybe model
+# Maybe model
 
 The responsibility of the maybe model is to represent an operation result. To achieve that, `Maybe<T>`
 structure composes features of the other two models: [problem model](problem-model.html) to represent
