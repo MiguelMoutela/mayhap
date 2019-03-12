@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mayhap
+namespace Mayhap.Error
 {
     /// <summary>
     /// The problem type attribute.
@@ -14,7 +14,7 @@ namespace Mayhap
         public string Value { get; }
 
         /// <summary>
-        /// Creates a ProblemTypeAttribute instance.
+        /// Creates a <see cref="ProblemTypeAttribute"/> instance.
         /// </summary>
         /// <param name="type">The problem type.</param>
         public ProblemTypeAttribute(string type) => Value = type;

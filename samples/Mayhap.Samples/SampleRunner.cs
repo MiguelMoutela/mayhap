@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Mayhap.Maybe;
 using Mayhap.Samples.Shared;
 using Xunit;
 using Xunit.Abstractions;
@@ -8,10 +9,7 @@ namespace Mayhap.Samples
 {
     public class SampleRunner
     {
-        public SampleRunner(ITestOutputHelper output)
-        {
-            Output = output;
-        }
+        public SampleRunner(ITestOutputHelper output) => Output = output;
 
         private ITestOutputHelper Output { get; }
 

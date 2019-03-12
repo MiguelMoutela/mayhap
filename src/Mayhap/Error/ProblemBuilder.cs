@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Mayhap
+namespace Mayhap.Error
 {
     /// <summary>
-    /// Problem structure builder
+    /// The <see cref="Problem"/> structure builder.
     /// </summary>
     public class ProblemBuilder
     {
@@ -15,10 +15,10 @@ namespace Mayhap
         private string _detail;
         private string _instance;
         private int? _status;
-        private Dictionary<string, object> _properties;
+        private readonly Dictionary<string, object> _properties;
 
         /// <summary>
-        /// Creates a ProblemBuilder instance.
+        /// Creates a <see cref="ProblemBuilder"/> instance.
         /// </summary>
         public ProblemBuilder()
         {
@@ -37,10 +37,10 @@ namespace Mayhap
         }
 
         /// <summary>
-        /// Sets the output Problem instances type.
+        /// Sets the output <see cref="Problem"/> instances type.
         /// </summary>
         /// <param name="type">The problem type.</param>
-        /// <returns>An instance of ProblemBuilder.</returns>
+        /// <returns>An instance of <see cref="ProblemBuilder"/>.</returns>
         public ProblemBuilder WithType(string type)
         {
             _typeString = type;
@@ -48,10 +48,10 @@ namespace Mayhap
         }
 
         /// <summary>
-        /// Sets the output Problem instances title.
+        /// Sets the output <see cref="Problem"/> instances title.
         /// </summary>
         /// <param name="title">The title.</param>
-        /// <returns>An instance of ProblemBuilder.</returns>
+        /// <returns>An instance of <see cref="ProblemBuilder"/>.</returns>
         public ProblemBuilder WithTitle(string title)
         {
             _title = title;
@@ -59,10 +59,10 @@ namespace Mayhap
         }
 
         /// <summary>
-        /// Sets the output Problem instances detail.
+        /// Sets the output <see cref="Problem"/> instances detail.
         /// </summary>
         /// <param name="detail">The detail.</param>
-        /// <returns>An instance of ProblemBuilder.</returns>
+        /// <returns>An instance of <see cref="ProblemBuilder"/>.</returns>
         public ProblemBuilder WithDetail(string detail)
         {
             _detail = detail;
@@ -70,10 +70,10 @@ namespace Mayhap
         }
 
         /// <summary>
-        /// Sets the output Problem instances instance property.
+        /// Sets the output <see cref="Problem"/> instances instance property.
         /// </summary>
-        /// <param name="instance">The instance</param>
-        /// <returns>An instance of ProblemBuilder.</returns>
+        /// <param name="instance">The instance.</param>
+        /// <returns>An instance of <see cref="ProblemBuilder"/>.</returns>
         public ProblemBuilder WithInstance(string instance)
         {
             _instance = instance;
@@ -81,10 +81,10 @@ namespace Mayhap
         }
 
         /// <summary>
-        /// Sets the output Problem instances status.
+        /// Sets the output <see cref="Problem"/> instances status.
         /// </summary>
-        /// <param name="status">The status</param>
-        /// <returns>An instance of ProblemBuilder.</returns>
+        /// <param name="status">The status.</param>
+        /// <returns>An instance of <see cref="ProblemBuilder"/>.</returns>
         public ProblemBuilder WithStatus(int? status)
         {
             _status = status;
@@ -92,10 +92,10 @@ namespace Mayhap
         }
 
         /// <summary>
-        /// Sets the output Problem instances extension properties.
+        /// Sets the output <see cref="Problem"/> instances extension properties.
         /// </summary>
         /// <param name="properties">The extension properties.</param>
-        /// <returns>An instance of ProblemBuilder.</returns>
+        /// <returns>An instance of <see cref="ProblemBuilder"/>.</returns>
         public ProblemBuilder WithProperties(Dictionary<string, object> properties)
         {
             foreach (var property in properties)
@@ -107,11 +107,11 @@ namespace Mayhap
         }
 
         /// <summary>
-        /// Sets the output Problem instances extension property.
+        /// Sets the output <see cref="Problem"/> instances extension property.
         /// </summary>
         /// <param name="name">The property name.</param>
         /// <param name="value">The property value</param>
-        /// <returns>An instance of ProblemBuilder.</returns>
+        /// <returns>An instance of <see cref="ProblemBuilder"/>.</returns>
         public ProblemBuilder WithProperty(string name, object value)
         {
             _properties[name] = value;
@@ -119,9 +119,9 @@ namespace Mayhap
         }
 
         /// <summary>
-        /// Creates previously set up Problem instance.
+        /// Creates a set up <see cref="Problem"/> instance.
         /// </summary>
-        /// <returns>A Problem structure instance.</returns>
+        /// <returns>A <see cref="Problem"/> structure instance.</returns>
         public Problem Create()
         {
             var properties = _properties.Any() ? _properties : null;

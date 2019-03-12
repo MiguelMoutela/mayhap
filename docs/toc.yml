@@ -1,0 +1,6 @@
+- name: Docs
+  href: articles/
+  homepage: articles/option-model.md
+- name: Reference
+  href: reference/
+  homepage: reference/index.md

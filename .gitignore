@@ -31,6 +31,9 @@ msbuild.wrn
 # Visual Studio 2015
 .vs/
 
+# docfx
+docs/_site/
+
 #Cake
 tools/
 artifacts/
