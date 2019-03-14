@@ -9,7 +9,7 @@ namespace Mayhap.Maybe
     /// <typeparam name="TValue">The wrapped type.</typeparam>
     public readonly struct Maybe<TValue>
     {
-        internal Maybe(IOption<IProblem> error, IOption<TValue> value)
+        internal Maybe(IOption<Problem> error, IOption<TValue> value)
         {
             Error = error;
             Value = value;
@@ -37,7 +37,7 @@ namespace Mayhap.Maybe
         /// <value>
         /// Contains the error optional instance.
         /// </value>
-        public IOption<IProblem> Error { get; }
+        public IOption<Problem> Error { get; }
 
         /// <summary>
         /// Implicitly casts the instance to the <see cref="bool"/> type. The result represents instances success flag.
