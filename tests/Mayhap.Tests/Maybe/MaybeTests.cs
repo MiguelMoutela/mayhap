@@ -34,8 +34,8 @@ namespace Mayhap.Tests.Maybe
 
             // then
             maybe.IsSuccessful.Should().BeFalse();
-            maybe.Error.Should().BeOfType<Some<IProblem>>();
-            var problem = (Problem) maybe.Error.Unwrap();
+            maybe.Error.Should().BeOfType<Some<Problem>>();
+            var problem = maybe.Error.Unwrap();
             problem.Type.Should().Be(fault);
         }
 
@@ -75,7 +75,7 @@ namespace Mayhap.Tests.Maybe
             var maybe = TestProblemType.ProblemX.Fail<int>();
 
             maybe.IsSuccessful.Should().BeFalse();
-            ((Problem) maybe.Error.Unwrap()).Type.Should().Be("Problem X");
+            maybe.Error.Unwrap().Type.Should().Be("Problem X");
         }
 
         private enum TestProblemType

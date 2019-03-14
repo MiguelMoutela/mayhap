@@ -85,8 +85,7 @@ IOption<int> y = Optional.None<string>().Map(Convert.ToInt32);
 
 ### The problem details model
 Mayhap comes with a [RFC7807](https://tools.ietf.org/html/rfc7807) `Problem` struct, which is the
-default error model. It may be easily replaced by a custom model implementing `IProblem` interface.
-
+default error model. 
 Along with the `Problem` struct, Mayhap delivers also a few `Problem` construction
 and customization facilities.
 

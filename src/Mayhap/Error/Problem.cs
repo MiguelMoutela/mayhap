@@ -6,7 +6,7 @@ namespace Mayhap.Error
     /// <summary>
     /// The RFC7807 compliant problem details representation.
     /// </summary>
-    public struct Problem : IProblem
+    public readonly struct Problem
     {
         /// <summary>
         /// Creates a <see cref="Problem"/> struct instance.
