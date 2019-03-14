@@ -84,11 +84,9 @@ IOption<int> y = Optional.None<string>().Map(Convert.ToInt32);
 ```
 
 ### The problem details model
-Mayhap comes with a [RFC7807](https://tools.ietf.org/html/rfc7807) `Problem` struct, which is the
-default error model. It may be easily replaced by a custom model implementing `IProblem` interface.
-
-Along with the `Problem` struct, Mayhap delivers also a few `Problem` construction
-and customization facilities.
+Mayhap comes with a [RFC7807](https://tools.ietf.org/html/rfc7807) `Problem` struct. 
+It is used by maybe model to provide an error representation. 
+Along with the `Problem` struct, Mayhap delivers also a few `Problem` construction and customization facilities.
 
 Example:
 ```csharp
@@ -126,7 +124,6 @@ public Maybe<AccountBalance> Deposit(long accountId, decimal amount)
     // ...
 }
 ```
-The problem details model is used by maybe model to provide error representation.
 
 ### The maybe model
 Mayhap comes with `Maybe<T>` struct. Its main purpose is to provide fault-aware operation chains.
