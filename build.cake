@@ -1,3 +1,6 @@
+#addin nuget:?package=Cake.DocFx&version=0.12.0
+#tool nuget:?package=docfx.console&version=2.40.12
+
 var target = Argument("target", "Build");
 var configuration = Argument("configuration", "Release");
 var shouldPublish = 
@@ -18,10 +21,12 @@ if(!HasEnvironmentVariable("NUGET_API_KEY"))
 string nugetVersion = null;
 string informationalVersion = null;
 string version = null;
-var slnPath = System.IO.Path.GetFullPath("./Mayhap.sln");
-var mayhapCsprojPath = System.IO.Path.GetFullPath("./src/Mayhap/Mayhap.csproj");
-var artifactsPath = System.IO.Path.GetFullPath("./artifacts");
-var packageArtifact = System.IO.Path.Combine(artifactsPath, "Mayhap*.nuspec");
+
+var slnPath = MakeAbsolute(FilePath.FromString("./Mayhap.sln"));
+var mayhapCsprojPath = MakeAbsolute(FilePath.FromString("./src/Mayhap/Mayhap.csproj"));
+var artifactsPath = MakeAbsolute(DirectoryPath.FromString("./artifacts"));
+var docsPath = MakeAbsolute(DirectoryPath.FromString("./docs"));
+var packageArtifact = System.IO.Path.Combine(artifactsPath.FullPath, "Mayhap*.nuspec");
 
 ICollection<string> Props(params string[] properties)
     => properties;
@@ -33,14 +38,18 @@ Task("Clean")
         {
             Configuration = configuration
         };
-        DotNetCoreClean(slnPath, cleanSettings);
+        DotNetCoreClean(slnPath.FullPath, cleanSettings);
         
         var deleteSettings = new DeleteDirectorySettings
         {
             Force = true,
             Recursive = true
         };
+
         if(DirectoryExists(artifactsPath)) DeleteDirectory(artifactsPath, deleteSettings);
+
+        var docsOutput = System.IO.Path.Combine(docsPath.FullPath, "_site");
+        if(DirectoryExists(docsOutput)) DeleteDirectory(docsOutput, deleteSettings);
     });
 
 Task("Version")
@@ -69,7 +78,7 @@ Task("Compile")
             settings.MSBuildSettings.Properties["FileVersion"] = Props(version);
             settings.MSBuildSettings.Properties["InformationalVersion"] = Props(version);
             settings.MSBuildSettings.Properties["PackageVersion"] = Props(nugetVersion);
-            DotNetCoreBuild(slnPath, settings);
+            DotNetCoreBuild(slnPath.FullPath, settings);
         });
 
 Task("Test")
@@ -98,7 +107,7 @@ Task("Pack")
                 MSBuildSettings = new DotNetCoreMSBuildSettings()
             };
             settings.MSBuildSettings.Properties["PackageVersion"] = Props(nugetVersion);
-            DotNetCorePack(mayhapCsprojPath, settings);
+            DotNetCorePack(mayhapCsprojPath.FullPath, settings);
         });
 
 Task("Publish")
@@ -117,7 +126,39 @@ Task("Publish")
         DotNetCoreNuGetPush(packageArtifact);
     });
 
+Task("GenerateDocs")
+    .IsDependentOn("Clean")
+    .IsDependentOn("Version")
+    .Does(() =>
+    {
+        // var docFxTemplate = System.IO.Path.Combine(docsPath.FullPath, "docfx.json");
+        // var tocFxTemplate = System.IO.Path.Combine(docsPath.FullPath, "toc.template.yml");
+        // var docFx = System.IO.Path.Combine(docsPath.FullPath, $"docfx.{nugetVersion}.json");
+        // var toc = System.IO.Path.Combine(docsPath.FullPath, "toc.yml");
+        
+        // TransformTextFile(docFxTemplate, "{{", "}}")
+            // .WithToken("reference", nugetVersion)
+            // .Save(docFx);
+        // TransformTextFile(tocFxTemplate, "{{", "}}")
+            // .WithToken("reference", nugetVersion)
+            // .Save(toc);
+
+        var docFx = System.IO.Path.Combine(docsPath.FullPath, "docfx.json");
+        DocFxBuild(docFx);
+
+        if(!DirectoryExists(artifactsPath)) CreateDirectory(artifactsPath);
+        Zip("./docs/_site",
+            System.IO.Path.Combine(artifactsPath.FullPath, $"Mayhap.{nugetVersion}.docs.zip"));
+        // DeleteFile(docFx);
+    });
+
+Task("PublishDocs")
+    .WithCriteria(() => shouldPublish)
+    .IsDependentOn("Version")
+    .IsDependentOn("GenerateDocs");
+
 Task("Build")
+    .IsDependentOn("PublishDocs")
     .IsDependentOn("Publish");
 
 Task("List")
