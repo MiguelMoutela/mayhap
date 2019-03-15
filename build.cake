@@ -1,16 +1,29 @@
-#addin nuget:?package=Cake.DocFx&version=0.12.0
-#tool nuget:?package=docfx.console&version=2.40.12
+#addin nuget:?package=Cake.Git&version=0.19.0
+// #addin nuget:?package=Cake.DocFx&version=0.12.0
+// #tool nuget:?package=docfx.console&version=2.40.12
 
 var target = Argument("target", "Build");
 var configuration = Argument("configuration", "Release");
 var shouldPublish = 
         HasEnvironmentVariable("APP_VEYOR_REPO_BRANCH")
             && HasEnvironmentVariable("NUGET_API_KEY")
+            && HasEnvironmentVariable("GITHUB_ACCESS_TOKEN")
+            && HasEnvironmentVariable("GITHUB_REPO")
             && EnvironmentVariable("APP_VEYOR_REPO_BRANCH")
                 .Equals("master", StringComparison.InvariantCulture);
 var nugetApiKey = 
     HasEnvironmentVariable("NUGET_API_KEY") 
         ? EnvironmentVariable("NUGET_API_KEY") 
+        : null;
+
+var githubAccessToken = 
+    HasEnvironmentVariable("GITHUB_ACCESS_TOKEN") 
+        ? EnvironmentVariable("GITHUB_ACCESS_TOKEN") 
+        : null;
+
+var githubRepo = 
+    HasEnvironmentVariable("GITHUB_REPO") 
+        ? EnvironmentVariable("GITHUB_REPO") 
         : null;
 
 if(!HasEnvironmentVariable("NUGET_API_KEY"))
@@ -27,7 +40,7 @@ var mayhapCsprojPath = MakeAbsolute(FilePath.FromString("./src/Mayhap/Mayhap.csp
 var artifactsPath = MakeAbsolute(DirectoryPath.FromString("./artifacts"));
 var docsPath = MakeAbsolute(DirectoryPath.FromString("./docs"));
 var docsTempPath = MakeAbsolute(DirectoryPath.FromString("./docs.tmp"));
-var packageArtifact = System.IO.Path.Combine(artifactsPath.FullPath, "Mayhap*.nuspec");
+var packageArtifact = artifactsPath.CombineWithFilePath("Mayhap*.nuspec");
 
 ICollection<string> Props(params string[] properties)
     => properties;
@@ -49,7 +62,7 @@ Task("Clean")
 
         if(DirectoryExists(artifactsPath)) DeleteDirectory(artifactsPath, deleteSettings);
 
-        var docsOutput = System.IO.Path.Combine(docsPath.FullPath, "_site");
+        var docsOutput = docsPath.Combine("_site");
         if(DirectoryExists(docsOutput)) DeleteDirectory(docsOutput, deleteSettings);
         if(DirectoryExists(docsTempPath)) DeleteDirectory(docsTempPath, deleteSettings);
     });
@@ -125,7 +138,7 @@ Task("Publish")
             ForceEnglishOutput = true
         };
 
-        DotNetCoreNuGetPush(packageArtifact);
+        DotNetCoreNuGetPush(packageArtifact.FullPath);
     });
 
 Task("GenerateDocs")
@@ -133,34 +146,77 @@ Task("GenerateDocs")
     .IsDependentOn("Version")
     .Does(() =>
     {
-        CopyDirectory(docsPath, docsTempPath);
-        var docFxTemplate = System.IO.Path.Combine(docsTempPath.FullPath, "docfx.template.json");
-        var tocFxTemplate = System.IO.Path.Combine(docsTempPath.FullPath, "toc.template.yml");
-        
-        var docFx = System.IO.Path.Combine(docsTempPath.FullPath, "docfx.json");
-        var toc = System.IO.Path.Combine(docsTempPath.FullPath, "toc.yml");
-        MoveDirectory(docsTempPath.Combine("reference"), docsTempPath.Combine(nugetVersion));
+        var docFxTemplate = docsTempPath.CombineWithFilePath("docfx.template.json");
+        var tocFxTemplate = docsTempPath.CombineWithFilePath("toc.template.yml");
+        var docFx = docsTempPath.CombineWithFilePath("docfx.json");
+        var toc = docsTempPath.CombineWithFilePath("toc.yml");
+        var tempOutput = docsTempPath.Combine("_site");
 
-        var tempOutput = System.IO.Path.Combine(docsTempPath.FullPath, "_site");
+        Information("Making a copy of the docs generation config...");
+        CopyDirectory(docsPath, docsTempPath);
+
+        Information("Preparing a versioned docs structure...");
+        CopyDirectory(docsTempPath.Combine("reference"), docsTempPath.Combine(nugetVersion));
         
         TransformTextFile(docFxTemplate, "{{", "}}")
             .WithToken("reference", nugetVersion)
+            .WithToken("sourceRoot", MakeAbsolute(Directory("./src")).FullPath)
             .Save(docFx);
         TransformTextFile(tocFxTemplate, "{{", "}}")
             .WithToken("reference", nugetVersion)
             .Save(toc);
 
-        DocFxBuild(docFx);
+        Information("Building the docs...");
+        StartProcess("docfx", docFx.FullPath);
 
         if(!DirectoryExists(artifactsPath)) CreateDirectory(artifactsPath);
+        
+        Information("Making a docs artifact...");
         Zip(tempOutput,
             System.IO.Path.Combine(artifactsPath.FullPath, $"Mayhap.{nugetVersion}.docs.zip"));
     });
 
 Task("PublishDocs")
-    .WithCriteria(() => shouldPublish)
+    // .WithCriteria(() => shouldPublish)
     .IsDependentOn("Version")
-    .IsDependentOn("GenerateDocs");
+    .IsDependentOn("GenerateDocs")
+    .Does(() =>
+        {
+            githubRepo = TransformText(githubRepo, "{{", "}}")
+                .WithToken("token", githubAccessToken)
+                .ToString();
+            var ghPagesPublishPath = DirectoryPath.FromString("../ghpages");
+
+            var articlesPath = DirectoryPath.FromString("../ghpages/articles");
+            var tempOutput = docsTempPath.Combine("_site");
+
+            Information("Cloning the docs branch...");
+            var cloneSettings = new GitCloneSettings()
+            {
+                BranchName = "gh-pages",
+                Checkout = true,
+            };
+            GitClone(githubRepo, ghPagesPublishPath, cloneSettings);
+
+
+            if(DirectoryExists(articlesPath)) DeleteDirectory(
+                articlesPath,
+                new DeleteDirectorySettings { Force = true, Recursive = true });
+
+            CopyFiles("./docs.tmp/_site/**/*", "../ghpages", true);
+
+            GitAddAll(ghPagesPublishPath);
+            if(GitHasStagedChanges(ghPagesPublishPath))
+            {
+                Information("Publishing the docs...");
+                GitCommit(ghPagesPublishPath, "AppVeyor", "appveyor@mayhap", $"Docs update {nugetVersion}");
+                GitPush(ghPagesPublishPath);
+            }
+            else
+            {
+                Information("No changes to publish");
+            }
+        });
 
 Task("Build")
     .IsDependentOn("PublishDocs")

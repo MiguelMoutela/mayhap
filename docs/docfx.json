@@ -11,7 +11,8 @@
       ],
       "dest": "reference",
       "disableGitFeatures": false,
-      "disableDefaultFilter": false
+      "disableDefaultFilter": false,
+      "properties": { "TargetFramework": "netstandard1.6" }
     }
   ],
   "build": {

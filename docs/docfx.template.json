@@ -4,14 +4,15 @@
       "src": [
         {
           "files": [
-            "src/**.csproj"
+            "Mayhap/Mayhap.csproj"
           ],
-          "src": ".."
+          "src": "{{sourceRoot}}"
         }
       ],
       "dest": "{{reference}}",
       "disableGitFeatures": false,
-      "disableDefaultFilter": false
+      "disableDefaultFilter": false,
+      "properties": { "TargetFramework": "netstandard1.6" }
     }
   ],
   "build": {

@@ -6,9 +6,13 @@ environment:
     secure: tUx7I2So0E8VbuxyJ2nYNkz2ryrcjKOYmTn3O5szPAicQ9+GTCT+ML+BLj6prsp6
   GITHUB_ACCESS_TOKEN:
     secure: as7zGFm/RJCI55uS1pEEUfT9plPrGwYloK0k5E1S48UJ1OZymfPiqfyfdiAyL7uh
+  GITHUB_REPO: https://appveyor:{{token}}@github.com/pmartynski/mayhap.git
+
+install:
+  - choco install docfx --version 2.40.11 -y
 
 build_script:
   - ps: ./build.ps1
 
 artifacts:
-  - path: 'artifacts/*.nupkg'
+  - path: artifacts/*
