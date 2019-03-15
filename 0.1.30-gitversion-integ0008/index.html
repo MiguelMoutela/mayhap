@@ -5,17 +5,17 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Mayhap </title>
+    <title>The API reference </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Mayhap ">
+    <meta name="title" content="The API reference ">
     <meta name="generator" content="docfx 2.40.12.0">
     
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles/docfx.vendor.css">
-    <link rel="stylesheet" href="styles/docfx.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <meta property="docfx:navrel" content="toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
     
     
     
@@ -34,8 +34,8 @@
                 <span class="icon-bar"></span>
               </button>
               
-              <a class="navbar-brand" href="index.html">
-                <img id="logo" class="svg" src="logo.svg" alt="">
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -60,29 +60,9 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="mayhap">Mayhap</h1>
+<h1 id="the-api-reference">The API reference</h1>
 
-<hr>
-<p>Mayhap is a tiny C# library inspired by Scott Wlaschins <a href="https://fsharpforfunandprofit.com/rop/">Railway Oriented Programming</a>.
-The main motivation behind the Mayhap project is to provide a set of structures and functions,
-to simplify processing of <code>optional</code> values. Mayhap usage helps to eliminate null-checking.
-<code>Maybe&lt;T&gt;</code> and <code>IOption&lt;T&gt;</code> types semantically suggests, that you should check if wrapped value really exists.</p>
-<p>Examples:</p>
-<pre><code class="lang-csharp">public Maybe&lt;CustomerDto&gt; Deposit(Guid id, decimal amount)
-{
-    return _repository.Find(id.ToString(&quot;n&quot;))
-        .Map(customerDto =&gt; _converter.ToEntity(customerDto), out var customer)
-        .Map(c =&gt; c.Deposit(amount))
-        .Map(_ =&gt; _converter.ToDto(customer))
-        .Map(customerDto =&gt; _repository.Update(customerDto));
-}
-</code></pre>
-<pre><code class="lang-csharp">IOption&lt;int&gt; x = &quot;1&quot;.Some().Map(s =&gt; Convert.ToInt32(s).Some());
-// x == Some&lt;int&gt;{ Value = 1 }
-
-IOption&lt;int&gt; y = Optional.None&lt;string&gt;().Map(s =&gt; Convert.ToInt32(s).Some());
-// y == None&lt;int&gt;
-</code></pre>
+<p>This section contains the full reference of Mayhap library.</p>
 </article>
           </div>
           
@@ -91,7 +71,7 @@ IOption&lt;int&gt; y = Optional.None&lt;string&gt;().Map(s =&gt; Convert.ToInt32
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/pmartynski/mayhap/blob/feature/gitversion-integration/docs.tmp/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/pmartynski/mayhap/blob/feature/gitversion-integration/docs.tmp/0.1.30-gitversion-integ0008/index.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -117,8 +97,8 @@ IOption&lt;int&gt; y = Optional.None&lt;string&gt;().Map(s =&gt; Convert.ToInt32
       </footer>
     </div>
     
-    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="styles/docfx.js"></script>
-    <script type="text/javascript" src="styles/main.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
   </body>
 </html>

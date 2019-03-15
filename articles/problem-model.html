@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Problem details model </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Problem details model ">
+    <meta name="generator" content="docfx 2.40.12.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="problem-details-model">Problem details model</h1>
+
+<p>Mayhap provides a <a href="https://tools.ietf.org/html/rfc7807">RFC7807</a> <code>Problem</code> struct to represent error information.
+<code>Maybe&lt;TValue&gt;</code> structure uses <code>IOption&lt;Problem&gt;</code> instance to indicate failed operation and to provide more details about the error.</p>
+<h2 id="problem-structure-construction"><code>Problem</code> structure construction</h2>
+<p>The <code>Problem</code> structure may be created using its constructor or using <code>ProblemBuilder</code> instance.
+To simplify problem instance creation Mayhap comes with a set of custom attributes, to decorate
+enum values.</p>
+<p>Example:</p>
+<pre><code class="lang-csharp">public enum ProblemType
+{
+    [ProblemType(&quot;VALIDATION_ERROR&quot;)]
+    [ProblemTitle(&quot;The data input is invalid&quot;)]
+    [ProblemStatus(400)]
+    ValidationError
+}
+
+public Maybe&lt;AccountBalance&gt; Deposit(long accountId, decimal amount)
+{
+    if(amount &lt;= 0)
+    {
+        return Problem.OfType(ProblemType.ValidationError)
+            .WithDetail(&quot;The amount value is too low.&quot;)
+            .WithInstance(&quot;/account/3215&quot;)
+            .WithProperty(
+                &quot;correlationId&quot;, 
+                &quot;a910ff48df1b41fb884cf05e1e68741d&quot;)
+            .Create()
+            .Fail&lt;AccountBalance&gt;()
+    }
+
+    Maybe&lt;Account&gt; account = _accountRepository.Find(accountId);
+    if(!account)
+    {
+        return Problem.New()
+            .WithType(&quot;ACCOUNT_NOT_FOUND&quot;)
+            .Create()
+            .Fail&lt;AccountBalance&gt;();
+    }
+
+    // ...
+}
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/pmartynski/mayhap/blob/feature/gitversion-integration/docs.tmp/articles/problem-model.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
