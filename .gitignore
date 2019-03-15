@@ -33,6 +33,7 @@ msbuild.wrn
 
 # docfx
 docs/_site/
+docs.tmp/
 
 #Cake
 tools/

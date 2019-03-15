@@ -26,6 +26,7 @@ var slnPath = MakeAbsolute(FilePath.FromString("./Mayhap.sln"));
 var mayhapCsprojPath = MakeAbsolute(FilePath.FromString("./src/Mayhap/Mayhap.csproj"));
 var artifactsPath = MakeAbsolute(DirectoryPath.FromString("./artifacts"));
 var docsPath = MakeAbsolute(DirectoryPath.FromString("./docs"));
+var docsTempPath = MakeAbsolute(DirectoryPath.FromString("./docs.tmp"));
 var packageArtifact = System.IO.Path.Combine(artifactsPath.FullPath, "Mayhap*.nuspec");
 
 ICollection<string> Props(params string[] properties)
@@ -50,6 +51,7 @@ Task("Clean")
 
         var docsOutput = System.IO.Path.Combine(docsPath.FullPath, "_site");
         if(DirectoryExists(docsOutput)) DeleteDirectory(docsOutput, deleteSettings);
+        if(DirectoryExists(docsTempPath)) DeleteDirectory(docsTempPath, deleteSettings);
     });
 
 Task("Version")
@@ -131,25 +133,28 @@ Task("GenerateDocs")
     .IsDependentOn("Version")
     .Does(() =>
     {
-        // var docFxTemplate = System.IO.Path.Combine(docsPath.FullPath, "docfx.json");
-        // var tocFxTemplate = System.IO.Path.Combine(docsPath.FullPath, "toc.template.yml");
-        // var docFx = System.IO.Path.Combine(docsPath.FullPath, $"docfx.{nugetVersion}.json");
-        // var toc = System.IO.Path.Combine(docsPath.FullPath, "toc.yml");
+        CopyDirectory(docsPath, docsTempPath);
+        var docFxTemplate = System.IO.Path.Combine(docsTempPath.FullPath, "docfx.template.json");
+        var tocFxTemplate = System.IO.Path.Combine(docsTempPath.FullPath, "toc.template.yml");
         
-        // TransformTextFile(docFxTemplate, "{{", "}}")
-            // .WithToken("reference", nugetVersion)
-            // .Save(docFx);
-        // TransformTextFile(tocFxTemplate, "{{", "}}")
-            // .WithToken("reference", nugetVersion)
-            // .Save(toc);
+        var docFx = System.IO.Path.Combine(docsTempPath.FullPath, "docfx.json");
+        var toc = System.IO.Path.Combine(docsTempPath.FullPath, "toc.yml");
+        MoveDirectory(docsTempPath.Combine("reference"), docsTempPath.Combine(nugetVersion));
 
-        var docFx = System.IO.Path.Combine(docsPath.FullPath, "docfx.json");
+        var tempOutput = System.IO.Path.Combine(docsTempPath.FullPath, "_site");
+        
+        TransformTextFile(docFxTemplate, "{{", "}}")
+            .WithToken("reference", nugetVersion)
+            .Save(docFx);
+        TransformTextFile(tocFxTemplate, "{{", "}}")
+            .WithToken("reference", nugetVersion)
+            .Save(toc);
+
         DocFxBuild(docFx);
 
         if(!DirectoryExists(artifactsPath)) CreateDirectory(artifactsPath);
-        Zip("./docs/_site",
+        Zip(tempOutput,
             System.IO.Path.Combine(artifactsPath.FullPath, $"Mayhap.{nugetVersion}.docs.zip"));
-        // DeleteFile(docFx);
     });
 
 Task("PublishDocs")
