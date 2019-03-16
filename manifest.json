@@ -5,11 +5,11 @@
   "files": [
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.Problem.yml",
+      "source_relative_path": "0.1/Mayhap.Error.Problem.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.Problem.html",
-          "hash": "89AWLgVrIjucHEwXMJDVlQ=="
+          "relative_path": "0.1/Mayhap.Error.Problem.html",
+          "hash": "mCF8y1SQ8YbQDmCHU2Wqmg=="
         }
       },
       "is_incremental": false,
@@ -17,11 +17,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.ProblemBuilder.yml",
+      "source_relative_path": "0.1/Mayhap.Error.ProblemBuilder.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.ProblemBuilder.html",
-          "hash": "unGYpq+7DbMfwu1jWm5+zQ=="
+          "relative_path": "0.1/Mayhap.Error.ProblemBuilder.html",
+          "hash": "QrFS1IVhTJvkaRCspfIu+A=="
         }
       },
       "is_incremental": false,
@@ -29,11 +29,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.ProblemDetailAttribute.yml",
+      "source_relative_path": "0.1/Mayhap.Error.ProblemDetailAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.ProblemDetailAttribute.html",
-          "hash": "0sWHqQOIbhVlCqmuow2nJA=="
+          "relative_path": "0.1/Mayhap.Error.ProblemDetailAttribute.html",
+          "hash": "0M4w9PaOiMa15+szK21dHA=="
         }
       },
       "is_incremental": false,
@@ -41,11 +41,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.ProblemInstanceAttribute.yml",
+      "source_relative_path": "0.1/Mayhap.Error.ProblemInstanceAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.ProblemInstanceAttribute.html",
-          "hash": "sD6oFn+kB9EV3/FJHVShAA=="
+          "relative_path": "0.1/Mayhap.Error.ProblemInstanceAttribute.html",
+          "hash": "8yuNt8guigDTLTKrokDlZw=="
         }
       },
       "is_incremental": false,
@@ -53,11 +53,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.ProblemPropertyAttribute.yml",
+      "source_relative_path": "0.1/Mayhap.Error.ProblemPropertyAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.ProblemPropertyAttribute.html",
-          "hash": "9sOag0HqhWWoPbjzi++Bxw=="
+          "relative_path": "0.1/Mayhap.Error.ProblemPropertyAttribute.html",
+          "hash": "HevYPnzVP21tAuRiy9jJfg=="
         }
       },
       "is_incremental": false,
@@ -65,11 +65,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.ProblemStatusAttribute.yml",
+      "source_relative_path": "0.1/Mayhap.Error.ProblemStatusAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.ProblemStatusAttribute.html",
-          "hash": "USsOKFybhl9MtUlkNO7nYw=="
+          "relative_path": "0.1/Mayhap.Error.ProblemStatusAttribute.html",
+          "hash": "el220gskrRJm3vfjSFrHsA=="
         }
       },
       "is_incremental": false,
@@ -77,11 +77,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.ProblemTitleAttribute.yml",
+      "source_relative_path": "0.1/Mayhap.Error.ProblemTitleAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.ProblemTitleAttribute.html",
-          "hash": "54JCiIJPu2TOe4GtJkjB7Q=="
+          "relative_path": "0.1/Mayhap.Error.ProblemTitleAttribute.html",
+          "hash": "bOAmVOttKGu/S+s/Fy4nyw=="
         }
       },
       "is_incremental": false,
@@ -89,11 +89,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.ProblemTypeAttribute.yml",
+      "source_relative_path": "0.1/Mayhap.Error.ProblemTypeAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.ProblemTypeAttribute.html",
-          "hash": "M0Vs1T8BiqZud05b55ZZZw=="
+          "relative_path": "0.1/Mayhap.Error.ProblemTypeAttribute.html",
+          "hash": "qkzWBShZMznuepps1jFJfw=="
         }
       },
       "is_incremental": false,
@@ -101,11 +101,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.yml",
+      "source_relative_path": "0.1/Mayhap.Error.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Error.html",
-          "hash": "1Ox5HjS0Z7ZJld4Fim8gxA=="
+          "relative_path": "0.1/Mayhap.Error.html",
+          "hash": "jDtcFsN7eIYJTroewSZtVg=="
         }
       },
       "is_incremental": false,
@@ -113,11 +113,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Maybe.Empty.yml",
+      "source_relative_path": "0.1/Mayhap.Maybe.Empty.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Maybe.Empty.html",
-          "hash": "ep068gOoFB9752yaFyW13w=="
+          "relative_path": "0.1/Mayhap.Maybe.Empty.html",
+          "hash": "ekQhW2lUem33IwZh/yPSRw=="
         }
       },
       "is_incremental": false,
@@ -125,11 +125,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Maybe.Maybe-1.yml",
+      "source_relative_path": "0.1/Mayhap.Maybe.Maybe-1.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Maybe.Maybe-1.html",
-          "hash": "lG3Dj9giPcLy3lj2usm/8g=="
+          "relative_path": "0.1/Mayhap.Maybe.Maybe-1.html",
+          "hash": "z98Bso3sX9kn1ClnX01wag=="
         }
       },
       "is_incremental": false,
@@ -137,11 +137,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Maybe.MaybeFactory.yml",
+      "source_relative_path": "0.1/Mayhap.Maybe.MaybeFactory.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Maybe.MaybeFactory.html",
-          "hash": "wUCNNBaovMoQRqpvtBrMKg=="
+          "relative_path": "0.1/Mayhap.Maybe.MaybeFactory.html",
+          "hash": "SAV2u+hEGg7UePEeKHRt3Q=="
         }
       },
       "is_incremental": false,
@@ -149,11 +149,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Maybe.Track.yml",
+      "source_relative_path": "0.1/Mayhap.Maybe.Track.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Maybe.Track.html",
-          "hash": "6P7Nm/9iib9UQSaE+Mqy0A=="
+          "relative_path": "0.1/Mayhap.Maybe.Track.html",
+          "hash": "oDhz5dznfWCvb2G90qxtxQ=="
         }
       },
       "is_incremental": false,
@@ -161,11 +161,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Maybe.yml",
+      "source_relative_path": "0.1/Mayhap.Maybe.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Maybe.html",
-          "hash": "zmlKrmDikInm+2KqC76F4Q=="
+          "relative_path": "0.1/Mayhap.Maybe.html",
+          "hash": "YO0xDqcMErjUhAQw526KPg=="
         }
       },
       "is_incremental": false,
@@ -173,11 +173,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Option.IOption-1.yml",
+      "source_relative_path": "0.1/Mayhap.Option.IOption-1.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Option.IOption-1.html",
-          "hash": "jGPfDSrgHY7cMkcJSWQL4g=="
+          "relative_path": "0.1/Mayhap.Option.IOption-1.html",
+          "hash": "jN7+bw+5ZZGAp0C78LVWMA=="
         }
       },
       "is_incremental": false,
@@ -185,11 +185,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Option.None-1.yml",
+      "source_relative_path": "0.1/Mayhap.Option.None-1.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Option.None-1.html",
-          "hash": "lejXuMxDpN9h/TZQ+nEorg=="
+          "relative_path": "0.1/Mayhap.Option.None-1.html",
+          "hash": "v/VsDnD2MriXZ1DjjkWhHQ=="
         }
       },
       "is_incremental": false,
@@ -197,11 +197,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Option.Optional.yml",
+      "source_relative_path": "0.1/Mayhap.Option.Optional.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Option.Optional.html",
-          "hash": "Udl6NWhvz4K5FXOB1staRA=="
+          "relative_path": "0.1/Mayhap.Option.Optional.html",
+          "hash": "4xFH+9bS8+aDJGKVnFq/IQ=="
         }
       },
       "is_incremental": false,
@@ -209,11 +209,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Option.Some-1.yml",
+      "source_relative_path": "0.1/Mayhap.Option.Some-1.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Option.Some-1.html",
-          "hash": "Hw8BLapQNA7KDbO/iBKH0g=="
+          "relative_path": "0.1/Mayhap.Option.Some-1.html",
+          "hash": "dmfumcFFfI4npzEsuiD7rA=="
         }
       },
       "is_incremental": false,
@@ -221,11 +221,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Option.Track.yml",
+      "source_relative_path": "0.1/Mayhap.Option.Track.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Option.Track.html",
-          "hash": "E7QaRNFgcZlOeMvMXQxgfQ=="
+          "relative_path": "0.1/Mayhap.Option.Track.html",
+          "hash": "3sSqCuJQ+pXWuWbwruCfGQ=="
         }
       },
       "is_incremental": false,
@@ -233,11 +233,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "0.1.30-gitversion-integ0008/Mayhap.Option.yml",
+      "source_relative_path": "0.1/Mayhap.Option.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/Mayhap.Option.html",
-          "hash": "28HNQc784njnAIR+iqK5+Q=="
+          "relative_path": "0.1/Mayhap.Option.html",
+          "hash": "qsnG4jmcvm/8GOWghKP7Lw=="
         }
       },
       "is_incremental": false,
@@ -245,11 +245,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "0.1.30-gitversion-integ0008/index.md",
+      "source_relative_path": "0.1/index.md",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/index.html",
-          "hash": "N0u0I7I+NDJKeemB7i6vYA=="
+          "relative_path": "0.1/index.html",
+          "hash": "TpMPjKwiFY21cXgcer0V6Q=="
         }
       },
       "is_incremental": false,
@@ -257,10 +257,10 @@
     },
     {
       "type": "Toc",
-      "source_relative_path": "0.1.30-gitversion-integ0008/toc.yml",
+      "source_relative_path": "0.1/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "0.1.30-gitversion-integ0008/toc.html",
+          "relative_path": "0.1/toc.html",
           "hash": "uw0Aj4vZxTV9+jaAq9m3VA=="
         }
       },
@@ -336,7 +336,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "m/9h5iKob+LHhfAHuioSMA=="
+          "hash": "gzyCd8HxE/5DRHBXocUWEQ=="
         }
       },
       "is_incremental": false,
