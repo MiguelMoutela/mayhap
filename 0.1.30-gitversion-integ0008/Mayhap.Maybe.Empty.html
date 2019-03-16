@@ -5,9 +5,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Maybe model </title>
+    <title>Struct Empty
+   </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Maybe model ">
+    <meta name="title" content="Struct Empty
+   ">
     <meta name="generator" content="docfx 2.40.11.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -66,60 +68,62 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
-<h1 id="maybe-model">Maybe model</h1>
-
-<p>The responsibility of the maybe model is to represent an operation result. To achieve that, <code>Maybe&lt;T&gt;</code>
-structure composes features of the other two models: <a href="problem-model.html">problem model</a> to represent
-error information, and <a href="option-model.html">option model</a> to represent value in case of success. To provide a fluent experience, <code>Maybe&lt;T&gt;</code> structure comes with a set of methods and extension methods.
-The structure is also immutable.</p>
-<h2 id="maybet-structure-construction"><code>Maybe&lt;T&gt;</code> structure construction</h2>
-<p>To create a <code>Maybe&lt;T&gt;</code> instance use <code>Success()</code>/<code>Fail()</code>extension methods. The <code>Success()</code> method,
-can be called from any type, while <code>Fail()</code> extends only <code>IProblem</code>, <code>string</code>, and <code>System.Enum</code> values.</p>
-<pre><code class="lang-csharp">Maybe&lt;string&gt; success = &quot;some string&quot;.Success();
-Maybe&lt;int&gt; fail = &quot;some error&quot;.Fail&lt;int&gt;();
-</code></pre>
-<h2 id="implicit-casting">Implicit casting</h2>
-<p>The <code>Maybe&lt;T&gt;</code> structure can be cast to <code>bool</code> and <code>T</code> types. Thanks to this feature, the <code>Maybe&lt;T&gt;</code>
-value can be used directly as a method parameter or a condition in an <code>if</code> statement.</p>
-<pre><code class="lang-csharp">bool isSuccess = &quot;some value&quot;.Success(); // true
-string val = &quot;some value&quot;.Success(); // val == &quot;some value&quot;
-
-// but be careful...
-object obj = &quot;some value&quot;.Success&lt;object&gt;(); // obj is Maybe&lt;string&gt; { Value = &quot;some value&quot; }
-</code></pre>
-<h2 id="chaining">Chaining</h2>
-<p>The <code>Maybe&lt;T&gt;</code> struct is most useful when dealing with more than one operation that may fail.
-Mayhap delivers a bunch of <code>Map()</code> methods which enable <code>Maybe&lt;T&gt;</code> chaining.</p>
-<pre><code class="lang-csharp">public Maybe&lt;CustomerDto&gt; Deposit(Guid id, decimal amount)
-{
-    return _repository.Find(id.ToString(&quot;n&quot;))
-        .Map(customerDto =&gt; _converter.ToEntity(customerDto), out var customer)
-        .Map(c =&gt; c.Deposit(amount))
-        .Map(_ =&gt; _converter.ToDto(customer))
-        .Map(customerDto =&gt; _repository.Update(customerDto));
-}
-</code></pre>
-<p>The example above is equivalent to:</p>
-<pre><code class="lang-csharp">public Maybe&lt;CustomerDto&gt; Deposit(Guid id, decimal amount)
-{
-    var customerDto = _repository.Find(id.ToString(&quot;n&quot;));
-
-    var customer = customer
-        ? _converter.ToEntity(customerDto)
-        : customer.Error.Fail&lt;Customer&gt;();
-
-    customer = customer.Deposit();
-
-    customerDto = customer
-        ? _converter.ToDto(customer)
-        : customer.Error.Fail&lt;CustomerDto&gt;();
-
-    return customerDto
-        ? _repository.Update(customerDto)
-        : customerDto;
-}
-</code></pre>
+            <article class="content wrap" id="_content" data-uid="Mayhap.Maybe.Empty">
+  
+  
+  <h1 id="Mayhap_Maybe_Empty" data-uid="Mayhap.Maybe.Empty" class="text-break">Struct Empty
+  </h1>
+  <div class="markdown level0 summary"><p>A helper struct made to represent an empty return value in <a class="xref" href="Mayhap.Maybe.Maybe-1.html">Maybe&lt;TValue&gt;</a> structure.</p>
+<p>See also: <a class="xref" href="Mayhap.Maybe.Maybe-1.html">Maybe&lt;TValue&gt;</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Mayhap.Maybe.html">Mayhap.Maybe</a></h6>
+  <h6><strong>Assembly</strong>: Mayhap.dll</h6>
+  <h5 id="Mayhap_Maybe_Empty_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct Empty</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/pmartynski/mayhap/new/feature/gitversion-integration/apiSpec/new?filename=Mayhap_Maybe_Empty_Success.md&amp;value=---%0Auid%3A%20Mayhap.Maybe.Empty.Success%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/pmartynski/mayhap/blob/feature/gitversion-integration/src/Mayhap/Maybe/Empty.cs/#L14">View Source</a>
+  </span>
+  <a id="Mayhap_Maybe_Empty_Success_" data-uid="Mayhap.Maybe.Empty.Success*"></a>
+  <h4 id="Mayhap_Maybe_Empty_Success" data-uid="Mayhap.Maybe.Empty.Success">Success()</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <a class="xref" href="Mayhap.Maybe.Empty.html">Empty</a> struct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Maybe&lt;Empty&gt; Success()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mayhap.Maybe.Maybe-1.html">Maybe</a>&lt;<a class="xref" href="Mayhap.Maybe.Empty.html">Empty</a>&gt;</td>
+        <td><p>The <a class="xref" href="Mayhap.Maybe.Empty.html">Empty</a> structure instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Mayhap.Maybe.MaybeFactory.html#Mayhap_Maybe_MaybeFactory_Success__1___0_">MaybeFactory.Success&lt;TValue&gt;(TValue)</a>
+  </div>
+  <div>
+      <a class="xref" href="Mayhap.Option.Optional.html#Mayhap_Option_Optional_Some__1___0_">Optional.Some&lt;TValue&gt;(TValue)</a>
+  </div>
 </article>
           </div>
           
@@ -128,7 +132,10 @@ Mayhap delivers a bunch of <code>Map()</code> methods which enable <code>Maybe&l
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/pmartynski/mayhap/blob/feature/gitversion-integration/docs.tmp/articles/maybe-model.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/pmartynski/mayhap/new/feature/gitversion-integration/apiSpec/new?filename=Mayhap_Maybe_Empty.md&amp;value=---%0Auid%3A%20Mayhap.Maybe.Empty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/pmartynski/mayhap/blob/feature/gitversion-integration/src/Mayhap/Maybe/Empty.cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
