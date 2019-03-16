@@ -10,6 +10,7 @@ var shouldPublish =
             && HasEnvironmentVariable("GITHUB_REPO")
             && EnvironmentVariable("APP_VEYOR_REPO_BRANCH")
                 .Equals("master", StringComparison.InvariantCulture);
+var shouldPublishDocs = false;
 
 // nuget parameters
 var nugetApiKey = 
@@ -33,6 +34,11 @@ var githubRepo =
         ? EnvironmentVariable("GITHUB_REPO") 
         : null;
 
+var commit =
+    HasEnvironmentVariable("APPVEYOR_REPO_COMMIT")
+        ? EnvironmentVariable("APPVEYOR_REPO_COMMIT")
+        : null;
+
 if(!HasEnvironmentVariable("GITHUB_ACCESS_TOKEN") || !HasEnvironmentVariable("GITHUB_REPO"))
 {
     Warning("GitHub path and/or PAT not specified");
@@ -42,16 +48,41 @@ if(!HasEnvironmentVariable("GITHUB_ACCESS_TOKEN") || !HasEnvironmentVariable("GI
 string nugetVersion = null;
 string informationalVersion = null;
 string version = null;
+string docsVersion = null;
 
+// paths
 var slnPath = MakeAbsolute(FilePath.FromString("./Mayhap.sln"));
 var mayhapCsprojPath = MakeAbsolute(FilePath.FromString("./src/Mayhap/Mayhap.csproj"));
 var artifactsPath = MakeAbsolute(DirectoryPath.FromString("./artifacts"));
+var packageArtifact = artifactsPath.CombineWithFilePath("Mayhap*.nuspec");
 var docsPath = MakeAbsolute(DirectoryPath.FromString("./docs"));
 var docsTempPath = MakeAbsolute(DirectoryPath.FromString("./docs.tmp"));
-var packageArtifact = artifactsPath.CombineWithFilePath("Mayhap*.nuspec");
+var docFxTemplate = docsTempPath.CombineWithFilePath("docfx.template.json");
+var tocFxTemplate = docsTempPath.CombineWithFilePath("toc.template.yml");
+var docFx = docsTempPath.CombineWithFilePath("docfx.json");
+var toc = docsTempPath.CombineWithFilePath("toc.yml");
+var docsTempOutput = docsTempPath.Combine("_site");
+var ghPagesPublishPath = DirectoryPath.FromString("../ghpages");
+var articlesPath = DirectoryPath.FromString("../ghpages/articles");
+var ghTagPublish = DirectoryPath.FromString("../tagPublish");
 
 ICollection<string> Props(params string[] properties)
     => properties;
+
+void Clone(string branch, string outputPath)
+{
+    githubRepo = TransformText(githubRepo, "{{", "}}")
+                .WithToken("token", githubAccessToken)
+                .ToString();
+
+    Information("Cloning the docs branch...");
+    var cloneSettings = new GitCloneSettings()
+    {
+        BranchName = branch,
+        Checkout = true,
+    };
+    GitClone(githubRepo, outputPath, cloneSettings);
+}
 
 Task("Clean")
     .Does(() => 
@@ -82,9 +113,13 @@ Task("Version")
         nugetVersion = gitVersion.NuGetVersionV2;
         informationalVersion = gitVersion.InformationalVersion;
         version = gitVersion.AssemblySemVer;
+        var v = new Version(version);
+        docsVersion = $"{v.Major}.{v.Minor}";
+        shouldPublishDocs = shouldPublish && v.Build == 0;
         Information("NuGetVersionV2: {0}", nugetVersion);
         Information("InformationalVersion: {0}", informationalVersion);
         Information("SemVer: {0}", version);
+        Information("DocsVersion: {0}", docsVersion);
     });
 
 Task("Compile")
@@ -131,6 +166,13 @@ Task("Pack")
             };
             settings.MSBuildSettings.Properties["PackageVersion"] = Props(nugetVersion);
             DotNetCorePack(mayhapCsprojPath.FullPath, settings);
+
+            ///
+            var tagName = $"v{nugetVersion}";
+            Clone("master", ghTagPublish.FullPath);
+            GitCheckout(ghTagPublish, commit);
+            GitTag(ghTagPublish, tagName);
+            GitPushRef(ghTagPublish, "origin", tagName);
         });
 
 Task("Publish")
@@ -154,24 +196,18 @@ Task("GenerateDocs")
     .IsDependentOn("Version")
     .Does(() =>
     {
-        var docFxTemplate = docsTempPath.CombineWithFilePath("docfx.template.json");
-        var tocFxTemplate = docsTempPath.CombineWithFilePath("toc.template.yml");
-        var docFx = docsTempPath.CombineWithFilePath("docfx.json");
-        var toc = docsTempPath.CombineWithFilePath("toc.yml");
-        var tempOutput = docsTempPath.Combine("_site");
-
         Information("Making a copy of the docs generation config...");
         CopyDirectory(docsPath, docsTempPath);
 
         Information("Preparing a versioned docs structure...");
-        CopyDirectory(docsTempPath.Combine("reference"), docsTempPath.Combine(nugetVersion));
+        CopyDirectory(docsTempPath.Combine("reference"), docsTempPath.Combine(docsVersion));
         
         TransformTextFile(docFxTemplate, "{{", "}}")
-            .WithToken("reference", nugetVersion)
+            .WithToken("reference", docsVersion)
             .WithToken("sourceRoot", MakeAbsolute(Directory("./src")).FullPath)
             .Save(docFx);
         TransformTextFile(tocFxTemplate, "{{", "}}")
-            .WithToken("reference", nugetVersion)
+            .WithToken("reference", docsVersion)
             .Save(toc);
 
         Information("Building the docs...");
@@ -180,44 +216,27 @@ Task("GenerateDocs")
         if(!DirectoryExists(artifactsPath)) CreateDirectory(artifactsPath);
         
         Information("Making a docs artifact...");
-        Zip(tempOutput,
-            artifactsPath.CombineWithFilePath($"Mayhap.{nugetVersion}.docs.zip"));
+        Zip(docsTempOutput,
+            artifactsPath.CombineWithFilePath($"Mayhap.{docsVersion}.docs.zip"));
     });
 
 Task("PublishDocs")
-    .WithCriteria(() => shouldPublish)
-    .IsDependentOn("Version")
+    .WithCriteria(shouldPublishDocs)
     .IsDependentOn("GenerateDocs")
     .Does(() =>
         {
-            githubRepo = TransformText(githubRepo, "{{", "}}")
-                .WithToken("token", githubAccessToken)
-                .ToString();
-            var ghPagesPublishPath = DirectoryPath.FromString("../ghpages");
-
-            var articlesPath = DirectoryPath.FromString("../ghpages/articles");
-            var tempOutput = docsTempPath.Combine("_site");
-
-            Information("Cloning the docs branch...");
-            var cloneSettings = new GitCloneSettings()
-            {
-                BranchName = "gh-pages",
-                Checkout = true,
-            };
-            GitClone(githubRepo, ghPagesPublishPath, cloneSettings);
-
-
+            Clone("gh-pages", ghPagesPublishPath.FullPath);
             if(DirectoryExists(articlesPath)) DeleteDirectory(
                 articlesPath,
                 new DeleteDirectorySettings { Force = true, Recursive = true });
 
-            CopyFiles("./docs.tmp/_site/**/*", "../ghpages", true);
+            CopyFiles(docsTempOutput.CombineWithFilePath("**/*").FullPath, ghPagesPublishPath, true);
 
             GitAddAll(ghPagesPublishPath);
             if(GitHasStagedChanges(ghPagesPublishPath))
             {
                 Information("Publishing the docs...");
-                GitCommit(ghPagesPublishPath, "AppVeyor", "appveyor@mayhap", $"Docs update {nugetVersion}");
+                GitCommit(ghPagesPublishPath, "AppVeyor", "appveyor@mayhap", $"Docs update: {docsVersion}");
                 GitPush(ghPagesPublishPath);
             }
             else
