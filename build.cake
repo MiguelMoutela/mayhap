@@ -1,7 +1,6 @@
 #addin nuget:?package=Cake.Git&version=0.19.0
-// #addin nuget:?package=Cake.DocFx&version=0.12.0
-// #tool nuget:?package=docfx.console&version=2.40.12
 
+// primary parameters
 var target = Argument("target", "Build");
 var configuration = Argument("configuration", "Release");
 var shouldPublish = 
@@ -11,11 +10,19 @@ var shouldPublish =
             && HasEnvironmentVariable("GITHUB_REPO")
             && EnvironmentVariable("APP_VEYOR_REPO_BRANCH")
                 .Equals("master", StringComparison.InvariantCulture);
+
+// nuget parameters
 var nugetApiKey = 
     HasEnvironmentVariable("NUGET_API_KEY") 
         ? EnvironmentVariable("NUGET_API_KEY") 
         : null;
 
+if(!HasEnvironmentVariable("NUGET_API_KEY"))
+{
+    Warning("Nuget API key not specified");
+}
+
+// github parameters
 var githubAccessToken = 
     HasEnvironmentVariable("GITHUB_ACCESS_TOKEN") 
         ? EnvironmentVariable("GITHUB_ACCESS_TOKEN") 
@@ -26,11 +33,12 @@ var githubRepo =
         ? EnvironmentVariable("GITHUB_REPO") 
         : null;
 
-if(!HasEnvironmentVariable("NUGET_API_KEY"))
+if(!HasEnvironmentVariable("GITHUB_ACCESS_TOKEN") || !HasEnvironmentVariable("GITHUB_REPO"))
 {
-    Warning("Nuget API key not specified");
+    Warning("GitHub path and/or PAT not specified");
 }
 
+// version paramteres
 string nugetVersion = null;
 string informationalVersion = null;
 string version = null;
@@ -173,11 +181,11 @@ Task("GenerateDocs")
         
         Information("Making a docs artifact...");
         Zip(tempOutput,
-            System.IO.Path.Combine(artifactsPath.FullPath, $"Mayhap.{nugetVersion}.docs.zip"));
+            artifactsPath.CombineWithFilePath($"Mayhap.{nugetVersion}.docs.zip"));
     });
 
 Task("PublishDocs")
-    // .WithCriteria(() => shouldPublish)
+    .WithCriteria(() => shouldPublish)
     .IsDependentOn("Version")
     .IsDependentOn("GenerateDocs")
     .Does(() =>
