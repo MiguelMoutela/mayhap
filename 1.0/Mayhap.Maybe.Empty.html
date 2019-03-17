@@ -5,9 +5,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Option model </title>
+    <title>Struct Empty
+   </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Option model ">
+    <meta name="title" content="Struct Empty
+   ">
     <meta name="generator" content="docfx 2.40.11.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -66,50 +68,62 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
-<h1 id="option-model">Option model</h1>
-
-<p>The option model represents a value which may, or may not exist. It's a C# adaptation of common
-functional pattern. The base of the option model is build of three types: <code>IOption&lt;T&gt;</code>, <code>Some&lt;T&gt;</code>
-and <code>None&lt;T&gt;</code>. <code>Some&lt;T&gt;</code> and <code>None&lt;T&gt;</code> structs are implementing <code>IOption&lt;T&gt;</code> interface.</p>
-<h2 id="ioptiont-construction"><code>IOption&lt;T&gt;</code> construction</h2>
-<p>A <code>Some&lt;T&gt;</code> instance can be constructed using <code>Some()</code> extension method called from any type, while
-<code>None&lt;T&gt;</code> can be instantiated using a static factory method <code>Optional.None&lt;T&gt;()</code>.</p>
-<pre><code class="lang-csharp">IOption&lt;string&gt; some = &quot;some value&quot;.Some();
-IOption&lt;string&gt; none = Optional.None&lt;string&gt;();
-</code></pre>
-<h2 id="unwrapping-value">Unwrapping value</h2>
-<p><code>Some&lt;T&gt;</code> and <code>None&lt;T&gt;</code> instances can be directly cast to <code>T</code> type. <code>Some&lt;T&gt;</code> will return a wrapped
-value of <code>T</code>, while <code>None&lt;T&gt;</code> will always return <code>default(T)</code>. This feature allows you to use both of
-those structures as a method parameter directly. In the case of <code>IOption&lt;T&gt;</code> interface instance,
-its <code>Unwrap()</code> method can be used.</p>
-<pre><code class="lang-csharp">Some&lt;string&gt; some = &quot;some value&quot;.Some();
-string value = some;
-
-None&lt;string&gt; none = Optional.None&lt;string&gt;();
-string willBeNull = none;
-
-IOption&lt;string&gt; option = some;
-string unwrapped = some.Unwrap();
-</code></pre>
-<h2 id="chaining">Chaining</h2>
-<p>The <code>IOption&lt;T&gt;</code> type is extended by a few <code>Map()</code> extension methods, which can help you in situations,
-when one optional value is a result of an operation on another one.</p>
-<pre><code class="lang-csharp">IOption&lt;int&gt; someInt = &quot;100&quot;.Some().Map(s =&gt; Convert.ToInt32(s).Some());
-</code></pre>
-<p>The example above is equivalent to:</p>
-<pre><code class="lang-csharp">IOption&lt;string&gt; someString = &quot;100&quot;.Some();
-
-IOption&lt;T&gt; optionalInt1;
-switch(someString)
-{
-    case Some&lt;string&gt; s:
-        optionalInt1 = Convert.ToInt32(s).Some();
-        break;
-    default:
-        optionalInt1 = Optional.None&lt;int&gt;();
-}
-</code></pre>
+            <article class="content wrap" id="_content" data-uid="Mayhap.Maybe.Empty">
+  
+  
+  <h1 id="Mayhap_Maybe_Empty" data-uid="Mayhap.Maybe.Empty" class="text-break">Struct Empty
+  </h1>
+  <div class="markdown level0 summary"><p>A helper struct made to represent an empty return value in <a class="xref" href="Mayhap.Maybe.Maybe-1.html">Maybe&lt;TValue&gt;</a> structure.</p>
+<p>See also: <a class="xref" href="Mayhap.Maybe.Maybe-1.html">Maybe&lt;TValue&gt;</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Mayhap.Maybe.html">Mayhap.Maybe</a></h6>
+  <h6><strong>Assembly</strong>: Mayhap.dll</h6>
+  <h5 id="Mayhap_Maybe_Empty_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct Empty</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/pmartynski/mayhap/new/master/apiSpec/new?filename=Mayhap_Maybe_Empty_Success.md&amp;value=---%0Auid%3A%20Mayhap.Maybe.Empty.Success%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/pmartynski/mayhap/blob/master/src/Mayhap/Maybe/Empty.cs/#L14">View Source</a>
+  </span>
+  <a id="Mayhap_Maybe_Empty_Success_" data-uid="Mayhap.Maybe.Empty.Success*"></a>
+  <h4 id="Mayhap_Maybe_Empty_Success" data-uid="Mayhap.Maybe.Empty.Success">Success()</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <a class="xref" href="Mayhap.Maybe.Empty.html">Empty</a> struct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Maybe&lt;Empty&gt; Success()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Mayhap.Maybe.Maybe-1.html">Maybe</a>&lt;<a class="xref" href="Mayhap.Maybe.Empty.html">Empty</a>&gt;</td>
+        <td><p>The <a class="xref" href="Mayhap.Maybe.Empty.html">Empty</a> structure instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Mayhap.Maybe.MaybeFactory.html#Mayhap_Maybe_MaybeFactory_Success__1___0_">MaybeFactory.Success&lt;TValue&gt;(TValue)</a>
+  </div>
+  <div>
+      <a class="xref" href="Mayhap.Option.Optional.html#Mayhap_Option_Optional_Some__1___0_">Optional.Some&lt;TValue&gt;(TValue)</a>
+  </div>
 </article>
           </div>
           
@@ -118,7 +132,10 @@ switch(someString)
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/pmartynski/mayhap/blob/master/docs.tmp/articles/option-model.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/pmartynski/mayhap/new/master/apiSpec/new?filename=Mayhap_Maybe_Empty.md&amp;value=---%0Auid%3A%20Mayhap.Maybe.Empty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/pmartynski/mayhap/blob/master/src/Mayhap/Maybe/Empty.cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

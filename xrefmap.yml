@@ -3,19 +3,19 @@ sorted: true
 references:
 - uid: Mayhap.Error
   name: Mayhap.Error
-  href: 0.1/Mayhap.Error.html
+  href: 1.0/Mayhap.Error.html
   commentId: N:Mayhap.Error
   fullName: Mayhap.Error
   nameWithType: Mayhap.Error
 - uid: Mayhap.Error.Problem
   name: Problem
-  href: 0.1/Mayhap.Error.Problem.html
+  href: 1.0/Mayhap.Error.Problem.html
   commentId: T:Mayhap.Error.Problem
   fullName: Mayhap.Error.Problem
   nameWithType: Problem
 - uid: Mayhap.Error.Problem.#ctor(System.String,System.String,System.String,System.String,System.Nullable{System.Int32},IReadOnlyDictionary{System.String,System.Object})
   name: Problem(String, String, String, String, Nullable<Int32>, IReadOnlyDictionary<String, Object>)
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem__ctor_System_String_System_String_System_String_System_String_System_Nullable_System_Int32__IReadOnlyDictionary_System_String_System_Object__
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem__ctor_System_String_System_String_System_String_System_String_System_Nullable_System_Int32__IReadOnlyDictionary_System_String_System_Object__
   commentId: M:Mayhap.Error.Problem.#ctor(System.String,System.String,System.String,System.String,System.Nullable{System.Int32},IReadOnlyDictionary{System.String,System.Object})
   name.vb: Problem(String, String, String, String, Nullable(Of Int32), IReadOnlyDictionary(Of String, Object))
   fullName: Mayhap.Error.Problem.Problem(System.String, System.String, System.String, System.String, System.Nullable<System.Int32>, IReadOnlyDictionary<System.String, System.Object>)
@@ -24,189 +24,189 @@ references:
   nameWithType.vb: Problem.Problem(String, String, String, String, Nullable(Of Int32), IReadOnlyDictionary(Of String, Object))
 - uid: Mayhap.Error.Problem.#ctor*
   name: Problem
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem__ctor_
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem__ctor_
   commentId: Overload:Mayhap.Error.Problem.#ctor
   isSpec: "True"
   fullName: Mayhap.Error.Problem.Problem
   nameWithType: Problem.Problem
 - uid: Mayhap.Error.Problem.Detail
   name: Detail
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Detail
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Detail
   commentId: P:Mayhap.Error.Problem.Detail
   fullName: Mayhap.Error.Problem.Detail
   nameWithType: Problem.Detail
 - uid: Mayhap.Error.Problem.Detail*
   name: Detail
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Detail_
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Detail_
   commentId: Overload:Mayhap.Error.Problem.Detail
   isSpec: "True"
   fullName: Mayhap.Error.Problem.Detail
   nameWithType: Problem.Detail
 - uid: Mayhap.Error.Problem.Instance
   name: Instance
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Instance
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Instance
   commentId: P:Mayhap.Error.Problem.Instance
   fullName: Mayhap.Error.Problem.Instance
   nameWithType: Problem.Instance
 - uid: Mayhap.Error.Problem.Instance*
   name: Instance
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Instance_
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Instance_
   commentId: Overload:Mayhap.Error.Problem.Instance
   isSpec: "True"
   fullName: Mayhap.Error.Problem.Instance
   nameWithType: Problem.Instance
 - uid: Mayhap.Error.Problem.New
   name: New()
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_New
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_New
   commentId: M:Mayhap.Error.Problem.New
   fullName: Mayhap.Error.Problem.New()
   nameWithType: Problem.New()
 - uid: Mayhap.Error.Problem.New*
   name: New
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_New_
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_New_
   commentId: Overload:Mayhap.Error.Problem.New
   isSpec: "True"
   fullName: Mayhap.Error.Problem.New
   nameWithType: Problem.New
 - uid: Mayhap.Error.Problem.OfType(Enum)
   name: OfType(Enum)
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_OfType_Enum_
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_OfType_Enum_
   commentId: M:Mayhap.Error.Problem.OfType(Enum)
   fullName: Mayhap.Error.Problem.OfType(Enum)
   nameWithType: Problem.OfType(Enum)
 - uid: Mayhap.Error.Problem.OfType*
   name: OfType
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_OfType_
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_OfType_
   commentId: Overload:Mayhap.Error.Problem.OfType
   isSpec: "True"
   fullName: Mayhap.Error.Problem.OfType
   nameWithType: Problem.OfType
 - uid: Mayhap.Error.Problem.Properties
   name: Properties
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Properties
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Properties
   commentId: P:Mayhap.Error.Problem.Properties
   fullName: Mayhap.Error.Problem.Properties
   nameWithType: Problem.Properties
 - uid: Mayhap.Error.Problem.Properties*
   name: Properties
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Properties_
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Properties_
   commentId: Overload:Mayhap.Error.Problem.Properties
   isSpec: "True"
   fullName: Mayhap.Error.Problem.Properties
   nameWithType: Problem.Properties
 - uid: Mayhap.Error.Problem.Status
   name: Status
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Status
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Status
   commentId: P:Mayhap.Error.Problem.Status
   fullName: Mayhap.Error.Problem.Status
   nameWithType: Problem.Status
 - uid: Mayhap.Error.Problem.Status*
   name: Status
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Status_
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Status_
   commentId: Overload:Mayhap.Error.Problem.Status
   isSpec: "True"
   fullName: Mayhap.Error.Problem.Status
   nameWithType: Problem.Status
 - uid: Mayhap.Error.Problem.Title
   name: Title
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Title
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Title
   commentId: P:Mayhap.Error.Problem.Title
   fullName: Mayhap.Error.Problem.Title
   nameWithType: Problem.Title
 - uid: Mayhap.Error.Problem.Title*
   name: Title
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Title_
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Title_
   commentId: Overload:Mayhap.Error.Problem.Title
   isSpec: "True"
   fullName: Mayhap.Error.Problem.Title
   nameWithType: Problem.Title
 - uid: Mayhap.Error.Problem.ToString
   name: ToString()
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_ToString
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_ToString
   commentId: M:Mayhap.Error.Problem.ToString
   fullName: Mayhap.Error.Problem.ToString()
   nameWithType: Problem.ToString()
 - uid: Mayhap.Error.Problem.ToString*
   name: ToString
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_ToString_
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_ToString_
   commentId: Overload:Mayhap.Error.Problem.ToString
   isSpec: "True"
   fullName: Mayhap.Error.Problem.ToString
   nameWithType: Problem.ToString
 - uid: Mayhap.Error.Problem.Type
   name: Type
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Type
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Type
   commentId: P:Mayhap.Error.Problem.Type
   fullName: Mayhap.Error.Problem.Type
   nameWithType: Problem.Type
 - uid: Mayhap.Error.Problem.Type*
   name: Type
-  href: 0.1/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Type_
+  href: 1.0/Mayhap.Error.Problem.html#Mayhap_Error_Problem_Type_
   commentId: Overload:Mayhap.Error.Problem.Type
   isSpec: "True"
   fullName: Mayhap.Error.Problem.Type
   nameWithType: Problem.Type
 - uid: Mayhap.Error.ProblemBuilder
   name: ProblemBuilder
-  href: 0.1/Mayhap.Error.ProblemBuilder.html
+  href: 1.0/Mayhap.Error.ProblemBuilder.html
   commentId: T:Mayhap.Error.ProblemBuilder
   fullName: Mayhap.Error.ProblemBuilder
   nameWithType: ProblemBuilder
 - uid: Mayhap.Error.ProblemBuilder.#ctor
   name: ProblemBuilder()
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder__ctor
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder__ctor
   commentId: M:Mayhap.Error.ProblemBuilder.#ctor
   fullName: Mayhap.Error.ProblemBuilder.ProblemBuilder()
   nameWithType: ProblemBuilder.ProblemBuilder()
 - uid: Mayhap.Error.ProblemBuilder.#ctor*
   name: ProblemBuilder
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder__ctor_
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder__ctor_
   commentId: Overload:Mayhap.Error.ProblemBuilder.#ctor
   isSpec: "True"
   fullName: Mayhap.Error.ProblemBuilder.ProblemBuilder
   nameWithType: ProblemBuilder.ProblemBuilder
 - uid: Mayhap.Error.ProblemBuilder.Create
   name: Create()
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_Create
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_Create
   commentId: M:Mayhap.Error.ProblemBuilder.Create
   fullName: Mayhap.Error.ProblemBuilder.Create()
   nameWithType: ProblemBuilder.Create()
 - uid: Mayhap.Error.ProblemBuilder.Create*
   name: Create
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_Create_
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_Create_
   commentId: Overload:Mayhap.Error.ProblemBuilder.Create
   isSpec: "True"
   fullName: Mayhap.Error.ProblemBuilder.Create
   nameWithType: ProblemBuilder.Create
 - uid: Mayhap.Error.ProblemBuilder.WithDetail(System.String)
   name: WithDetail(String)
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithDetail_System_String_
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithDetail_System_String_
   commentId: M:Mayhap.Error.ProblemBuilder.WithDetail(System.String)
   fullName: Mayhap.Error.ProblemBuilder.WithDetail(System.String)
   nameWithType: ProblemBuilder.WithDetail(String)
 - uid: Mayhap.Error.ProblemBuilder.WithDetail*
   name: WithDetail
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithDetail_
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithDetail_
   commentId: Overload:Mayhap.Error.ProblemBuilder.WithDetail
   isSpec: "True"
   fullName: Mayhap.Error.ProblemBuilder.WithDetail
   nameWithType: ProblemBuilder.WithDetail
 - uid: Mayhap.Error.ProblemBuilder.WithInstance(System.String)
   name: WithInstance(String)
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithInstance_System_String_
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithInstance_System_String_
   commentId: M:Mayhap.Error.ProblemBuilder.WithInstance(System.String)
   fullName: Mayhap.Error.ProblemBuilder.WithInstance(System.String)
   nameWithType: ProblemBuilder.WithInstance(String)
 - uid: Mayhap.Error.ProblemBuilder.WithInstance*
   name: WithInstance
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithInstance_
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithInstance_
   commentId: Overload:Mayhap.Error.ProblemBuilder.WithInstance
   isSpec: "True"
   fullName: Mayhap.Error.ProblemBuilder.WithInstance
   nameWithType: ProblemBuilder.WithInstance
 - uid: Mayhap.Error.ProblemBuilder.WithProperties(Dictionary{System.String,System.Object})
   name: WithProperties(Dictionary<String, Object>)
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithProperties_Dictionary_System_String_System_Object__
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithProperties_Dictionary_System_String_System_Object__
   commentId: M:Mayhap.Error.ProblemBuilder.WithProperties(Dictionary{System.String,System.Object})
   name.vb: WithProperties(Dictionary(Of String, Object))
   fullName: Mayhap.Error.ProblemBuilder.WithProperties(Dictionary<System.String, System.Object>)
@@ -215,27 +215,27 @@ references:
   nameWithType.vb: ProblemBuilder.WithProperties(Dictionary(Of String, Object))
 - uid: Mayhap.Error.ProblemBuilder.WithProperties*
   name: WithProperties
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithProperties_
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithProperties_
   commentId: Overload:Mayhap.Error.ProblemBuilder.WithProperties
   isSpec: "True"
   fullName: Mayhap.Error.ProblemBuilder.WithProperties
   nameWithType: ProblemBuilder.WithProperties
 - uid: Mayhap.Error.ProblemBuilder.WithProperty(System.String,System.Object)
   name: WithProperty(String, Object)
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithProperty_System_String_System_Object_
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithProperty_System_String_System_Object_
   commentId: M:Mayhap.Error.ProblemBuilder.WithProperty(System.String,System.Object)
   fullName: Mayhap.Error.ProblemBuilder.WithProperty(System.String, System.Object)
   nameWithType: ProblemBuilder.WithProperty(String, Object)
 - uid: Mayhap.Error.ProblemBuilder.WithProperty*
   name: WithProperty
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithProperty_
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithProperty_
   commentId: Overload:Mayhap.Error.ProblemBuilder.WithProperty
   isSpec: "True"
   fullName: Mayhap.Error.ProblemBuilder.WithProperty
   nameWithType: ProblemBuilder.WithProperty
 - uid: Mayhap.Error.ProblemBuilder.WithStatus(System.Nullable{System.Int32})
   name: WithStatus(Nullable<Int32>)
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithStatus_System_Nullable_System_Int32__
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithStatus_System_Nullable_System_Int32__
   commentId: M:Mayhap.Error.ProblemBuilder.WithStatus(System.Nullable{System.Int32})
   name.vb: WithStatus(Nullable(Of Int32))
   fullName: Mayhap.Error.ProblemBuilder.WithStatus(System.Nullable<System.Int32>)
@@ -244,270 +244,270 @@ references:
   nameWithType.vb: ProblemBuilder.WithStatus(Nullable(Of Int32))
 - uid: Mayhap.Error.ProblemBuilder.WithStatus*
   name: WithStatus
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithStatus_
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithStatus_
   commentId: Overload:Mayhap.Error.ProblemBuilder.WithStatus
   isSpec: "True"
   fullName: Mayhap.Error.ProblemBuilder.WithStatus
   nameWithType: ProblemBuilder.WithStatus
 - uid: Mayhap.Error.ProblemBuilder.WithTitle(System.String)
   name: WithTitle(String)
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithTitle_System_String_
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithTitle_System_String_
   commentId: M:Mayhap.Error.ProblemBuilder.WithTitle(System.String)
   fullName: Mayhap.Error.ProblemBuilder.WithTitle(System.String)
   nameWithType: ProblemBuilder.WithTitle(String)
 - uid: Mayhap.Error.ProblemBuilder.WithTitle*
   name: WithTitle
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithTitle_
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithTitle_
   commentId: Overload:Mayhap.Error.ProblemBuilder.WithTitle
   isSpec: "True"
   fullName: Mayhap.Error.ProblemBuilder.WithTitle
   nameWithType: ProblemBuilder.WithTitle
 - uid: Mayhap.Error.ProblemBuilder.WithType(System.String)
   name: WithType(String)
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithType_System_String_
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithType_System_String_
   commentId: M:Mayhap.Error.ProblemBuilder.WithType(System.String)
   fullName: Mayhap.Error.ProblemBuilder.WithType(System.String)
   nameWithType: ProblemBuilder.WithType(String)
 - uid: Mayhap.Error.ProblemBuilder.WithType*
   name: WithType
-  href: 0.1/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithType_
+  href: 1.0/Mayhap.Error.ProblemBuilder.html#Mayhap_Error_ProblemBuilder_WithType_
   commentId: Overload:Mayhap.Error.ProblemBuilder.WithType
   isSpec: "True"
   fullName: Mayhap.Error.ProblemBuilder.WithType
   nameWithType: ProblemBuilder.WithType
 - uid: Mayhap.Error.ProblemDetailAttribute
   name: ProblemDetailAttribute
-  href: 0.1/Mayhap.Error.ProblemDetailAttribute.html
+  href: 1.0/Mayhap.Error.ProblemDetailAttribute.html
   commentId: T:Mayhap.Error.ProblemDetailAttribute
   fullName: Mayhap.Error.ProblemDetailAttribute
   nameWithType: ProblemDetailAttribute
 - uid: Mayhap.Error.ProblemDetailAttribute.#ctor(System.String)
   name: ProblemDetailAttribute(String)
-  href: 0.1/Mayhap.Error.ProblemDetailAttribute.html#Mayhap_Error_ProblemDetailAttribute__ctor_System_String_
+  href: 1.0/Mayhap.Error.ProblemDetailAttribute.html#Mayhap_Error_ProblemDetailAttribute__ctor_System_String_
   commentId: M:Mayhap.Error.ProblemDetailAttribute.#ctor(System.String)
   fullName: Mayhap.Error.ProblemDetailAttribute.ProblemDetailAttribute(System.String)
   nameWithType: ProblemDetailAttribute.ProblemDetailAttribute(String)
 - uid: Mayhap.Error.ProblemDetailAttribute.#ctor*
   name: ProblemDetailAttribute
-  href: 0.1/Mayhap.Error.ProblemDetailAttribute.html#Mayhap_Error_ProblemDetailAttribute__ctor_
+  href: 1.0/Mayhap.Error.ProblemDetailAttribute.html#Mayhap_Error_ProblemDetailAttribute__ctor_
   commentId: Overload:Mayhap.Error.ProblemDetailAttribute.#ctor
   isSpec: "True"
   fullName: Mayhap.Error.ProblemDetailAttribute.ProblemDetailAttribute
   nameWithType: ProblemDetailAttribute.ProblemDetailAttribute
 - uid: Mayhap.Error.ProblemDetailAttribute.Value
   name: Value
-  href: 0.1/Mayhap.Error.ProblemDetailAttribute.html#Mayhap_Error_ProblemDetailAttribute_Value
+  href: 1.0/Mayhap.Error.ProblemDetailAttribute.html#Mayhap_Error_ProblemDetailAttribute_Value
   commentId: P:Mayhap.Error.ProblemDetailAttribute.Value
   fullName: Mayhap.Error.ProblemDetailAttribute.Value
   nameWithType: ProblemDetailAttribute.Value
 - uid: Mayhap.Error.ProblemDetailAttribute.Value*
   name: Value
-  href: 0.1/Mayhap.Error.ProblemDetailAttribute.html#Mayhap_Error_ProblemDetailAttribute_Value_
+  href: 1.0/Mayhap.Error.ProblemDetailAttribute.html#Mayhap_Error_ProblemDetailAttribute_Value_
   commentId: Overload:Mayhap.Error.ProblemDetailAttribute.Value
   isSpec: "True"
   fullName: Mayhap.Error.ProblemDetailAttribute.Value
   nameWithType: ProblemDetailAttribute.Value
 - uid: Mayhap.Error.ProblemInstanceAttribute
   name: ProblemInstanceAttribute
-  href: 0.1/Mayhap.Error.ProblemInstanceAttribute.html
+  href: 1.0/Mayhap.Error.ProblemInstanceAttribute.html
   commentId: T:Mayhap.Error.ProblemInstanceAttribute
   fullName: Mayhap.Error.ProblemInstanceAttribute
   nameWithType: ProblemInstanceAttribute
 - uid: Mayhap.Error.ProblemInstanceAttribute.#ctor(System.String)
   name: ProblemInstanceAttribute(String)
-  href: 0.1/Mayhap.Error.ProblemInstanceAttribute.html#Mayhap_Error_ProblemInstanceAttribute__ctor_System_String_
+  href: 1.0/Mayhap.Error.ProblemInstanceAttribute.html#Mayhap_Error_ProblemInstanceAttribute__ctor_System_String_
   commentId: M:Mayhap.Error.ProblemInstanceAttribute.#ctor(System.String)
   fullName: Mayhap.Error.ProblemInstanceAttribute.ProblemInstanceAttribute(System.String)
   nameWithType: ProblemInstanceAttribute.ProblemInstanceAttribute(String)
 - uid: Mayhap.Error.ProblemInstanceAttribute.#ctor*
   name: ProblemInstanceAttribute
-  href: 0.1/Mayhap.Error.ProblemInstanceAttribute.html#Mayhap_Error_ProblemInstanceAttribute__ctor_
+  href: 1.0/Mayhap.Error.ProblemInstanceAttribute.html#Mayhap_Error_ProblemInstanceAttribute__ctor_
   commentId: Overload:Mayhap.Error.ProblemInstanceAttribute.#ctor
   isSpec: "True"
   fullName: Mayhap.Error.ProblemInstanceAttribute.ProblemInstanceAttribute
   nameWithType: ProblemInstanceAttribute.ProblemInstanceAttribute
 - uid: Mayhap.Error.ProblemInstanceAttribute.Value
   name: Value
-  href: 0.1/Mayhap.Error.ProblemInstanceAttribute.html#Mayhap_Error_ProblemInstanceAttribute_Value
+  href: 1.0/Mayhap.Error.ProblemInstanceAttribute.html#Mayhap_Error_ProblemInstanceAttribute_Value
   commentId: P:Mayhap.Error.ProblemInstanceAttribute.Value
   fullName: Mayhap.Error.ProblemInstanceAttribute.Value
   nameWithType: ProblemInstanceAttribute.Value
 - uid: Mayhap.Error.ProblemInstanceAttribute.Value*
   name: Value
-  href: 0.1/Mayhap.Error.ProblemInstanceAttribute.html#Mayhap_Error_ProblemInstanceAttribute_Value_
+  href: 1.0/Mayhap.Error.ProblemInstanceAttribute.html#Mayhap_Error_ProblemInstanceAttribute_Value_
   commentId: Overload:Mayhap.Error.ProblemInstanceAttribute.Value
   isSpec: "True"
   fullName: Mayhap.Error.ProblemInstanceAttribute.Value
   nameWithType: ProblemInstanceAttribute.Value
 - uid: Mayhap.Error.ProblemPropertyAttribute
   name: ProblemPropertyAttribute
-  href: 0.1/Mayhap.Error.ProblemPropertyAttribute.html
+  href: 1.0/Mayhap.Error.ProblemPropertyAttribute.html
   commentId: T:Mayhap.Error.ProblemPropertyAttribute
   fullName: Mayhap.Error.ProblemPropertyAttribute
   nameWithType: ProblemPropertyAttribute
 - uid: Mayhap.Error.ProblemPropertyAttribute.#ctor(System.String,System.Object)
   name: ProblemPropertyAttribute(String, Object)
-  href: 0.1/Mayhap.Error.ProblemPropertyAttribute.html#Mayhap_Error_ProblemPropertyAttribute__ctor_System_String_System_Object_
+  href: 1.0/Mayhap.Error.ProblemPropertyAttribute.html#Mayhap_Error_ProblemPropertyAttribute__ctor_System_String_System_Object_
   commentId: M:Mayhap.Error.ProblemPropertyAttribute.#ctor(System.String,System.Object)
   fullName: Mayhap.Error.ProblemPropertyAttribute.ProblemPropertyAttribute(System.String, System.Object)
   nameWithType: ProblemPropertyAttribute.ProblemPropertyAttribute(String, Object)
 - uid: Mayhap.Error.ProblemPropertyAttribute.#ctor*
   name: ProblemPropertyAttribute
-  href: 0.1/Mayhap.Error.ProblemPropertyAttribute.html#Mayhap_Error_ProblemPropertyAttribute__ctor_
+  href: 1.0/Mayhap.Error.ProblemPropertyAttribute.html#Mayhap_Error_ProblemPropertyAttribute__ctor_
   commentId: Overload:Mayhap.Error.ProblemPropertyAttribute.#ctor
   isSpec: "True"
   fullName: Mayhap.Error.ProblemPropertyAttribute.ProblemPropertyAttribute
   nameWithType: ProblemPropertyAttribute.ProblemPropertyAttribute
 - uid: Mayhap.Error.ProblemPropertyAttribute.Name
   name: Name
-  href: 0.1/Mayhap.Error.ProblemPropertyAttribute.html#Mayhap_Error_ProblemPropertyAttribute_Name
+  href: 1.0/Mayhap.Error.ProblemPropertyAttribute.html#Mayhap_Error_ProblemPropertyAttribute_Name
   commentId: P:Mayhap.Error.ProblemPropertyAttribute.Name
   fullName: Mayhap.Error.ProblemPropertyAttribute.Name
   nameWithType: ProblemPropertyAttribute.Name
 - uid: Mayhap.Error.ProblemPropertyAttribute.Name*
   name: Name
-  href: 0.1/Mayhap.Error.ProblemPropertyAttribute.html#Mayhap_Error_ProblemPropertyAttribute_Name_
+  href: 1.0/Mayhap.Error.ProblemPropertyAttribute.html#Mayhap_Error_ProblemPropertyAttribute_Name_
   commentId: Overload:Mayhap.Error.ProblemPropertyAttribute.Name
   isSpec: "True"
   fullName: Mayhap.Error.ProblemPropertyAttribute.Name
   nameWithType: ProblemPropertyAttribute.Name
 - uid: Mayhap.Error.ProblemPropertyAttribute.Value
   name: Value
-  href: 0.1/Mayhap.Error.ProblemPropertyAttribute.html#Mayhap_Error_ProblemPropertyAttribute_Value
+  href: 1.0/Mayhap.Error.ProblemPropertyAttribute.html#Mayhap_Error_ProblemPropertyAttribute_Value
   commentId: P:Mayhap.Error.ProblemPropertyAttribute.Value
   fullName: Mayhap.Error.ProblemPropertyAttribute.Value
   nameWithType: ProblemPropertyAttribute.Value
 - uid: Mayhap.Error.ProblemPropertyAttribute.Value*
   name: Value
-  href: 0.1/Mayhap.Error.ProblemPropertyAttribute.html#Mayhap_Error_ProblemPropertyAttribute_Value_
+  href: 1.0/Mayhap.Error.ProblemPropertyAttribute.html#Mayhap_Error_ProblemPropertyAttribute_Value_
   commentId: Overload:Mayhap.Error.ProblemPropertyAttribute.Value
   isSpec: "True"
   fullName: Mayhap.Error.ProblemPropertyAttribute.Value
   nameWithType: ProblemPropertyAttribute.Value
 - uid: Mayhap.Error.ProblemStatusAttribute
   name: ProblemStatusAttribute
-  href: 0.1/Mayhap.Error.ProblemStatusAttribute.html
+  href: 1.0/Mayhap.Error.ProblemStatusAttribute.html
   commentId: T:Mayhap.Error.ProblemStatusAttribute
   fullName: Mayhap.Error.ProblemStatusAttribute
   nameWithType: ProblemStatusAttribute
 - uid: Mayhap.Error.ProblemStatusAttribute.#ctor(System.Int32)
   name: ProblemStatusAttribute(Int32)
-  href: 0.1/Mayhap.Error.ProblemStatusAttribute.html#Mayhap_Error_ProblemStatusAttribute__ctor_System_Int32_
+  href: 1.0/Mayhap.Error.ProblemStatusAttribute.html#Mayhap_Error_ProblemStatusAttribute__ctor_System_Int32_
   commentId: M:Mayhap.Error.ProblemStatusAttribute.#ctor(System.Int32)
   fullName: Mayhap.Error.ProblemStatusAttribute.ProblemStatusAttribute(System.Int32)
   nameWithType: ProblemStatusAttribute.ProblemStatusAttribute(Int32)
 - uid: Mayhap.Error.ProblemStatusAttribute.#ctor*
   name: ProblemStatusAttribute
-  href: 0.1/Mayhap.Error.ProblemStatusAttribute.html#Mayhap_Error_ProblemStatusAttribute__ctor_
+  href: 1.0/Mayhap.Error.ProblemStatusAttribute.html#Mayhap_Error_ProblemStatusAttribute__ctor_
   commentId: Overload:Mayhap.Error.ProblemStatusAttribute.#ctor
   isSpec: "True"
   fullName: Mayhap.Error.ProblemStatusAttribute.ProblemStatusAttribute
   nameWithType: ProblemStatusAttribute.ProblemStatusAttribute
 - uid: Mayhap.Error.ProblemStatusAttribute.Value
   name: Value
-  href: 0.1/Mayhap.Error.ProblemStatusAttribute.html#Mayhap_Error_ProblemStatusAttribute_Value
+  href: 1.0/Mayhap.Error.ProblemStatusAttribute.html#Mayhap_Error_ProblemStatusAttribute_Value
   commentId: P:Mayhap.Error.ProblemStatusAttribute.Value
   fullName: Mayhap.Error.ProblemStatusAttribute.Value
   nameWithType: ProblemStatusAttribute.Value
 - uid: Mayhap.Error.ProblemStatusAttribute.Value*
   name: Value
-  href: 0.1/Mayhap.Error.ProblemStatusAttribute.html#Mayhap_Error_ProblemStatusAttribute_Value_
+  href: 1.0/Mayhap.Error.ProblemStatusAttribute.html#Mayhap_Error_ProblemStatusAttribute_Value_
   commentId: Overload:Mayhap.Error.ProblemStatusAttribute.Value
   isSpec: "True"
   fullName: Mayhap.Error.ProblemStatusAttribute.Value
   nameWithType: ProblemStatusAttribute.Value
 - uid: Mayhap.Error.ProblemTitleAttribute
   name: ProblemTitleAttribute
-  href: 0.1/Mayhap.Error.ProblemTitleAttribute.html
+  href: 1.0/Mayhap.Error.ProblemTitleAttribute.html
   commentId: T:Mayhap.Error.ProblemTitleAttribute
   fullName: Mayhap.Error.ProblemTitleAttribute
   nameWithType: ProblemTitleAttribute
 - uid: Mayhap.Error.ProblemTitleAttribute.#ctor(System.String)
   name: ProblemTitleAttribute(String)
-  href: 0.1/Mayhap.Error.ProblemTitleAttribute.html#Mayhap_Error_ProblemTitleAttribute__ctor_System_String_
+  href: 1.0/Mayhap.Error.ProblemTitleAttribute.html#Mayhap_Error_ProblemTitleAttribute__ctor_System_String_
   commentId: M:Mayhap.Error.ProblemTitleAttribute.#ctor(System.String)
   fullName: Mayhap.Error.ProblemTitleAttribute.ProblemTitleAttribute(System.String)
   nameWithType: ProblemTitleAttribute.ProblemTitleAttribute(String)
 - uid: Mayhap.Error.ProblemTitleAttribute.#ctor*
   name: ProblemTitleAttribute
-  href: 0.1/Mayhap.Error.ProblemTitleAttribute.html#Mayhap_Error_ProblemTitleAttribute__ctor_
+  href: 1.0/Mayhap.Error.ProblemTitleAttribute.html#Mayhap_Error_ProblemTitleAttribute__ctor_
   commentId: Overload:Mayhap.Error.ProblemTitleAttribute.#ctor
   isSpec: "True"
   fullName: Mayhap.Error.ProblemTitleAttribute.ProblemTitleAttribute
   nameWithType: ProblemTitleAttribute.ProblemTitleAttribute
 - uid: Mayhap.Error.ProblemTitleAttribute.Value
   name: Value
-  href: 0.1/Mayhap.Error.ProblemTitleAttribute.html#Mayhap_Error_ProblemTitleAttribute_Value
+  href: 1.0/Mayhap.Error.ProblemTitleAttribute.html#Mayhap_Error_ProblemTitleAttribute_Value
   commentId: P:Mayhap.Error.ProblemTitleAttribute.Value
   fullName: Mayhap.Error.ProblemTitleAttribute.Value
   nameWithType: ProblemTitleAttribute.Value
 - uid: Mayhap.Error.ProblemTitleAttribute.Value*
   name: Value
-  href: 0.1/Mayhap.Error.ProblemTitleAttribute.html#Mayhap_Error_ProblemTitleAttribute_Value_
+  href: 1.0/Mayhap.Error.ProblemTitleAttribute.html#Mayhap_Error_ProblemTitleAttribute_Value_
   commentId: Overload:Mayhap.Error.ProblemTitleAttribute.Value
   isSpec: "True"
   fullName: Mayhap.Error.ProblemTitleAttribute.Value
   nameWithType: ProblemTitleAttribute.Value
 - uid: Mayhap.Error.ProblemTypeAttribute
   name: ProblemTypeAttribute
-  href: 0.1/Mayhap.Error.ProblemTypeAttribute.html
+  href: 1.0/Mayhap.Error.ProblemTypeAttribute.html
   commentId: T:Mayhap.Error.ProblemTypeAttribute
   fullName: Mayhap.Error.ProblemTypeAttribute
   nameWithType: ProblemTypeAttribute
 - uid: Mayhap.Error.ProblemTypeAttribute.#ctor(System.String)
   name: ProblemTypeAttribute(String)
-  href: 0.1/Mayhap.Error.ProblemTypeAttribute.html#Mayhap_Error_ProblemTypeAttribute__ctor_System_String_
+  href: 1.0/Mayhap.Error.ProblemTypeAttribute.html#Mayhap_Error_ProblemTypeAttribute__ctor_System_String_
   commentId: M:Mayhap.Error.ProblemTypeAttribute.#ctor(System.String)
   fullName: Mayhap.Error.ProblemTypeAttribute.ProblemTypeAttribute(System.String)
   nameWithType: ProblemTypeAttribute.ProblemTypeAttribute(String)
 - uid: Mayhap.Error.ProblemTypeAttribute.#ctor*
   name: ProblemTypeAttribute
-  href: 0.1/Mayhap.Error.ProblemTypeAttribute.html#Mayhap_Error_ProblemTypeAttribute__ctor_
+  href: 1.0/Mayhap.Error.ProblemTypeAttribute.html#Mayhap_Error_ProblemTypeAttribute__ctor_
   commentId: Overload:Mayhap.Error.ProblemTypeAttribute.#ctor
   isSpec: "True"
   fullName: Mayhap.Error.ProblemTypeAttribute.ProblemTypeAttribute
   nameWithType: ProblemTypeAttribute.ProblemTypeAttribute
 - uid: Mayhap.Error.ProblemTypeAttribute.Value
   name: Value
-  href: 0.1/Mayhap.Error.ProblemTypeAttribute.html#Mayhap_Error_ProblemTypeAttribute_Value
+  href: 1.0/Mayhap.Error.ProblemTypeAttribute.html#Mayhap_Error_ProblemTypeAttribute_Value
   commentId: P:Mayhap.Error.ProblemTypeAttribute.Value
   fullName: Mayhap.Error.ProblemTypeAttribute.Value
   nameWithType: ProblemTypeAttribute.Value
 - uid: Mayhap.Error.ProblemTypeAttribute.Value*
   name: Value
-  href: 0.1/Mayhap.Error.ProblemTypeAttribute.html#Mayhap_Error_ProblemTypeAttribute_Value_
+  href: 1.0/Mayhap.Error.ProblemTypeAttribute.html#Mayhap_Error_ProblemTypeAttribute_Value_
   commentId: Overload:Mayhap.Error.ProblemTypeAttribute.Value
   isSpec: "True"
   fullName: Mayhap.Error.ProblemTypeAttribute.Value
   nameWithType: ProblemTypeAttribute.Value
 - uid: Mayhap.Maybe
   name: Mayhap.Maybe
-  href: 0.1/Mayhap.Maybe.html
+  href: 1.0/Mayhap.Maybe.html
   commentId: N:Mayhap.Maybe
   fullName: Mayhap.Maybe
   nameWithType: Mayhap.Maybe
 - uid: Mayhap.Maybe.Empty
   name: Empty
-  href: 0.1/Mayhap.Maybe.Empty.html
+  href: 1.0/Mayhap.Maybe.Empty.html
   commentId: T:Mayhap.Maybe.Empty
   fullName: Mayhap.Maybe.Empty
   nameWithType: Empty
 - uid: Mayhap.Maybe.Empty.Success
   name: Success()
-  href: 0.1/Mayhap.Maybe.Empty.html#Mayhap_Maybe_Empty_Success
+  href: 1.0/Mayhap.Maybe.Empty.html#Mayhap_Maybe_Empty_Success
   commentId: M:Mayhap.Maybe.Empty.Success
   fullName: Mayhap.Maybe.Empty.Success()
   nameWithType: Empty.Success()
 - uid: Mayhap.Maybe.Empty.Success*
   name: Success
-  href: 0.1/Mayhap.Maybe.Empty.html#Mayhap_Maybe_Empty_Success_
+  href: 1.0/Mayhap.Maybe.Empty.html#Mayhap_Maybe_Empty_Success_
   commentId: Overload:Mayhap.Maybe.Empty.Success
   isSpec: "True"
   fullName: Mayhap.Maybe.Empty.Success
   nameWithType: Empty.Success
 - uid: Mayhap.Maybe.Maybe`1
   name: Maybe<TValue>
-  href: 0.1/Mayhap.Maybe.Maybe-1.html
+  href: 1.0/Mayhap.Maybe.Maybe-1.html
   commentId: T:Mayhap.Maybe.Maybe`1
   name.vb: Maybe(Of TValue)
   fullName: Mayhap.Maybe.Maybe<TValue>
@@ -516,7 +516,7 @@ references:
   nameWithType.vb: Maybe(Of TValue)
 - uid: Mayhap.Maybe.Maybe`1.Error
   name: Error
-  href: 0.1/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_Error
+  href: 1.0/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_Error
   commentId: P:Mayhap.Maybe.Maybe`1.Error
   fullName: Mayhap.Maybe.Maybe<TValue>.Error
   fullName.vb: Mayhap.Maybe.Maybe(Of TValue).Error
@@ -524,7 +524,7 @@ references:
   nameWithType.vb: Maybe(Of TValue).Error
 - uid: Mayhap.Maybe.Maybe`1.Error*
   name: Error
-  href: 0.1/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_Error_
+  href: 1.0/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_Error_
   commentId: Overload:Mayhap.Maybe.Maybe`1.Error
   isSpec: "True"
   fullName: Mayhap.Maybe.Maybe<TValue>.Error
@@ -533,7 +533,7 @@ references:
   nameWithType.vb: Maybe(Of TValue).Error
 - uid: Mayhap.Maybe.Maybe`1.IsSuccessful
   name: IsSuccessful
-  href: 0.1/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_IsSuccessful
+  href: 1.0/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_IsSuccessful
   commentId: P:Mayhap.Maybe.Maybe`1.IsSuccessful
   fullName: Mayhap.Maybe.Maybe<TValue>.IsSuccessful
   fullName.vb: Mayhap.Maybe.Maybe(Of TValue).IsSuccessful
@@ -541,7 +541,7 @@ references:
   nameWithType.vb: Maybe(Of TValue).IsSuccessful
 - uid: Mayhap.Maybe.Maybe`1.IsSuccessful*
   name: IsSuccessful
-  href: 0.1/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_IsSuccessful_
+  href: 1.0/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_IsSuccessful_
   commentId: Overload:Mayhap.Maybe.Maybe`1.IsSuccessful
   isSpec: "True"
   fullName: Mayhap.Maybe.Maybe<TValue>.IsSuccessful
@@ -550,7 +550,7 @@ references:
   nameWithType.vb: Maybe(Of TValue).IsSuccessful
 - uid: Mayhap.Maybe.Maybe`1.op_Implicit(Mayhap.Maybe.Maybe{`0})~`0
   name: Implicit(Maybe<TValue> to TValue)
-  href: 0.1/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_op_Implicit_Mayhap_Maybe_Maybe__0____0
+  href: 1.0/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_op_Implicit_Mayhap_Maybe_Maybe__0____0
   commentId: M:Mayhap.Maybe.Maybe`1.op_Implicit(Mayhap.Maybe.Maybe{`0})~`0
   name.vb: Widening(Maybe(Of TValue) to TValue)
   fullName: Mayhap.Maybe.Maybe<TValue>.Implicit(Mayhap.Maybe.Maybe<TValue> to TValue)
@@ -559,7 +559,7 @@ references:
   nameWithType.vb: Maybe(Of TValue).Widening(Maybe(Of TValue) to TValue)
 - uid: Mayhap.Maybe.Maybe`1.op_Implicit(Mayhap.Maybe.Maybe{`0})~System.Boolean
   name: Implicit(Maybe<TValue> to Boolean)
-  href: 0.1/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_op_Implicit_Mayhap_Maybe_Maybe__0___System_Boolean
+  href: 1.0/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_op_Implicit_Mayhap_Maybe_Maybe__0___System_Boolean
   commentId: M:Mayhap.Maybe.Maybe`1.op_Implicit(Mayhap.Maybe.Maybe{`0})~System.Boolean
   name.vb: Widening(Maybe(Of TValue) to Boolean)
   fullName: Mayhap.Maybe.Maybe<TValue>.Implicit(Mayhap.Maybe.Maybe<TValue> to System.Boolean)
@@ -568,7 +568,7 @@ references:
   nameWithType.vb: Maybe(Of TValue).Widening(Maybe(Of TValue) to Boolean)
 - uid: Mayhap.Maybe.Maybe`1.op_Implicit*
   name: Implicit
-  href: 0.1/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_op_Implicit_
+  href: 1.0/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_op_Implicit_
   commentId: Overload:Mayhap.Maybe.Maybe`1.op_Implicit
   isSpec: "True"
   name.vb: Widening
@@ -578,7 +578,7 @@ references:
   nameWithType.vb: Maybe(Of TValue).Widening
 - uid: Mayhap.Maybe.Maybe`1.ToString
   name: ToString()
-  href: 0.1/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_ToString
+  href: 1.0/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_ToString
   commentId: M:Mayhap.Maybe.Maybe`1.ToString
   fullName: Mayhap.Maybe.Maybe<TValue>.ToString()
   fullName.vb: Mayhap.Maybe.Maybe(Of TValue).ToString()
@@ -586,7 +586,7 @@ references:
   nameWithType.vb: Maybe(Of TValue).ToString()
 - uid: Mayhap.Maybe.Maybe`1.ToString*
   name: ToString
-  href: 0.1/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_ToString_
+  href: 1.0/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_ToString_
   commentId: Overload:Mayhap.Maybe.Maybe`1.ToString
   isSpec: "True"
   fullName: Mayhap.Maybe.Maybe<TValue>.ToString
@@ -595,7 +595,7 @@ references:
   nameWithType.vb: Maybe(Of TValue).ToString
 - uid: Mayhap.Maybe.Maybe`1.Value
   name: Value
-  href: 0.1/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_Value
+  href: 1.0/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_Value
   commentId: P:Mayhap.Maybe.Maybe`1.Value
   fullName: Mayhap.Maybe.Maybe<TValue>.Value
   fullName.vb: Mayhap.Maybe.Maybe(Of TValue).Value
@@ -603,7 +603,7 @@ references:
   nameWithType.vb: Maybe(Of TValue).Value
 - uid: Mayhap.Maybe.Maybe`1.Value*
   name: Value
-  href: 0.1/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_Value_
+  href: 1.0/Mayhap.Maybe.Maybe-1.html#Mayhap_Maybe_Maybe_1_Value_
   commentId: Overload:Mayhap.Maybe.Maybe`1.Value
   isSpec: "True"
   fullName: Mayhap.Maybe.Maybe<TValue>.Value
@@ -612,20 +612,20 @@ references:
   nameWithType.vb: Maybe(Of TValue).Value
 - uid: Mayhap.Maybe.MaybeFactory
   name: MaybeFactory
-  href: 0.1/Mayhap.Maybe.MaybeFactory.html
+  href: 1.0/Mayhap.Maybe.MaybeFactory.html
   commentId: T:Mayhap.Maybe.MaybeFactory
   fullName: Mayhap.Maybe.MaybeFactory
   nameWithType: MaybeFactory
 - uid: Mayhap.Maybe.MaybeFactory.Fail*
   name: Fail
-  href: 0.1/Mayhap.Maybe.MaybeFactory.html#Mayhap_Maybe_MaybeFactory_Fail_
+  href: 1.0/Mayhap.Maybe.MaybeFactory.html#Mayhap_Maybe_MaybeFactory_Fail_
   commentId: Overload:Mayhap.Maybe.MaybeFactory.Fail
   isSpec: "True"
   fullName: Mayhap.Maybe.MaybeFactory.Fail
   nameWithType: MaybeFactory.Fail
 - uid: Mayhap.Maybe.MaybeFactory.Fail``1(Enum)
   name: Fail<TValue>(Enum)
-  href: 0.1/Mayhap.Maybe.MaybeFactory.html#Mayhap_Maybe_MaybeFactory_Fail__1_Enum_
+  href: 1.0/Mayhap.Maybe.MaybeFactory.html#Mayhap_Maybe_MaybeFactory_Fail__1_Enum_
   commentId: M:Mayhap.Maybe.MaybeFactory.Fail``1(Enum)
   name.vb: Fail(Of TValue)(Enum)
   fullName: Mayhap.Maybe.MaybeFactory.Fail<TValue>(Enum)
@@ -634,7 +634,7 @@ references:
   nameWithType.vb: MaybeFactory.Fail(Of TValue)(Enum)
 - uid: Mayhap.Maybe.MaybeFactory.Fail``1(Mayhap.Error.Problem@)
   name: Fail<TValue>(Problem)
-  href: 0.1/Mayhap.Maybe.MaybeFactory.html#Mayhap_Maybe_MaybeFactory_Fail__1_Mayhap_Error_Problem__
+  href: 1.0/Mayhap.Maybe.MaybeFactory.html#Mayhap_Maybe_MaybeFactory_Fail__1_Mayhap_Error_Problem__
   commentId: M:Mayhap.Maybe.MaybeFactory.Fail``1(Mayhap.Error.Problem@)
   name.vb: Fail(Of TValue)(ByRef Problem)
   fullName: Mayhap.Maybe.MaybeFactory.Fail<TValue>(Mayhap.Error.Problem)
@@ -643,7 +643,7 @@ references:
   nameWithType.vb: MaybeFactory.Fail(Of TValue)(ByRef Problem)
 - uid: Mayhap.Maybe.MaybeFactory.Fail``1(System.String)
   name: Fail<TValue>(String)
-  href: 0.1/Mayhap.Maybe.MaybeFactory.html#Mayhap_Maybe_MaybeFactory_Fail__1_System_String_
+  href: 1.0/Mayhap.Maybe.MaybeFactory.html#Mayhap_Maybe_MaybeFactory_Fail__1_System_String_
   commentId: M:Mayhap.Maybe.MaybeFactory.Fail``1(System.String)
   name.vb: Fail(Of TValue)(String)
   fullName: Mayhap.Maybe.MaybeFactory.Fail<TValue>(System.String)
@@ -652,14 +652,14 @@ references:
   nameWithType.vb: MaybeFactory.Fail(Of TValue)(String)
 - uid: Mayhap.Maybe.MaybeFactory.Success*
   name: Success
-  href: 0.1/Mayhap.Maybe.MaybeFactory.html#Mayhap_Maybe_MaybeFactory_Success_
+  href: 1.0/Mayhap.Maybe.MaybeFactory.html#Mayhap_Maybe_MaybeFactory_Success_
   commentId: Overload:Mayhap.Maybe.MaybeFactory.Success
   isSpec: "True"
   fullName: Mayhap.Maybe.MaybeFactory.Success
   nameWithType: MaybeFactory.Success
 - uid: Mayhap.Maybe.MaybeFactory.Success``1(``0)
   name: Success<TValue>(TValue)
-  href: 0.1/Mayhap.Maybe.MaybeFactory.html#Mayhap_Maybe_MaybeFactory_Success__1___0_
+  href: 1.0/Mayhap.Maybe.MaybeFactory.html#Mayhap_Maybe_MaybeFactory_Success__1___0_
   commentId: M:Mayhap.Maybe.MaybeFactory.Success``1(``0)
   name.vb: Success(Of TValue)(TValue)
   fullName: Mayhap.Maybe.MaybeFactory.Success<TValue>(TValue)
@@ -668,20 +668,20 @@ references:
   nameWithType.vb: MaybeFactory.Success(Of TValue)(TValue)
 - uid: Mayhap.Maybe.Track
   name: Track
-  href: 0.1/Mayhap.Maybe.Track.html
+  href: 1.0/Mayhap.Maybe.Track.html
   commentId: T:Mayhap.Maybe.Track
   fullName: Mayhap.Maybe.Track
   nameWithType: Track
 - uid: Mayhap.Maybe.Track.Map*
   name: Map
-  href: 0.1/Mayhap.Maybe.Track.html#Mayhap_Maybe_Track_Map_
+  href: 1.0/Mayhap.Maybe.Track.html#Mayhap_Maybe_Track_Map_
   commentId: Overload:Mayhap.Maybe.Track.Map
   isSpec: "True"
   fullName: Mayhap.Maybe.Track.Map
   nameWithType: Track.Map
 - uid: Mayhap.Maybe.Track.Map``2(Mayhap.Maybe.Maybe{``0},Func{``0,Mayhap.Maybe.Maybe{``1}})
   name: Map<TInput, TOutput>(Maybe<TInput>, Func<TInput, Maybe<TOutput>>)
-  href: 0.1/Mayhap.Maybe.Track.html#Mayhap_Maybe_Track_Map__2_Mayhap_Maybe_Maybe___0__Func___0_Mayhap_Maybe_Maybe___1___
+  href: 1.0/Mayhap.Maybe.Track.html#Mayhap_Maybe_Track_Map__2_Mayhap_Maybe_Maybe___0__Func___0_Mayhap_Maybe_Maybe___1___
   commentId: M:Mayhap.Maybe.Track.Map``2(Mayhap.Maybe.Maybe{``0},Func{``0,Mayhap.Maybe.Maybe{``1}})
   name.vb: Map(Of TInput, TOutput)(Maybe(Of TInput), Func(Of TInput, Maybe(Of TOutput)))
   fullName: Mayhap.Maybe.Track.Map<TInput, TOutput>(Mayhap.Maybe.Maybe<TInput>, Func<TInput, Mayhap.Maybe.Maybe<TOutput>>)
@@ -690,7 +690,7 @@ references:
   nameWithType.vb: Track.Map(Of TInput, TOutput)(Maybe(Of TInput), Func(Of TInput, Maybe(Of TOutput)))
 - uid: Mayhap.Maybe.Track.Map``2(Mayhap.Maybe.Maybe{``0},Func{``0,Mayhap.Maybe.Maybe{``1}},Mayhap.Maybe.Maybe{``1}@)
   name: Map<TInput, TOutput>(Maybe<TInput>, Func<TInput, Maybe<TOutput>>, out Maybe<TOutput>)
-  href: 0.1/Mayhap.Maybe.Track.html#Mayhap_Maybe_Track_Map__2_Mayhap_Maybe_Maybe___0__Func___0_Mayhap_Maybe_Maybe___1___Mayhap_Maybe_Maybe___1___
+  href: 1.0/Mayhap.Maybe.Track.html#Mayhap_Maybe_Track_Map__2_Mayhap_Maybe_Maybe___0__Func___0_Mayhap_Maybe_Maybe___1___Mayhap_Maybe_Maybe___1___
   commentId: M:Mayhap.Maybe.Track.Map``2(Mayhap.Maybe.Maybe{``0},Func{``0,Mayhap.Maybe.Maybe{``1}},Mayhap.Maybe.Maybe{``1}@)
   name.vb: Map(Of TInput, TOutput)(Maybe(Of TInput), Func(Of TInput, Maybe(Of TOutput)), ByRef Maybe(Of TOutput))
   fullName: Mayhap.Maybe.Track.Map<TInput, TOutput>(Mayhap.Maybe.Maybe<TInput>, Func<TInput, Mayhap.Maybe.Maybe<TOutput>>, out Mayhap.Maybe.Maybe<TOutput>)
@@ -699,7 +699,7 @@ references:
   nameWithType.vb: Track.Map(Of TInput, TOutput)(Maybe(Of TInput), Func(Of TInput, Maybe(Of TOutput)), ByRef Maybe(Of TOutput))
 - uid: Mayhap.Maybe.Track.Map``2(Mayhap.Maybe.Maybe{``0},Func{``0,Task{Mayhap.Maybe.Maybe{``1}}})
   name: Map<TInput, TOutput>(Maybe<TInput>, Func<TInput, Task<Maybe<TOutput>>>)
-  href: 0.1/Mayhap.Maybe.Track.html#Mayhap_Maybe_Track_Map__2_Mayhap_Maybe_Maybe___0__Func___0_Task_Mayhap_Maybe_Maybe___1____
+  href: 1.0/Mayhap.Maybe.Track.html#Mayhap_Maybe_Track_Map__2_Mayhap_Maybe_Maybe___0__Func___0_Task_Mayhap_Maybe_Maybe___1____
   commentId: M:Mayhap.Maybe.Track.Map``2(Mayhap.Maybe.Maybe{``0},Func{``0,Task{Mayhap.Maybe.Maybe{``1}}})
   name.vb: Map(Of TInput, TOutput)(Maybe(Of TInput), Func(Of TInput, Task(Of Maybe(Of TOutput))))
   fullName: Mayhap.Maybe.Track.Map<TInput, TOutput>(Mayhap.Maybe.Maybe<TInput>, Func<TInput, Task<Mayhap.Maybe.Maybe<TOutput>>>)
@@ -708,7 +708,7 @@ references:
   nameWithType.vb: Track.Map(Of TInput, TOutput)(Maybe(Of TInput), Func(Of TInput, Task(Of Maybe(Of TOutput))))
 - uid: Mayhap.Maybe.Track.Map``2(Mayhap.Maybe.Maybe{``0},Func{``0,Task{Mayhap.Maybe.Maybe{``1}}},Task{Mayhap.Maybe.Maybe{``1}}@)
   name: Map<TInput, TOutput>(Maybe<TInput>, Func<TInput, Task<Maybe<TOutput>>>, out Task<Maybe<TOutput>>)
-  href: 0.1/Mayhap.Maybe.Track.html#Mayhap_Maybe_Track_Map__2_Mayhap_Maybe_Maybe___0__Func___0_Task_Mayhap_Maybe_Maybe___1____Task_Mayhap_Maybe_Maybe___1____
+  href: 1.0/Mayhap.Maybe.Track.html#Mayhap_Maybe_Track_Map__2_Mayhap_Maybe_Maybe___0__Func___0_Task_Mayhap_Maybe_Maybe___1____Task_Mayhap_Maybe_Maybe___1____
   commentId: M:Mayhap.Maybe.Track.Map``2(Mayhap.Maybe.Maybe{``0},Func{``0,Task{Mayhap.Maybe.Maybe{``1}}},Task{Mayhap.Maybe.Maybe{``1}}@)
   name.vb: Map(Of TInput, TOutput)(Maybe(Of TInput), Func(Of TInput, Task(Of Maybe(Of TOutput))), ByRef Task(Of Maybe(Of TOutput)))
   fullName: Mayhap.Maybe.Track.Map<TInput, TOutput>(Mayhap.Maybe.Maybe<TInput>, Func<TInput, Task<Mayhap.Maybe.Maybe<TOutput>>>, out Task<Mayhap.Maybe.Maybe<TOutput>>)
@@ -717,13 +717,13 @@ references:
   nameWithType.vb: Track.Map(Of TInput, TOutput)(Maybe(Of TInput), Func(Of TInput, Task(Of Maybe(Of TOutput))), ByRef Task(Of Maybe(Of TOutput)))
 - uid: Mayhap.Option
   name: Mayhap.Option
-  href: 0.1/Mayhap.Option.html
+  href: 1.0/Mayhap.Option.html
   commentId: N:Mayhap.Option
   fullName: Mayhap.Option
   nameWithType: Mayhap.Option
 - uid: Mayhap.Option.IOption`1
   name: IOption<T>
-  href: 0.1/Mayhap.Option.IOption-1.html
+  href: 1.0/Mayhap.Option.IOption-1.html
   commentId: T:Mayhap.Option.IOption`1
   name.vb: IOption(Of T)
   fullName: Mayhap.Option.IOption<T>
@@ -732,7 +732,7 @@ references:
   nameWithType.vb: IOption(Of T)
 - uid: Mayhap.Option.IOption`1.HasValue
   name: HasValue
-  href: 0.1/Mayhap.Option.IOption-1.html#Mayhap_Option_IOption_1_HasValue
+  href: 1.0/Mayhap.Option.IOption-1.html#Mayhap_Option_IOption_1_HasValue
   commentId: P:Mayhap.Option.IOption`1.HasValue
   fullName: Mayhap.Option.IOption<T>.HasValue
   fullName.vb: Mayhap.Option.IOption(Of T).HasValue
@@ -740,7 +740,7 @@ references:
   nameWithType.vb: IOption(Of T).HasValue
 - uid: Mayhap.Option.IOption`1.HasValue*
   name: HasValue
-  href: 0.1/Mayhap.Option.IOption-1.html#Mayhap_Option_IOption_1_HasValue_
+  href: 1.0/Mayhap.Option.IOption-1.html#Mayhap_Option_IOption_1_HasValue_
   commentId: Overload:Mayhap.Option.IOption`1.HasValue
   isSpec: "True"
   fullName: Mayhap.Option.IOption<T>.HasValue
@@ -749,7 +749,7 @@ references:
   nameWithType.vb: IOption(Of T).HasValue
 - uid: Mayhap.Option.IOption`1.Unwrap
   name: Unwrap()
-  href: 0.1/Mayhap.Option.IOption-1.html#Mayhap_Option_IOption_1_Unwrap
+  href: 1.0/Mayhap.Option.IOption-1.html#Mayhap_Option_IOption_1_Unwrap
   commentId: M:Mayhap.Option.IOption`1.Unwrap
   fullName: Mayhap.Option.IOption<T>.Unwrap()
   fullName.vb: Mayhap.Option.IOption(Of T).Unwrap()
@@ -757,7 +757,7 @@ references:
   nameWithType.vb: IOption(Of T).Unwrap()
 - uid: Mayhap.Option.IOption`1.Unwrap*
   name: Unwrap
-  href: 0.1/Mayhap.Option.IOption-1.html#Mayhap_Option_IOption_1_Unwrap_
+  href: 1.0/Mayhap.Option.IOption-1.html#Mayhap_Option_IOption_1_Unwrap_
   commentId: Overload:Mayhap.Option.IOption`1.Unwrap
   isSpec: "True"
   fullName: Mayhap.Option.IOption<T>.Unwrap
@@ -766,7 +766,7 @@ references:
   nameWithType.vb: IOption(Of T).Unwrap
 - uid: Mayhap.Option.None`1
   name: None<T>
-  href: 0.1/Mayhap.Option.None-1.html
+  href: 1.0/Mayhap.Option.None-1.html
   commentId: T:Mayhap.Option.None`1
   name.vb: None(Of T)
   fullName: Mayhap.Option.None<T>
@@ -775,7 +775,7 @@ references:
   nameWithType.vb: None(Of T)
 - uid: Mayhap.Option.None`1.HasValue
   name: HasValue
-  href: 0.1/Mayhap.Option.None-1.html#Mayhap_Option_None_1_HasValue
+  href: 1.0/Mayhap.Option.None-1.html#Mayhap_Option_None_1_HasValue
   commentId: P:Mayhap.Option.None`1.HasValue
   fullName: Mayhap.Option.None<T>.HasValue
   fullName.vb: Mayhap.Option.None(Of T).HasValue
@@ -783,7 +783,7 @@ references:
   nameWithType.vb: None(Of T).HasValue
 - uid: Mayhap.Option.None`1.HasValue*
   name: HasValue
-  href: 0.1/Mayhap.Option.None-1.html#Mayhap_Option_None_1_HasValue_
+  href: 1.0/Mayhap.Option.None-1.html#Mayhap_Option_None_1_HasValue_
   commentId: Overload:Mayhap.Option.None`1.HasValue
   isSpec: "True"
   fullName: Mayhap.Option.None<T>.HasValue
@@ -792,7 +792,7 @@ references:
   nameWithType.vb: None(Of T).HasValue
 - uid: Mayhap.Option.None`1.op_Implicit(Mayhap.Option.None{`0})~`0
   name: Implicit(None<T> to T)
-  href: 0.1/Mayhap.Option.None-1.html#Mayhap_Option_None_1_op_Implicit_Mayhap_Option_None__0____0
+  href: 1.0/Mayhap.Option.None-1.html#Mayhap_Option_None_1_op_Implicit_Mayhap_Option_None__0____0
   commentId: M:Mayhap.Option.None`1.op_Implicit(Mayhap.Option.None{`0})~`0
   name.vb: Widening(None(Of T) to T)
   fullName: Mayhap.Option.None<T>.Implicit(Mayhap.Option.None<T> to T)
@@ -801,7 +801,7 @@ references:
   nameWithType.vb: None(Of T).Widening(None(Of T) to T)
 - uid: Mayhap.Option.None`1.op_Implicit*
   name: Implicit
-  href: 0.1/Mayhap.Option.None-1.html#Mayhap_Option_None_1_op_Implicit_
+  href: 1.0/Mayhap.Option.None-1.html#Mayhap_Option_None_1_op_Implicit_
   commentId: Overload:Mayhap.Option.None`1.op_Implicit
   isSpec: "True"
   name.vb: Widening
@@ -811,7 +811,7 @@ references:
   nameWithType.vb: None(Of T).Widening
 - uid: Mayhap.Option.None`1.ToString
   name: ToString()
-  href: 0.1/Mayhap.Option.None-1.html#Mayhap_Option_None_1_ToString
+  href: 1.0/Mayhap.Option.None-1.html#Mayhap_Option_None_1_ToString
   commentId: M:Mayhap.Option.None`1.ToString
   fullName: Mayhap.Option.None<T>.ToString()
   fullName.vb: Mayhap.Option.None(Of T).ToString()
@@ -819,7 +819,7 @@ references:
   nameWithType.vb: None(Of T).ToString()
 - uid: Mayhap.Option.None`1.ToString*
   name: ToString
-  href: 0.1/Mayhap.Option.None-1.html#Mayhap_Option_None_1_ToString_
+  href: 1.0/Mayhap.Option.None-1.html#Mayhap_Option_None_1_ToString_
   commentId: Overload:Mayhap.Option.None`1.ToString
   isSpec: "True"
   fullName: Mayhap.Option.None<T>.ToString
@@ -828,7 +828,7 @@ references:
   nameWithType.vb: None(Of T).ToString
 - uid: Mayhap.Option.None`1.Unwrap
   name: Unwrap()
-  href: 0.1/Mayhap.Option.None-1.html#Mayhap_Option_None_1_Unwrap
+  href: 1.0/Mayhap.Option.None-1.html#Mayhap_Option_None_1_Unwrap
   commentId: M:Mayhap.Option.None`1.Unwrap
   fullName: Mayhap.Option.None<T>.Unwrap()
   fullName.vb: Mayhap.Option.None(Of T).Unwrap()
@@ -836,7 +836,7 @@ references:
   nameWithType.vb: None(Of T).Unwrap()
 - uid: Mayhap.Option.None`1.Unwrap*
   name: Unwrap
-  href: 0.1/Mayhap.Option.None-1.html#Mayhap_Option_None_1_Unwrap_
+  href: 1.0/Mayhap.Option.None-1.html#Mayhap_Option_None_1_Unwrap_
   commentId: Overload:Mayhap.Option.None`1.Unwrap
   isSpec: "True"
   fullName: Mayhap.Option.None<T>.Unwrap
@@ -845,20 +845,20 @@ references:
   nameWithType.vb: None(Of T).Unwrap
 - uid: Mayhap.Option.Optional
   name: Optional
-  href: 0.1/Mayhap.Option.Optional.html
+  href: 1.0/Mayhap.Option.Optional.html
   commentId: T:Mayhap.Option.Optional
   fullName: Mayhap.Option.Optional
   nameWithType: Optional
 - uid: Mayhap.Option.Optional.None*
   name: None
-  href: 0.1/Mayhap.Option.Optional.html#Mayhap_Option_Optional_None_
+  href: 1.0/Mayhap.Option.Optional.html#Mayhap_Option_Optional_None_
   commentId: Overload:Mayhap.Option.Optional.None
   isSpec: "True"
   fullName: Mayhap.Option.Optional.None
   nameWithType: Optional.None
 - uid: Mayhap.Option.Optional.None``1
   name: None<TValue>()
-  href: 0.1/Mayhap.Option.Optional.html#Mayhap_Option_Optional_None__1
+  href: 1.0/Mayhap.Option.Optional.html#Mayhap_Option_Optional_None__1
   commentId: M:Mayhap.Option.Optional.None``1
   name.vb: None(Of TValue)()
   fullName: Mayhap.Option.Optional.None<TValue>()
@@ -867,14 +867,14 @@ references:
   nameWithType.vb: Optional.None(Of TValue)()
 - uid: Mayhap.Option.Optional.Some*
   name: Some
-  href: 0.1/Mayhap.Option.Optional.html#Mayhap_Option_Optional_Some_
+  href: 1.0/Mayhap.Option.Optional.html#Mayhap_Option_Optional_Some_
   commentId: Overload:Mayhap.Option.Optional.Some
   isSpec: "True"
   fullName: Mayhap.Option.Optional.Some
   nameWithType: Optional.Some
 - uid: Mayhap.Option.Optional.Some``1(``0)
   name: Some<TValue>(TValue)
-  href: 0.1/Mayhap.Option.Optional.html#Mayhap_Option_Optional_Some__1___0_
+  href: 1.0/Mayhap.Option.Optional.html#Mayhap_Option_Optional_Some__1___0_
   commentId: M:Mayhap.Option.Optional.Some``1(``0)
   name.vb: Some(Of TValue)(TValue)
   fullName: Mayhap.Option.Optional.Some<TValue>(TValue)
@@ -883,7 +883,7 @@ references:
   nameWithType.vb: Optional.Some(Of TValue)(TValue)
 - uid: Mayhap.Option.Some`1
   name: Some<T>
-  href: 0.1/Mayhap.Option.Some-1.html
+  href: 1.0/Mayhap.Option.Some-1.html
   commentId: T:Mayhap.Option.Some`1
   name.vb: Some(Of T)
   fullName: Mayhap.Option.Some<T>
@@ -892,7 +892,7 @@ references:
   nameWithType.vb: Some(Of T)
 - uid: Mayhap.Option.Some`1.#ctor(`0)
   name: Some(T)
-  href: 0.1/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1__ctor__0_
+  href: 1.0/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1__ctor__0_
   commentId: M:Mayhap.Option.Some`1.#ctor(`0)
   fullName: Mayhap.Option.Some<T>.Some(T)
   fullName.vb: Mayhap.Option.Some(Of T).Some(T)
@@ -900,7 +900,7 @@ references:
   nameWithType.vb: Some(Of T).Some(T)
 - uid: Mayhap.Option.Some`1.#ctor*
   name: Some
-  href: 0.1/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1__ctor_
+  href: 1.0/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1__ctor_
   commentId: Overload:Mayhap.Option.Some`1.#ctor
   isSpec: "True"
   fullName: Mayhap.Option.Some<T>.Some
@@ -909,7 +909,7 @@ references:
   nameWithType.vb: Some(Of T).Some
 - uid: Mayhap.Option.Some`1.HasValue
   name: HasValue
-  href: 0.1/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_HasValue
+  href: 1.0/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_HasValue
   commentId: P:Mayhap.Option.Some`1.HasValue
   fullName: Mayhap.Option.Some<T>.HasValue
   fullName.vb: Mayhap.Option.Some(Of T).HasValue
@@ -917,7 +917,7 @@ references:
   nameWithType.vb: Some(Of T).HasValue
 - uid: Mayhap.Option.Some`1.HasValue*
   name: HasValue
-  href: 0.1/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_HasValue_
+  href: 1.0/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_HasValue_
   commentId: Overload:Mayhap.Option.Some`1.HasValue
   isSpec: "True"
   fullName: Mayhap.Option.Some<T>.HasValue
@@ -926,7 +926,7 @@ references:
   nameWithType.vb: Some(Of T).HasValue
 - uid: Mayhap.Option.Some`1.op_Implicit(Mayhap.Option.Some{`0})~`0
   name: Implicit(Some<T> to T)
-  href: 0.1/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_op_Implicit_Mayhap_Option_Some__0____0
+  href: 1.0/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_op_Implicit_Mayhap_Option_Some__0____0
   commentId: M:Mayhap.Option.Some`1.op_Implicit(Mayhap.Option.Some{`0})~`0
   name.vb: Widening(Some(Of T) to T)
   fullName: Mayhap.Option.Some<T>.Implicit(Mayhap.Option.Some<T> to T)
@@ -935,7 +935,7 @@ references:
   nameWithType.vb: Some(Of T).Widening(Some(Of T) to T)
 - uid: Mayhap.Option.Some`1.op_Implicit*
   name: Implicit
-  href: 0.1/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_op_Implicit_
+  href: 1.0/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_op_Implicit_
   commentId: Overload:Mayhap.Option.Some`1.op_Implicit
   isSpec: "True"
   name.vb: Widening
@@ -945,7 +945,7 @@ references:
   nameWithType.vb: Some(Of T).Widening
 - uid: Mayhap.Option.Some`1.ToString
   name: ToString()
-  href: 0.1/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_ToString
+  href: 1.0/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_ToString
   commentId: M:Mayhap.Option.Some`1.ToString
   fullName: Mayhap.Option.Some<T>.ToString()
   fullName.vb: Mayhap.Option.Some(Of T).ToString()
@@ -953,7 +953,7 @@ references:
   nameWithType.vb: Some(Of T).ToString()
 - uid: Mayhap.Option.Some`1.ToString*
   name: ToString
-  href: 0.1/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_ToString_
+  href: 1.0/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_ToString_
   commentId: Overload:Mayhap.Option.Some`1.ToString
   isSpec: "True"
   fullName: Mayhap.Option.Some<T>.ToString
@@ -962,7 +962,7 @@ references:
   nameWithType.vb: Some(Of T).ToString
 - uid: Mayhap.Option.Some`1.Unwrap
   name: Unwrap()
-  href: 0.1/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_Unwrap
+  href: 1.0/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_Unwrap
   commentId: M:Mayhap.Option.Some`1.Unwrap
   fullName: Mayhap.Option.Some<T>.Unwrap()
   fullName.vb: Mayhap.Option.Some(Of T).Unwrap()
@@ -970,7 +970,7 @@ references:
   nameWithType.vb: Some(Of T).Unwrap()
 - uid: Mayhap.Option.Some`1.Unwrap*
   name: Unwrap
-  href: 0.1/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_Unwrap_
+  href: 1.0/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_Unwrap_
   commentId: Overload:Mayhap.Option.Some`1.Unwrap
   isSpec: "True"
   fullName: Mayhap.Option.Some<T>.Unwrap
@@ -979,7 +979,7 @@ references:
   nameWithType.vb: Some(Of T).Unwrap
 - uid: Mayhap.Option.Some`1.Value
   name: Value
-  href: 0.1/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_Value
+  href: 1.0/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_Value
   commentId: P:Mayhap.Option.Some`1.Value
   fullName: Mayhap.Option.Some<T>.Value
   fullName.vb: Mayhap.Option.Some(Of T).Value
@@ -987,7 +987,7 @@ references:
   nameWithType.vb: Some(Of T).Value
 - uid: Mayhap.Option.Some`1.Value*
   name: Value
-  href: 0.1/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_Value_
+  href: 1.0/Mayhap.Option.Some-1.html#Mayhap_Option_Some_1_Value_
   commentId: Overload:Mayhap.Option.Some`1.Value
   isSpec: "True"
   fullName: Mayhap.Option.Some<T>.Value
@@ -996,20 +996,20 @@ references:
   nameWithType.vb: Some(Of T).Value
 - uid: Mayhap.Option.Track
   name: Track
-  href: 0.1/Mayhap.Option.Track.html
+  href: 1.0/Mayhap.Option.Track.html
   commentId: T:Mayhap.Option.Track
   fullName: Mayhap.Option.Track
   nameWithType: Track
 - uid: Mayhap.Option.Track.Map*
   name: Map
-  href: 0.1/Mayhap.Option.Track.html#Mayhap_Option_Track_Map_
+  href: 1.0/Mayhap.Option.Track.html#Mayhap_Option_Track_Map_
   commentId: Overload:Mayhap.Option.Track.Map
   isSpec: "True"
   fullName: Mayhap.Option.Track.Map
   nameWithType: Track.Map
 - uid: Mayhap.Option.Track.Map``2(Mayhap.Option.IOption{``0},Func{``0,Mayhap.Option.IOption{``1}})
   name: Map<TInput, TOutput>(IOption<TInput>, Func<TInput, IOption<TOutput>>)
-  href: 0.1/Mayhap.Option.Track.html#Mayhap_Option_Track_Map__2_Mayhap_Option_IOption___0__Func___0_Mayhap_Option_IOption___1___
+  href: 1.0/Mayhap.Option.Track.html#Mayhap_Option_Track_Map__2_Mayhap_Option_IOption___0__Func___0_Mayhap_Option_IOption___1___
   commentId: M:Mayhap.Option.Track.Map``2(Mayhap.Option.IOption{``0},Func{``0,Mayhap.Option.IOption{``1}})
   name.vb: Map(Of TInput, TOutput)(IOption(Of TInput), Func(Of TInput, IOption(Of TOutput)))
   fullName: Mayhap.Option.Track.Map<TInput, TOutput>(Mayhap.Option.IOption<TInput>, Func<TInput, Mayhap.Option.IOption<TOutput>>)
@@ -1018,7 +1018,7 @@ references:
   nameWithType.vb: Track.Map(Of TInput, TOutput)(IOption(Of TInput), Func(Of TInput, IOption(Of TOutput)))
 - uid: Mayhap.Option.Track.Map``2(Mayhap.Option.IOption{``0},Func{``0,Mayhap.Option.IOption{``1}},Mayhap.Option.IOption{``1}@)
   name: Map<TInput, TOutput>(IOption<TInput>, Func<TInput, IOption<TOutput>>, out IOption<TOutput>)
-  href: 0.1/Mayhap.Option.Track.html#Mayhap_Option_Track_Map__2_Mayhap_Option_IOption___0__Func___0_Mayhap_Option_IOption___1___Mayhap_Option_IOption___1___
+  href: 1.0/Mayhap.Option.Track.html#Mayhap_Option_Track_Map__2_Mayhap_Option_IOption___0__Func___0_Mayhap_Option_IOption___1___Mayhap_Option_IOption___1___
   commentId: M:Mayhap.Option.Track.Map``2(Mayhap.Option.IOption{``0},Func{``0,Mayhap.Option.IOption{``1}},Mayhap.Option.IOption{``1}@)
   name.vb: Map(Of TInput, TOutput)(IOption(Of TInput), Func(Of TInput, IOption(Of TOutput)), ByRef IOption(Of TOutput))
   fullName: Mayhap.Option.Track.Map<TInput, TOutput>(Mayhap.Option.IOption<TInput>, Func<TInput, Mayhap.Option.IOption<TOutput>>, out Mayhap.Option.IOption<TOutput>)
@@ -1027,7 +1027,7 @@ references:
   nameWithType.vb: Track.Map(Of TInput, TOutput)(IOption(Of TInput), Func(Of TInput, IOption(Of TOutput)), ByRef IOption(Of TOutput))
 - uid: Mayhap.Option.Track.Map``2(Mayhap.Option.IOption{``0},Func{``0,Task{Mayhap.Option.IOption{``1}}})
   name: Map<TInput, TOutput>(IOption<TInput>, Func<TInput, Task<IOption<TOutput>>>)
-  href: 0.1/Mayhap.Option.Track.html#Mayhap_Option_Track_Map__2_Mayhap_Option_IOption___0__Func___0_Task_Mayhap_Option_IOption___1____
+  href: 1.0/Mayhap.Option.Track.html#Mayhap_Option_Track_Map__2_Mayhap_Option_IOption___0__Func___0_Task_Mayhap_Option_IOption___1____
   commentId: M:Mayhap.Option.Track.Map``2(Mayhap.Option.IOption{``0},Func{``0,Task{Mayhap.Option.IOption{``1}}})
   name.vb: Map(Of TInput, TOutput)(IOption(Of TInput), Func(Of TInput, Task(Of IOption(Of TOutput))))
   fullName: Mayhap.Option.Track.Map<TInput, TOutput>(Mayhap.Option.IOption<TInput>, Func<TInput, Task<Mayhap.Option.IOption<TOutput>>>)
@@ -1036,7 +1036,7 @@ references:
   nameWithType.vb: Track.Map(Of TInput, TOutput)(IOption(Of TInput), Func(Of TInput, Task(Of IOption(Of TOutput))))
 - uid: Mayhap.Option.Track.Map``2(Mayhap.Option.IOption{``0},Func{``0,Task{Mayhap.Option.IOption{``1}}},Task{Mayhap.Option.IOption{``1}}@)
   name: Map<TInput, TOutput>(IOption<TInput>, Func<TInput, Task<IOption<TOutput>>>, out Task<IOption<TOutput>>)
-  href: 0.1/Mayhap.Option.Track.html#Mayhap_Option_Track_Map__2_Mayhap_Option_IOption___0__Func___0_Task_Mayhap_Option_IOption___1____Task_Mayhap_Option_IOption___1____
+  href: 1.0/Mayhap.Option.Track.html#Mayhap_Option_Track_Map__2_Mayhap_Option_IOption___0__Func___0_Task_Mayhap_Option_IOption___1____Task_Mayhap_Option_IOption___1____
   commentId: M:Mayhap.Option.Track.Map``2(Mayhap.Option.IOption{``0},Func{``0,Task{Mayhap.Option.IOption{``1}}},Task{Mayhap.Option.IOption{``1}}@)
   name.vb: Map(Of TInput, TOutput)(IOption(Of TInput), Func(Of TInput, Task(Of IOption(Of TOutput))), ByRef Task(Of IOption(Of TOutput)))
   fullName: Mayhap.Option.Track.Map<TInput, TOutput>(Mayhap.Option.IOption<TInput>, Func<TInput, Task<Mayhap.Option.IOption<TOutput>>>, out Task<Mayhap.Option.IOption<TOutput>>)
