@@ -6,6 +6,8 @@ to simplify processing of `optional` values. Mayhap usage helps to eliminate nul
 `Maybe<T>` and `IOption<T>` types semantically suggests, that you should check if wrapped value
 really exists.
 
+Full documentation can be found [here](https://pmartynski.github.io/mayhap/).
+
 ## Why to use Mayhap?
 Writing a block of business logic code, especially when dealing with remote resources, involves
 a lot of success checking on each step.

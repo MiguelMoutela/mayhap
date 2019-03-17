@@ -1,35 +1,18 @@
 image: Visual Studio 2017
 
-version: '#{build}'
-
 environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
-  SUPPRESS_ENV_INFO: true
+  NUGET_APIKEY:
+    secure: tUx7I2So0E8VbuxyJ2nYNkz2ryrcjKOYmTn3O5szPAicQ9+GTCT+ML+BLj6prsp6
+  GITHUB_ACCESS_TOKEN:
+    secure: as7zGFm/RJCI55uS1pEEUfT9plPrGwYloK0k5E1S48UJ1OZymfPiqfyfdiAyL7uh
+  GITHUB_REPO: https://appveyor:{{token}}@github.com/pmartynski/mayhap.git
 
-nuget:
-  disable_publish_on_pr: true
-
-pull_requests:
-  do_not_increment_build_number: true
-
-before_build:
-  - ps: .\scripts\envinfo.ps1
+install:
+  - choco install docfx --version 2.40.11 -y
 
 build_script:
-  - ps: .\scripts\build.ps1
-
-test_script:
-  - ps: .\scripts\test.ps1
+  - ps: ./build.ps1
 
 artifacts:
-  - path: '**/*.nupkg'
-
-deploy:
-  - provider: NuGet
-    api_key:
-      secure: tUx7I2So0E8VbuxyJ2nYNkz2ryrcjKOYmTn3O5szPAicQ9+GTCT+ML+BLj6prsp6
-    skip_symbols: false
-    symbol_server: http://nuget.smbsrc.net
-    on:
-      branch: master
-      appveyor_repo_tag: true
+  - path: artifacts/*

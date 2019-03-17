@@ -4,12 +4,12 @@
       "src": [
         {
           "files": [
-            "src/**.csproj"
+            "Mayhap/Mayhap.csproj"
           ],
-          "src": ".."
+          "src": "{{sourceRoot}}"
         }
       ],
-      "dest": "reference",
+      "dest": "{{reference}}",
       "disableGitFeatures": false,
       "disableDefaultFilter": false,
       "properties": { "TargetFramework": "netstandard1.6" }
@@ -19,8 +19,8 @@
     "content": [
       {
         "files": [
-          "reference/**.yml",
-          "reference/index.md"
+          "{{reference}}/**.yml",
+          "{{reference}}/index.md"
         ]
       },
       {
