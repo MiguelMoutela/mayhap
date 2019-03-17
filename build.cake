@@ -75,7 +75,6 @@ void Clone(string branch, string outputPath)
                 .WithToken("token", githubAccessToken)
                 .ToString();
 
-    Information("Cloning the docs branch...");
     var cloneSettings = new GitCloneSettings()
     {
         BranchName = branch,
@@ -166,13 +165,6 @@ Task("Pack")
             };
             settings.MSBuildSettings.Properties["PackageVersion"] = Props(nugetVersion);
             DotNetCorePack(mayhapCsprojPath.FullPath, settings);
-
-            ///
-            var tagName = $"v{nugetVersion}";
-            Clone("master", ghTagPublish.FullPath);
-            GitCheckout(ghTagPublish, commit);
-            GitTag(ghTagPublish, tagName);
-            GitPushRef(ghTagPublish, "origin", tagName);
         });
 
 Task("Publish")
@@ -189,6 +181,13 @@ Task("Publish")
         };
 
         DotNetCoreNuGetPush(packageArtifact.FullPath);
+
+        
+        var tagName = $"v{nugetVersion}";
+        Clone("master", ghTagPublish.FullPath);
+        GitCheckout(ghTagPublish, commit);
+        GitTag(ghTagPublish, tagName);
+        GitPushRef(ghTagPublish, "origin", tagName);
     });
 
 Task("GenerateDocs")
